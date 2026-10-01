@@ -71,7 +71,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 | Id | Task | Fatto quando |
 |---|---|---|
 | T1.18 ✅ | `getPlayerView(state, playerId)`: mano e mazzo avversari ridotti a conteggi, seed RNG rimosso. | Test che nessun campo segreto compare nella vista. |
-| T1.19 | Determinismo: stesso seed + stesse azioni → stesso stato. | Test con confronto degli snapshot. |
+| T1.19 ✅ | Determinismo: stesso seed + stesse azioni → stesso stato. | Test con confronto degli snapshot. |
 | T1.20 | CLI `npm run simulate` (cross-platform, `tsx`): partita con mosse legali casuali, log leggibile. | Il comando termina con un vincitore su 100 seed diversi. |
 
 **Uscita da M1**: `npm test` e `npm run typecheck` verdi.

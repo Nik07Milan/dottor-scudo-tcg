@@ -10,3 +10,4 @@ export * from "./errors";
 export { actionKey, getLegalActions } from "./legal";
 export { effectiveCost } from "./costs";
 export { getEventsView, getPlayerView, HIDDEN_CARD, type PlayerView } from "./view";
+export { replay, type ReplayResult } from "./replay";
