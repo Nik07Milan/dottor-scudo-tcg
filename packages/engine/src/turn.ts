@@ -44,7 +44,15 @@ export function endTurn(ctx: Ctx, player: PlayerId): void {
   const { state } = ctx;
   const ps = state.players[player];
   runBoardTrigger(ctx, player, "end_of_turn");
-  // Scalare Bloccato in riunione: T1.10.
+  // Bloccato in riunione: scende a fine turno del controllore, non nel turno in cui è stato bloccato (GDD §3.1).
+  for (const m of ps.board) {
+    if (m.frozenTurns <= 0 || m.frozenOnTurn === state.turn) continue;
+    m.frozenTurns -= 1;
+    if (m.frozenTurns === 0) {
+      m.frozenOnTurn = null;
+      ctx.events.push({ type: "frozen", instanceId: m.instanceId, turns: 0 });
+    }
+  }
   ps.costModifiers = ps.costModifiers.filter((m) => !m.expiresEndOfTurn);
   ctx.events.push({ type: "turn_ended", player, turn: state.turn });
   if (state.turn >= TURN_LIMIT) {

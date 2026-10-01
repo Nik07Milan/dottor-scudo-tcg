@@ -1,7 +1,8 @@
 // Danni a eroi e servitori. La morte non avviene qui: la gestisce la fase morti a fine effetto (deaths.ts).
 
-import type { Ctx } from "./context";
+import { doom, type Ctx } from "./context";
 import type { CharacterRef, GameState, InstanceId, MinionInstance, PlayerId } from "./state";
+import type { Keyword } from "./types";
 
 export interface MinionLocation {
   /** Controllore: il lato del campo su cui sta. */
@@ -28,11 +29,32 @@ export function damageHero(ctx: Ctx, player: PlayerId, amount: number): void {
   ctx.events.push({ type: "damage", target: { kind: "hero", player }, amount });
 }
 
-/** Danno a un servitore. Scudato e Mani in merda: T1.10. */
-export function damageMinion(ctx: Ctx, minion: MinionInstance, amount: number): void {
-  if (amount <= 0) return;
+/**
+ * Danno a un servitore (GDD §3.1). Scudato annulla la prima istanza > 0 e si perde.
+ * Se la sorgente ha Mani in merda e il danno passa, il bersaglio è distrutto.
+ * Restituisce il danno effettivamente inflitto (0 se annullato).
+ */
+export function damageMinion(ctx: Ctx, minion: MinionInstance, amount: number, source?: MinionInstance): number {
+  if (amount <= 0) return 0;
+  const target: CharacterRef = { kind: "minion", instanceId: minion.instanceId };
+  const shield = minion.keywords.indexOf("scudato");
+  if (shield >= 0) {
+    minion.keywords.splice(shield, 1);
+    ctx.events.push({ type: "shield_broken", target });
+    return 0;
+  }
   minion.health -= amount;
-  ctx.events.push({ type: "damage", target: { kind: "minion", instanceId: minion.instanceId }, amount });
+  ctx.events.push({ type: "damage", target, amount });
+  if (source?.keywords.includes("mani_in_merda")) doom(ctx, minion.instanceId);
+  return amount;
+}
+
+/** Toglie una keyword a un servitore, se ce l'ha. */
+export function loseKeyword(ctx: Ctx, minion: MinionInstance, keyword: Keyword): void {
+  const i = minion.keywords.indexOf(keyword);
+  if (i < 0) return;
+  minion.keywords.splice(i, 1);
+  ctx.events.push({ type: "keyword_lost", instanceId: minion.instanceId, keyword });
 }
 
 export function damageCharacter(ctx: Ctx, target: CharacterRef, amount: number): void {

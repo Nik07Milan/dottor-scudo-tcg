@@ -22,7 +22,8 @@ export function chosenTargets(state: GameState, player: PlayerId, card: CardDefi
   const targets: CharacterRef[] = [];
   for (const p of [player, opponentOf(player)]) {
     for (const m of state.players[p].board) {
-      // Smart working (non bersagliabile dagli avversari): T1.10.
+      // Smart working: non bersagliabile dagli avversari, sì dal proprio controllore.
+      if (p !== player && m.keywords.includes("smart_working")) continue;
       if (m.attack <= maxAttack) targets.push({ kind: "minion", instanceId: m.instanceId });
     }
     if (heroesOk) targets.push({ kind: "hero", player: p });

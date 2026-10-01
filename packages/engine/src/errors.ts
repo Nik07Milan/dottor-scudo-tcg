@@ -22,6 +22,8 @@ export type IllegalActionCode =
   | "cannot_attack"
   /** Il difensore non esiste o non è un personaggio nemico attaccabile. */
   | "invalid_target"
+  /** C'è una Burocrazia nemica: va attaccata prima lei. */
+  | "taunt_required"
   /** Tipo di azione previsto ma non ancora implementato nell'engine. */
   | "not_implemented"
   /** Ben formata ma non tra le mosse legali, senza un motivo più preciso. */

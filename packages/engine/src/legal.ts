@@ -1,7 +1,7 @@
 // Mosse legali (T1.5). getLegalActions è l'unica fonte di cosa si può fare: applyAction accetta
 // un'azione solo se la sua forma canonica compare qui. Ogni nuova azione va aggiunta in questo file.
 
-import { attackersOf, attackTargetsOf, canAttackNow, controls } from "./combat";
+import { attackersOf, attackTargetsOf, canAttackNow, controls, tauntBlocks } from "./combat";
 import { opponentOf } from "./context";
 import { effectiveCost } from "./costs";
 import { CARDS_BY_ID } from "./data";
@@ -41,8 +41,9 @@ function phaseActions(state: GameState, player: PlayerId): Action[] {
 }
 
 function attackActions(state: GameState, player: PlayerId): Action[] {
-  const targets = attackTargetsOf(state, player);
-  return attackersOf(state, player).flatMap((attacker) => targets.map((defender): Action => ({ type: "attack", player, attacker, defender })));
+  return attackersOf(state, player).flatMap((attacker) =>
+    attackTargetsOf(state, player, attacker).map((defender): Action => ({ type: "attack", player, attacker, defender })),
+  );
 }
 
 /**
@@ -173,6 +174,9 @@ export function diagnose(state: GameState, action: Action): IllegalActionCode {
       if (!controls(state, action.player, action.attacker)) return "invalid_attacker";
       if (!canAttackNow(state, action.player, action.attacker)) return "cannot_attack";
       if (!controls(state, opponentOf(action.player), action.defender)) return "invalid_target";
+      if (!attackTargetsOf(state, action.player, action.attacker).some((t) => sameRef(t, action.defender))) {
+        return tauntBlocks(state, action.player) ? "taunt_required" : "invalid_target";
+      }
       return "not_legal";
     }
 

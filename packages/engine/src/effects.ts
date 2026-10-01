@@ -127,13 +127,16 @@ function resolveAction(ctx: Ctx, action: EffectAction, source: EffectSource): vo
   const me = source.player;
 
   switch (action.kind) {
-    case "damage":
+    case "damage": {
       // Tutti i bersagli insieme (GDD §1.5.4); le morti a fine risoluzione.
+      // Un servitore sorgente con Mani in merda avvelena anche i danni dei suoi effetti.
+      const poisoner = source.minion !== undefined ? findMinion(state, source.minion)?.minion : undefined;
       for (const c of select(ctx, action.target, source)) {
         if (c.kind === "hero") damageHero(ctx, c.player, action.amount);
-        else damageMinion(ctx, c.minion, action.amount);
+        else damageMinion(ctx, c.minion, action.amount, poisoner);
       }
       return;
+    }
 
     case "heal":
       for (const c of select(ctx, action.target, source)) {
