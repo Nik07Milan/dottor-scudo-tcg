@@ -117,12 +117,12 @@ Phaser è solo presentazione e input:
 
 | Id | Task | Fatto quando |
 |---|---|---|
-| T4.1 | Init client Phaser + Vite dal template ufficiale (ultima major stabile di Phaser, versione esatta). Connessione Colyseus, `LobbyScene`: crea / unisciti con codice. | `npm run dev:client` apre la lobby. |
-| T4.2 | Adattatori puri: `PlayerView` → modello di scena, gesto → `Action`, coda di `GameEvent`. | Test Vitest senza Phaser. |
-| T4.3 | `BoardScene`: mano, scrivanie, eroi, caffettini, potere eroe, Strumento, Task, log. Mosse legali evidenziate con `getLegalActions` sulla vista. | Partita completa giocabile tra due browser. |
-| T4.4 | Input: drag per giocare, scelta del bersaglio con freccia, attacco, mulligan, Scopri (1 tra 3). | Tutte le azioni dell'engine raggiungibili dall'interfaccia. |
-| T4.5 | Animazioni guidate dagli eventi (danni, morti, Scudato, Bloccato), fine partita, timer visibile, riconnessione. | Ricaricare la pagina riporta alla partita. |
-| T4.6 | Passata estetica: frame delle carte, effetti con le particelle di Phaser, tema "ufficio", audio pronto per M5. | Revisione visiva approvata. |
+| T4.1 ✅ | Init client Phaser + Vite dal template ufficiale (ultima major stabile di Phaser, versione esatta). Connessione Colyseus, `LobbyScene`: crea / unisciti con codice. | `npm run dev:client` apre la lobby. |
+| T4.2 ✅ | Adattatori puri: `PlayerView` → modello di scena, gesto → `Action`, coda di `GameEvent`. | Test Vitest senza Phaser. |
+| T4.3 ✅ | `BoardScene`: mano, scrivanie, eroi, caffettini, potere eroe, Strumento, Task, log. Mosse legali evidenziate con `getLegalActions` sulla vista. | Partita completa giocabile tra due browser. |
+| T4.4 ✅ | Input: drag per giocare, scelta del bersaglio con freccia, attacco, mulligan, Scopri (1 tra 3). | Tutte le azioni dell'engine raggiungibili dall'interfaccia. |
+| T4.5 ✅ | Animazioni guidate dagli eventi (danni, morti, Scudato, Bloccato), fine partita, timer visibile, riconnessione. | Ricaricare la pagina riporta alla partita. |
+| T4.6 🟡 | Passata estetica (fatta: cornici per fazione e rarità, tema ufficio, particelle, audio predisposto; **in attesa di approvazione visiva**): frame delle carte, effetti con le particelle di Phaser, tema "ufficio", audio pronto per M5. | Revisione visiva approvata. |
 
 ---
 

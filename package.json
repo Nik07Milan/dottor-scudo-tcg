@@ -11,7 +11,8 @@
     "botmatch": "npm run botmatch --workspace=@dottorscudo/engine --",
     "fuzz": "npm run fuzz --workspace=@dottorscudo/engine --",
     "dev:server": "npm run dev --workspace=@dottorscudo/server",
-    "dev:client": "npm run dev --workspace=@dottorscudo/client"
+    "dev:client": "npm run dev --workspace=@dottorscudo/client",
+    "e2e": "npm run e2e --workspace=@dottorscudo/client"
   },
   "devDependencies": {
     "typescript": "^5.6.0"

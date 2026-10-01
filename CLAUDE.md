@@ -39,7 +39,8 @@ Non passare alla milestone successiva finché la precedente non ha test verdi.
 - `npm run typecheck` — typecheck di tutti i pacchetti
 - `npm run simulate -- --seed 42` — una partita tra bot casuali con il log; `--games 100` per il riepilogo, `--p1 <eroe> --p2 <eroe>` per scegliere gli eroi
 - `npm run botmatch -- --games 162` — bot contro bot (default greedy contro greedy): winrate per eroe e scontro, durata, carte più giocate; `--bots greedy,random`, `--json report.json`
-- `npm run dev:server` / `npm run dev:client`
+- `npm run dev:server` / `npm run dev:client` — server su ws://localhost:2567, client su http://localhost:5173
+- `npm run e2e` — prove end-to-end nel browser (due giocatori, partita e ricarica pagina); richiede server e client avviati e Chrome installato (`E2E_CHANNEL=chromium` per il Chromium di Playwright)
 
 ## Convenzioni
 - Id carte ed eroi: slug kebab-case (es. `uomo-sasso`), stabili: non rinominarli dopo M1.
