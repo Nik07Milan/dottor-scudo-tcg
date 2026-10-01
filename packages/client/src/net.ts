@@ -2,8 +2,11 @@
 // Il token di riconnessione resta nel browser: ricaricando la pagina si torna alla partita.
 
 import { Client, type Room } from "@colyseus/sdk";
-import type { ClientAction, ServerMessages } from "../../server/src/protocol";
+import type { ClientAction, JoinOptions, ServerMessages } from "../../server/src/protocol";
+import { accessToken } from "./account";
 import type { MatchConnection, MatchHandlers } from "./match";
+
+const joinOptions = (heroId: string, deckId?: string): JoinOptions => (deckId ? { heroId, deckId } : { heroId });
 
 const ROOM = "game";
 const TOKEN_KEY = "dottorscudo.reconnect";
@@ -22,12 +25,20 @@ export class Connection implements MatchConnection {
     return this.room?.roomId ?? null;
   }
 
-  async create(heroId: string): Promise<void> {
-    this.attach(await this.client.create(ROOM, { heroId }));
+  /** `deckId`: mazzo salvato (T5.3), altrimenti il precostruito. */
+  async create(heroId: string, deckId?: string): Promise<void> {
+    await this.authenticate();
+    this.attach(await this.client.create(ROOM, joinOptions(heroId, deckId)));
   }
 
-  async join(code: string, heroId: string): Promise<void> {
-    this.attach(await this.client.joinById(code.trim().toUpperCase(), { heroId }));
+  async join(code: string, heroId: string, deckId?: string): Promise<void> {
+    await this.authenticate();
+    this.attach(await this.client.joinById(code.trim().toUpperCase(), joinOptions(heroId, deckId)));
+  }
+
+  /** Se l'utente ha fatto l'accesso, il server riceve il token di Supabase (stringa vuota = ospite). */
+  private async authenticate(): Promise<void> {
+    this.client.auth.token = (await accessToken()) ?? "";
   }
 
   /** Prova a tornare nella partita lasciata (ricarica della pagina). */

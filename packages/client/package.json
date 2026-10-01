@@ -15,6 +15,7 @@
   "dependencies": {
     "@colyseus/sdk": "0.18.4",
     "@dottorscudo/engine": "0.1.0",
+    "@supabase/supabase-js": "2.117.2",
     "phaser": "4.2.1"
   },
   "devDependencies": {

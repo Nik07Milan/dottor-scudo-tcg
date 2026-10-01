@@ -4,6 +4,7 @@
 import { HEROES, HEROES_BY_ID, greedyBot, randomBot, type Bot } from "@dottorscudo/engine";
 import { ART_READY, croppedImage, heroPortrait, requestArt } from "../ui/art";
 import { LocalMatch } from "../local";
+import { mountAccountPanel } from "../overlay/accountPanel";
 import { TutorialMatch } from "../tutorial/tutorial";
 import { Scene } from "phaser";
 import type { ServerMessages } from "../../../server/src/protocol";
@@ -29,6 +30,7 @@ export class LobbyScene extends Scene {
     this.add.text(WIDTH / 2, 118, "il paladino degli impiegati contro la burocrazia aziendale", { fontFamily: FONT, fontSize: "18px", color: COLORS.muted }).setOrigin(0.5);
 
     this.drawHeroPicker();
+    mountAccountPanel(this, WIDTH - 175, 70);
 
     const create = button(this, WIDTH / 2 - 200, 560, "Crea partita", 220, 50);
     create.on("pointerdown", () => this.run(() => this.connection.create(this.heroId)));
