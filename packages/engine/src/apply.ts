@@ -66,5 +66,6 @@ const MESSAGES: Partial<Record<string, string>> = {
   cannot_attack: "Questo personaggio non può attaccare adesso",
   invalid_target: "Bersaglio non valido",
   taunt_required: "Devi prima attaccare un servitore con Burocrazia",
+  task_active: "Hai già una Task attiva",
   not_implemented: "Azione non ancora supportata",
 };

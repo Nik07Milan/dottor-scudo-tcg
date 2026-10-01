@@ -4,6 +4,7 @@ import { newInstanceId, type Ctx } from "./context";
 import { CARDS_BY_ID } from "./data";
 import { MAX_BOARD } from "./rules";
 import type { MinionInstance, PlayerId } from "./state";
+import { advanceTask } from "./tasks";
 
 /**
  * Mette un servitore sulla scrivania di `player` in `position` (default: a destra).
@@ -31,6 +32,7 @@ export function summonMinion(ctx: Ctx, player: PlayerId, cardId: string, positio
   const at = Math.min(position ?? board.length, board.length);
   board.splice(at, 0, minion);
   ctx.events.push({ type: "minion_summoned", player, instanceId: minion.instanceId, cardId, position: at });
+  advanceTask(ctx, player, "minions_summoned");
   return minion;
 }
 

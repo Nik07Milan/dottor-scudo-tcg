@@ -51,7 +51,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 | Id | Task | Fatto quando |
 |---|---|---|
 | T1.10 ✅ | Burocrazia, Scudato, Urgente (solo servitori nel primo turno), Smart working (perso dopo il primo attacco), Mani in merda, Bloccato in riunione (con durata), Deploy, Ultimo sorso. | `test/keywords/<keyword>.test.ts` verde per tutte e 8. |
-| T1.11 | Task: contatore di progresso nello stato, ricompensa al completamento (`le-task`, `progetto-nettuno`). | Test: progresso, completamento, ricompensa una sola volta. |
+| T1.11 ✅ | Task: contatore di progresso nello stato, ricompensa al completamento (`le-task`, `progetto-nettuno`). | Test: progresso, completamento, ricompensa una sola volta. |
 
 ### 1E. DSL degli effetti
 | Id | Task | Fatto quando |

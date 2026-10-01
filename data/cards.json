@@ -510,7 +510,18 @@
     "text": "Gioca 5 Pratiche. Ricompensa: Ferie arretrate (rigenera 10 ferie)",
     "effects": [],
     "lore": "Albi #19, #96, #120",
-    "art": "assets/albi/albo-019.webp"
+    "art": "assets/albi/albo-019.webp",
+    "task": {
+      "counter": "spells_played",
+      "goal": 5,
+      "reward": [
+        {
+          "kind": "heal",
+          "amount": 10,
+          "target": "friendly_hero"
+        }
+      ]
+    }
   },
   {
     "id": "il-cannellone",
@@ -940,7 +951,18 @@
     "text": "Evoca 6 servitori. Ricompensa: Nettuno 8/8 con Burocrazia",
     "effects": [],
     "lore": "Albi #33-38",
-    "art": "assets/albi/albo-033.webp"
+    "art": "assets/albi/albo-033.webp",
+    "task": {
+      "counter": "minions_summoned",
+      "goal": 6,
+      "reward": [
+        {
+          "kind": "summon",
+          "cardId": "nettuno",
+          "count": 1
+        }
+      ]
+    }
   },
   {
     "id": "riunione-infinita",

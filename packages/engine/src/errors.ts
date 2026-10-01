@@ -24,6 +24,8 @@ export type IllegalActionCode =
   | "invalid_target"
   /** C'è una Burocrazia nemica: va attaccata prima lei. */
   | "taunt_required"
+  /** C'è già una Task attiva: non se ne gioca un'altra. */
+  | "task_active"
   /** Tipo di azione previsto ma non ancora implementato nell'engine. */
   | "not_implemented"
   /** Ben formata ma non tra le mosse legali, senza un motivo più preciso. */

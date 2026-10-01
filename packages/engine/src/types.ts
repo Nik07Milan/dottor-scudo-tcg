@@ -70,8 +70,18 @@ export interface CardDefinition {
   keywords: Keyword[];
   text: string;
   effects: Effect[];
+  /** Solo per le carte con keyword `task` (GDD §3.3). */
+  task?: TaskDefinition;
   lore: string;
   art: string | null;
+}
+
+/** Obiettivo di una Task: cosa si conta, quanto serve, ricompensa risolta subito al completamento. */
+export interface TaskDefinition {
+  /** spells_played: Pratiche giocate dalla mano. minions_summoned: servitori entrati nel tuo campo (giocati o evocati). */
+  counter: "spells_played" | "minions_summoned";
+  goal: number;
+  reward: EffectAction[];
 }
 
 export interface HeroDefinition {

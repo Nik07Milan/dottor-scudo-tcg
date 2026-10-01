@@ -7,6 +7,7 @@ import { deathPhase } from "./deaths";
 import { CARDS_BY_ID } from "./data";
 import { effectsOf, runEffects } from "./effects";
 import type { CharacterRef, InstanceId, PlayerId } from "./state";
+import { advanceTask, startTask } from "./tasks";
 
 export function playCard(ctx: Ctx, player: PlayerId, cardInstanceId: InstanceId, position?: number, target?: CharacterRef): void {
   const ps = ctx.state.players[player];
@@ -31,10 +32,15 @@ export function playCard(ctx: Ctx, player: PlayerId, cardInstanceId: InstanceId,
       runEffects(ctx, onPlay, { player, cardId: def.id, minion: minion.instanceId, ...(target ? { target } : {}) });
       break;
     }
-    case "spell":
-      // Task nella zona Task: T1.11.
-      runEffects(ctx, onPlay, { player, cardId: def.id, ...(target ? { target } : {}) });
+    case "spell": {
+      // La Task giocata ora non conta per sé stessa: si conta solo per una Task già attiva.
+      const activeTask = ps.task;
+      if (def.task) startTask(ctx, player, def.id);
+      else runEffects(ctx, onPlay, { player, cardId: def.id, ...(target ? { target } : {}) });
+      if (activeTask && ps.task === activeTask) advanceTask(ctx, player, "spells_played");
+      deathPhase(ctx);
       break;
+    }
     case "weapon":
       equipWeapon(ctx, player, def.id);
       deathPhase(ctx);

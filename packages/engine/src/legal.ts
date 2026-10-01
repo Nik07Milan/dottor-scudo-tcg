@@ -57,6 +57,7 @@ function playCardActions(state: GameState, player: PlayerId): Action[] {
   for (const card of ps.hand) {
     const def = CARDS_BY_ID.get(card.cardId)!;
     if (effectiveCost(state, player, card) > ps.mana.available) continue;
+    if (def.task && ps.task) continue; // una sola Task attiva (GDD §3.3)
     const targets = chosenTargets(state, player, def);
     const targetOptions: (CharacterRef | undefined)[] = targets && targets.length > 0 ? targets : [undefined];
     if (def.type === "minion") {
@@ -154,6 +155,7 @@ export function diagnose(state: GameState, action: Action): IllegalActionCode {
       const card = ps.hand.find((c) => c.instanceId === action.card);
       if (!card) return "card_not_in_hand";
       if (effectiveCost(state, action.player, card) > ps.mana.available) return "not_enough_mana";
+      if (CARDS_BY_ID.get(card.cardId)!.task && ps.task) return "task_active";
       const def = CARDS_BY_ID.get(card.cardId)!;
       const isMinion = def.type === "minion";
       if (isMinion && ps.board.length >= MAX_BOARD) return "board_full";
