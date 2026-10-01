@@ -10,7 +10,8 @@
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "simulate": "tsx scripts/simulate.ts",
-    "botmatch": "tsx scripts/botmatch.ts"
+    "botmatch": "tsx scripts/botmatch.ts",
+    "fuzz": "tsx scripts/fuzz.ts"
   },
   "devDependencies": {
     "@types/node": "^22.20.4",

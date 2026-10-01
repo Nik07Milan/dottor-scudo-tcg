@@ -28,7 +28,13 @@ export function actorOf(state: GameState): PlayerId {
   return state.pendingChoice?.player ?? state.activePlayer;
 }
 
-export function playGame(setup: GameSetup, bots: readonly [Bot, Bot], seed: number): GameRecord {
+/** `onStep` è chiamato dopo ogni azione con lo stato risultante (es. per controllare gli invarianti). */
+export function playGame(
+  setup: GameSetup,
+  bots: readonly [Bot, Bot],
+  seed: number,
+  onStep?: (state: GameState, action: Action) => void,
+): GameRecord {
   const start = createGame(setup);
   let state = start.state;
   const events = [...start.events];
@@ -46,6 +52,7 @@ export function playGame(setup: GameSetup, bots: readonly [Bot, Bot], seed: numb
     state = r.state;
     actions.push(decision.action);
     events.push(...r.events);
+    onStep?.(state, decision.action);
   }
 
   return { setup, bots: [bots[0].name, bots[1].name], actions, events, result: state.result!, turns: state.turn, final: state };

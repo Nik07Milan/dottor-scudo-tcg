@@ -9,6 +9,7 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "simulate": "npm run simulate --workspace=@dottorscudo/engine --",
     "botmatch": "npm run botmatch --workspace=@dottorscudo/engine --",
+    "fuzz": "npm run fuzz --workspace=@dottorscudo/engine --",
     "dev:server": "npm run dev --workspace=@dottorscudo/server",
     "dev:client": "npm run dev --workspace=@dottorscudo/client"
   },
