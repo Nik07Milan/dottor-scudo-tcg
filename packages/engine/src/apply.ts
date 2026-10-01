@@ -43,8 +43,11 @@ export function applyAction(state: GameState, action: Action): ApplyResult {
       // Irraggiungibile: getLegalActions non propone altri tipi finché non sono implementati qui.
       throw new IllegalActionError("not_implemented", `Azione non ancora supportata: ${action.type}`);
   }
-  // Fine partita controllata solo a risoluzione completa (GDD §1.5.7).
-  if (ctx.state.phase !== "ended") checkHeroes(ctx);
+  // Fine partita controllata solo a risoluzione completa (GDD §1.5.7–8).
+  if (ctx.state.phase !== "ended") {
+    if (ctx.aborted) finishGame(ctx, { winner: null, reason: "resolution_limit" });
+    else checkHeroes(ctx);
+  }
   return { state: ctx.state, events: ctx.events };
 }
 

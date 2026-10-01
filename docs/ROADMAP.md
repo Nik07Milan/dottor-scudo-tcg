@@ -45,7 +45,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 |---|---|---|
 | T1.7 ✅ | `play_card`: Colleghi (posizione sulla scrivania, max 7), Pratiche, Strumenti (sostituiscono l'arma attuale). | Test: costo scalato, campo pieno rifiutato, sostituzione arma. |
 | T1.8 ✅ | `attack`: servitore contro servitore, servitore contro eroe, eroe con Strumento (−1 durabilità). Un attacco per turno, danno reciproco, l'armatura assorbe prima delle ferie. | Test per ogni combinazione. |
-| T1.9 | Fase morti: rimozione dal campo e cimitero già fatti in T1.8 (`deaths.ts`). Restano la coda di `on_death` (Ultimo sorso) in ordine deterministico e la ripetizione finché lo stato è stabile, con il limite di 200 passi (GDD §1.5.8). | Test con morti multiple simultanee. |
+| T1.9 ✅ | Fase morti: rimozione dal campo e cimitero già fatti in T1.8 (`deaths.ts`). Restano la coda di `on_death` (Ultimo sorso) in ordine deterministico e la ripetizione finché lo stato è stabile, con il limite di 200 passi (GDD §1.5.8). | Test con morti multiple simultanee. |
 
 ### 1D. Keyword (un file di test per keyword)
 | Id | Task | Fatto quando |

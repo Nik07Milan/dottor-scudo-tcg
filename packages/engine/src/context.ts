@@ -11,6 +11,10 @@ export interface Ctx {
    * durante un'azione e non entra mai nello stato.
    */
   doomed?: Set<InstanceId>;
+  /** Passi di risoluzione (EffectAction risolte) in questa azione. Rete contro le catene infinite. */
+  steps?: number;
+  /** Superato RESOLUTION_STEP_LIMIT: si smette di risolvere e la partita finisce in pareggio (GDD §1.5.8). */
+  aborted?: boolean;
 }
 
 export const opponentOf = (p: PlayerId): PlayerId => (p === "p1" ? "p2" : "p1");

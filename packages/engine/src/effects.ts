@@ -8,7 +8,7 @@ import { damageHero, damageMinion, findMinion } from "./damage";
 import { CARDS_BY_ID } from "./data";
 import { deathPhase } from "./deaths";
 import { randomInt } from "./rng";
-import { MAX_MANA } from "./rules";
+import { MAX_MANA, RESOLUTION_STEP_LIMIT } from "./rules";
 import type { CharacterRef, InstanceId, MinionInstance, PlayerId } from "./state";
 import { addToHand, drawCard } from "./turn";
 import type { Effect, EffectAction, TargetSelector, Trigger } from "./types";
@@ -21,6 +21,8 @@ export interface EffectSource {
   minion?: InstanceId;
   /** Bersaglio scelto nell'azione, per il selettore `chosen`. */
   target?: CharacterRef;
+  /** Posto che occupava il servitore sorgente, se non è più in campo (Ultimo sorso): lì entrano gli evocati. */
+  slot?: number;
 }
 
 type Character = { kind: "hero"; player: PlayerId } | { kind: "minion"; player: PlayerId; minion: MinionInstance };
@@ -35,14 +37,31 @@ export function effectsOf(cardId: string, trigger: Trigger): Effect[] {
  * Il trigger degli effetti non viene controllato: chi chiama passa quelli giusti.
  */
 export function runEffects(ctx: Ctx, effects: readonly Effect[], source: EffectSource): void {
-  for (const effect of effects) resolveAction(ctx, effect.action, source);
+  resolveEffects(ctx, effects, source);
   deathPhase(ctx);
+}
+
+/**
+ * Risolve gli effetti senza fase morti (la usa la fase morti stessa per gli Ultimo sorso).
+ * Ogni azione è un passo: oltre RESOLUTION_STEP_LIMIT la risoluzione si interrompe (ctx.aborted).
+ */
+export function resolveEffects(ctx: Ctx, effects: readonly Effect[], source: EffectSource): void {
+  for (const effect of effects) {
+    if (ctx.aborted) return;
+    ctx.steps = (ctx.steps ?? 0) + 1;
+    if (ctx.steps > RESOLUTION_STEP_LIMIT) {
+      ctx.aborted = true;
+      return;
+    }
+    resolveAction(ctx, effect.action, source);
+  }
 }
 
 /** Trigger dei servitori di `player` (inizio/fine turno), in ordine di entrata in gioco. */
 export function runBoardTrigger(ctx: Ctx, player: PlayerId, trigger: Trigger): void {
   const sources = [...ctx.state.players[player].board].sort((a, b) => a.instanceId - b.instanceId);
   for (const m of sources) {
+    if (ctx.aborted) return;
     const effects = effectsOf(m.cardId, trigger);
     if (effects.length === 0 || !isAlive(ctx, m.instanceId)) continue;
     runEffects(ctx, effects, { player, cardId: m.cardId, minion: m.instanceId });
@@ -150,9 +169,10 @@ function resolveAction(ctx: Ctx, action: EffectAction, source: EffectSource): vo
 
     case "summon": {
       const side = action.forOpponent ? opponentOf(me) : me;
-      // Da un servitore: alla sua destra, nell'ordine. Altrimenti in fondo a destra.
+      // Da un servitore in campo: alla sua destra. Da un Ultimo sorso: al posto del morto. Altrimenti in fondo.
       const sourceLoc = !action.forOpponent && source.minion !== undefined ? findMinion(state, source.minion) : null;
-      let position = sourceLoc && sourceLoc.player === side ? sourceLoc.index + 1 : undefined;
+      let position =
+        sourceLoc && sourceLoc.player === side ? sourceLoc.index + 1 : !action.forOpponent && source.slot !== undefined ? source.slot : undefined;
       for (let i = 0; i < action.count; i++) {
         const summoned = summonMinion(ctx, side, action.cardId, position);
         if (!summoned) break; // scrivania piena
