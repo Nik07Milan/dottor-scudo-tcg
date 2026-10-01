@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@dottorscudo/engine": "0.1.0",
+    "@supabase/supabase-js": "^2.117.2",
     "colyseus": "^0.18.9"
   },
   "devDependencies": {

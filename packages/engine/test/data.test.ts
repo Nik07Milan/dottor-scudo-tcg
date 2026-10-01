@@ -1,6 +1,17 @@
 import { describe, expect, it } from "vitest";
 import albiJson from "../../../data/dottorscudo-albi.json";
-import { CARDS, CARDS_BY_ID, HEROES, HEROES_BY_ID, KEYWORDS } from "../src/data";
+import {
+  CARDS,
+  CARDS_BY_ID,
+  DATA_VERSION,
+  HEROES,
+  HEROES_BY_ID,
+  KEYWORDS,
+  deckCards,
+  deckFromCounts,
+  deckToCounts,
+  fingerprint,
+} from "../src/data";
 import { CUSTOM_HANDLERS } from "../src/cards/custom";
 import { legalCardsForHero, maxCopies } from "../src/deck";
 import { nextRandom, randomInt, shuffle } from "../src/rng";
@@ -122,5 +133,22 @@ describe("rng", () => {
     expect(a.value).not.toEqual(input);
     expect(input).toEqual(copy);
     expect(a.seed).not.toBe(99);
+  });
+});
+
+describe("mazzi salvati e versione dei dati (T5.3)", () => {
+  it("deckToCounts e deckFromCounts sono l'una l'inversa dell'altra", () => {
+    const deck = deckCards("jackson");
+    const counts = deckToCounts(deck);
+    expect(Object.values(counts).reduce((a, b) => a + b, 0)).toBe(30);
+    expect(deckFromCounts(counts)).toEqual(deck);
+  });
+
+  it("l'impronta è stabile e cambia se cambiano i dati", () => {
+    expect(DATA_VERSION).toMatch(/^[0-9a-f]{8}$/);
+    expect(fingerprint([CARDS])).toBe(fingerprint(structuredClone([CARDS])));
+    const changed = structuredClone(CARDS);
+    changed[0]!.cost += 1;
+    expect(fingerprint([changed])).not.toBe(fingerprint([CARDS]));
   });
 });

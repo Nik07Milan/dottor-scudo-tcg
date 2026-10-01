@@ -1,10 +1,21 @@
 // T3.6: due client reali (SDK Colyseus) guidati da bot giocano una partita intera passando dal server.
 import { boot, type ColyseusTestServer } from "@colyseus/testing";
-import { actionKey, getLegalActions, greedyBot, randomBot, type Bot, type PlayerId, type PlayerView } from "@dottorscudo/engine";
-import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
+import {
+  actionKey,
+  deckCards,
+  deckToCounts,
+  getLegalActions,
+  greedyBot,
+  randomBot,
+  type Bot,
+  type PlayerId,
+  type PlayerView,
+} from "@dottorscudo/engine";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { server } from "../src/app";
 import { ROOM_NAME, type ServerMessages } from "../src/protocol";
-import type { GameRoom } from "../src/room";
+import { configureStore, type GameRoom } from "../src/room";
+import { MemoryStore } from "../src/store";
 
 let colyseus: ColyseusTestServer;
 
@@ -119,5 +130,41 @@ describe("stanza game", () => {
     await guest.leave(true);
     expect((await over).view.result).toEqual({ winner: "p1", reason: "concede" });
     expect(room.session.state?.result?.winner).toBe("p1");
+  });
+});
+
+describe("account, mazzi e storico (T5.3)", () => {
+  const store = new MemoryStore();
+  const customJackson = [...deckCards("jackson")].reverse();
+
+  beforeAll(() => {
+    store.tokens.set("token-u1", "u1");
+    store.decks.set("d1", { owner: "u1", heroId: "jackson", cards: deckToCounts(customJackson) });
+    configureStore(store);
+  });
+  afterAll(() => configureStore(null));
+  // Il client SDK è condiviso tra i test: il token va tolto dopo ognuno.
+  afterEach(() => (colyseus.sdk.auth.token = ""));
+
+  it("con il token si entra col proprio mazzo; la partita finita va nello storico", async () => {
+    colyseus.sdk.auth.token = "token-u1";
+    const host = await colyseus.sdk.create(ROOM_NAME, { heroId: "jackson", deckId: "d1" });
+    colyseus.sdk.auth.token = "";
+    const guest = await colyseus.sdk.joinById(host.roomId, { heroId: "milet" });
+    const room = colyseus.getRoomById(host.roomId) as GameRoom;
+    expect(room.session.setup?.players[0].deck).toEqual(customJackson);
+
+    await guest.leave(true);
+    await expect.poll(() => store.matches.length).toBe(1);
+    expect(store.matches[0]!.users).toEqual({ p1: "u1", p2: null });
+  });
+
+  it("un token non valido viene rifiutato", async () => {
+    colyseus.sdk.auth.token = "scaduto";
+    await expect(colyseus.sdk.create(ROOM_NAME, { heroId: "jackson" })).rejects.toThrow();
+  });
+
+  it("senza accesso non si usa un mazzo salvato", async () => {
+    await expect(colyseus.sdk.create(ROOM_NAME, { heroId: "jackson", deckId: "d1" })).rejects.toThrow();
   });
 });

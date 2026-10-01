@@ -2,13 +2,25 @@
 // Lo stato non è uno schema sincronizzato: ogni client riceve la propria vista filtrata come messaggio.
 
 import { randomInt } from "node:crypto";
-import { Room, type Client } from "colyseus";
+import { Room, type AuthContext, type Client } from "colyseus";
 import { RECONNECT_SECONDS } from "./config";
 import type { JoinOptions } from "./protocol";
-import { GameSession, generateCode, type SessionDeps } from "./session";
+import { GameSession, JoinError, generateCode, type SessionDeps } from "./session";
+import { loadSeatDeck, type Store } from "./store";
 
 /** Casualità del server (seed e scelte allo scadere del timer): crittografica, mai Math.random. */
 const serverRandom = () => randomInt(0, 2 ** 32) / 2 ** 32;
+
+/** Persistenza (T5.3), impostata all'avvio. null = ospiti, mazzi precostruiti, niente storico. */
+let store: Store | null = null;
+export function configureStore(s: Store | null): void {
+  store = s;
+}
+
+/** Risultato di onAuth, disponibile come `client.auth`. */
+interface Auth {
+  userId: string | null;
+}
 
 export class GameRoom extends Room {
   maxClients = 2;
@@ -30,13 +42,29 @@ export class GameRoom extends Room {
       },
       now: () => Date.now(),
       random: serverRandom,
+      onGameOver: (record) => {
+        // Le partite tra soli ospiti non hanno storico da mostrare a nessuno.
+        if (!store || (!record.users.p1 && !record.users.p2)) return;
+        store.saveMatch(record).catch((e: unknown) => console.error(`[${record.code}] ${e instanceof Error ? e.message : String(e)}`));
+      },
     };
     this.session = new GameSession(this.roomId, deps);
   }
 
-  onJoin(client: Client, options: JoinOptions): void {
+  /** Senza token si entra come ospite; un token non valido rifiuta l'ingresso. */
+  async onAuth(_client: Client, _options: JoinOptions, context: AuthContext): Promise<Auth> {
+    if (!context.token || !store) return { userId: null };
+    const userId = await store.verifyUser(context.token);
+    if (!userId) throw new JoinError("sessione scaduta: accedi di nuovo");
+    return { userId };
+  }
+
+  async onJoin(client: Client, options: JoinOptions): Promise<void> {
     // Un JoinError qui rifiuta l'ingresso: il client riceve l'errore.
-    this.session.join(client.sessionId, options?.heroId);
+    const userId = (client.auth as Auth | undefined)?.userId ?? null;
+    const heroId = options?.heroId;
+    const deck = options?.deckId ? await loadSeatDeck(store, userId, heroId, options.deckId) : undefined;
+    this.session.join(client.sessionId, heroId, { userId, deck });
   }
 
   async onDrop(client: Client): Promise<void> {

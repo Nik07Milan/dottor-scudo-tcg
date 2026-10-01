@@ -12,6 +12,7 @@ packages/server   server autoritativo Colyseus (Node) che usa l'engine
 packages/client   client Phaser + Vite
 data/             cards.json, heroes.json, keywords.json, dottorscudo-albi.json (lore)
 assets/           avatar/ e albi/ (immagini sorgente, non modificarle)
+supabase/         config.toml e migrations/ (applicate dall'integrazione GitHub al push su main)
 docs/GDD.md       game design document
 ```
 
@@ -23,6 +24,7 @@ docs/GDD.md       game design document
 5. **Viste filtrate**: `getPlayerView(state, playerId)` nasconde mano e mazzo avversari e il seed RNG. Mai inviare lo stato completo al client.
 6. **Validazione**: `getLegalActions(state, playerId)` è la fonte unica di cosa si può fare. `applyAction` rifiuta tutto il resto.
 7. **Phaser solo presentazione**: nessuna regola né stato di partita nelle scene. Gli eventi dell'engine diventano animazioni; la vista ricevuta dal server vince sempre.
+8. **Persistenza su Supabase (M5)**: il client usa solo la publishable key, protetta dalle regole RLS; la secret key sta solo nel server (`packages/server/.env`, mai in git né nel client). Il server rivalida i mazzi salvati e scrive lui le partite. Senza variabili d'ambiente tutto funziona come ospite.
 
 ## Milestone
 - **M1 — Engine**: tipi, stato iniziale, turni, caffettini, pesca, burnout, combattimento, tutte le keyword, DSL degli effetti, compilazione di `effects` per tutte le carte, poteri eroe, mazzi precostruiti. Test Vitest per ogni regola e ogni keyword. CLI che simula una partita.
@@ -40,6 +42,7 @@ Non passare alla milestone successiva finché la precedente non ha test verdi.
 - `npm run simulate -- --seed 42` — una partita tra bot casuali con il log; `--games 100` per il riepilogo, `--p1 <eroe> --p2 <eroe>` per scegliere gli eroi
 - `npm run botmatch -- --games 162` — bot contro bot (default greedy contro greedy): winrate per eroe e scontro, durata, carte più giocate; `--bots greedy,random`, `--json report.json`
 - `npm run dev:server` / `npm run dev:client` — server su ws://localhost:2567, client su http://localhost:5173
+- Supabase: copiare `packages/server/.env.example` e `packages/client/.env.example` in `.env` e compilarli. Le migrazioni (`supabase/migrations/`) le applica l'integrazione GitHub al push su main: scriverle rieseguibili (`if not exists`, `drop policy if exists`)
 - `npm run e2e` — prove end-to-end nel browser (due giocatori, ricarica pagina, contro l'IA, tutorial); richiede server e client avviati e Chrome installato (`E2E_CHANNEL=chromium` per il Chromium di Playwright). `npm run e2e:solo --workspace=@dottorscudo/client`: solo IA e tutorial, basta il client
 
 ## Convenzioni

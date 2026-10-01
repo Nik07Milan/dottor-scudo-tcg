@@ -8,6 +8,8 @@ export const ROOM_NAME = "game";
 /** Opzioni di create/joinById. Il mazzo è quello precostruito dell'eroe. */
 export interface JoinOptions {
   heroId: string;
+  /** Mazzo salvato dell'utente (T5.3); assente = mazzo precostruito. Richiede l'accesso (token in `client.auth.token`). */
+  deckId?: string;
 }
 
 /** Client → server. `player` viene ignorato: lo decide il server dalla connessione. */

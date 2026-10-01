@@ -3,6 +3,7 @@
 // Le dipendenze esterne (invio, orologio, casualità) sono iniettate: così si testa senza rete.
 
 import {
+  DATA_VERSION,
   HEROES_BY_ID,
   IllegalActionError,
   applyAction,
@@ -10,6 +11,7 @@ import {
   deckCards,
   getEventsView,
   getPlayerView,
+  validateDeck,
   type Action,
   type GameEvent,
   type GameSetup,
@@ -18,6 +20,7 @@ import {
 } from "@dottorscudo/engine";
 import { MULLIGAN_SECONDS, TURN_SECONDS } from "./config";
 import type { ServerMessages } from "./protocol";
+import type { MatchRecord } from "./store";
 
 export interface SessionDeps {
   send<K extends keyof ServerMessages>(sessionId: string, type: K, payload: ServerMessages[K]): void;
@@ -26,6 +29,14 @@ export interface SessionDeps {
   now(): number;
   /** Numero in [0, 1). Solo per seed e scelte automatiche allo scadere del timer, mai per le regole. */
   random(): number;
+  /** Chiamata una volta a fine partita (anche per timer o abbandono): storico e replay (T5.3). */
+  onGameOver?(record: MatchRecord): void;
+}
+
+/** Chi si siede: utente autenticato (null = ospite) e mazzo scelto (assente = precostruito). */
+export interface SeatOptions {
+  userId?: string | null;
+  deck?: string[];
 }
 
 export class JoinError extends Error {}
@@ -33,6 +44,8 @@ export class JoinError extends Error {}
 interface Seat {
   sessionId: string;
   heroId: string;
+  userId: string | null;
+  deck: string[] | null;
   connected: boolean;
 }
 
@@ -50,6 +63,7 @@ export class GameSession {
   setup: GameSetup | null = null;
   /** Azioni accettate, in ordine: con `setup` permettono il replay (M5). */
   readonly actions: Action[] = [];
+  private startedAt = 0;
   private deadline: number | null = null;
   private cancelTimer: (() => void) | null = null;
 
@@ -68,11 +82,15 @@ export class GameSession {
   }
 
   /** Siede un giocatore. Con il secondo giocatore la partita parte. Lancia JoinError se non è possibile. */
-  join(sessionId: string, heroId: string): PlayerId {
+  join(sessionId: string, heroId: string, options: SeatOptions = {}): PlayerId {
     if (!HEROES_BY_ID.has(heroId)) throw new JoinError(`eroe sconosciuto: ${heroId}`);
+    if (options.deck) {
+      const validation = validateDeck(heroId, options.deck);
+      if (!validation.ok) throw new JoinError(`mazzo non valido: ${validation.errors[0]!.message}`);
+    }
     const free = PLAYERS.find((p) => !this.seats.has(p));
     if (!free || this.state) throw new JoinError("la stanza è piena");
-    this.seats.set(free, { sessionId, heroId, connected: true });
+    this.seats.set(free, { sessionId, heroId, userId: options.userId ?? null, deck: options.deck ?? null, connected: true });
     this.deps.send(sessionId, "joined", { player: free, code: this.code });
     if (this.seats.size < 2) {
       this.deps.send(sessionId, "waiting", { code: this.code });
@@ -83,14 +101,15 @@ export class GameSession {
   }
 
   private start(): void {
-    const [h1, h2] = PLAYERS.map((p) => this.seats.get(p)!.heroId) as [string, string];
+    const setupOf = (p: PlayerId) => {
+      const seat = this.seats.get(p)!;
+      return { heroId: seat.heroId, deck: seat.deck ?? deckCards(seat.heroId) };
+    };
     this.setup = {
       seed: Math.floor(this.deps.random() * 2 ** 32),
-      players: [
-        { heroId: h1, deck: deckCards(h1) },
-        { heroId: h2, deck: deckCards(h2) },
-      ],
+      players: [setupOf("p1"), setupOf("p2")],
     };
+    this.startedAt = this.deps.now();
     const { state, events } = createGame(this.setup);
     this.state = state;
     this.restartTimer();
@@ -121,6 +140,23 @@ export class GameSession {
     // Il timer riparte quando cambia il turno o finisce il mulligan; non per ogni azione.
     if (state.turn !== before.turn || state.phase !== before.phase) this.restartTimer();
     this.broadcast(events, action.player);
+    if (state.phase === "ended" && before.phase !== "ended") this.deps.onGameOver?.(this.record());
+  }
+
+  /** La partita finita, pronta per lo storico. */
+  private record(): MatchRecord {
+    const state = this.state!;
+    return {
+      code: this.code,
+      setup: this.setup!,
+      actions: [...this.actions],
+      result: state.result!,
+      dataVersion: DATA_VERSION,
+      users: { p1: this.seats.get("p1")!.userId, p2: this.seats.get("p2")!.userId },
+      turns: state.turn,
+      startedAt: this.startedAt,
+      endedAt: this.deps.now(),
+    };
   }
 
   private broadcast(events: GameEvent[], actor: PlayerId | null = null): void {
