@@ -1,0 +1,16 @@
+{
+  "name": "dottorscudo-tcg",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Gioco di carte multiplayer ispirato al fumetto Dottor Scudo",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "test": "npm run test --workspace=@dottorscudo/engine",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "dev:server": "npm run dev --workspace=@dottorscudo/server",
+    "dev:client": "npm run dev --workspace=@dottorscudo/client"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

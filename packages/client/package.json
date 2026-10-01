@@ -1,0 +1,16 @@
+{
+  "name": "@dottorscudo/client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo \"Milestone 4: inizializzare qui React + Vite\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dottorscudo/engine": "0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "deploy",
+    "name": "Deploy",
+    "hearthstone": "Grido di battaglia",
+    "text": "Effetto quando la carta viene giocata"
+  },
+  {
+    "id": "burocrazia",
+    "name": "Burocrazia",
+    "hearthstone": "Provocazione",
+    "text": "I nemici devono attaccare prima questo servitore"
+  },
+  {
+    "id": "scudato",
+    "name": "Scudato",
+    "hearthstone": "Scudo divino",
+    "text": "Il primo danno subito viene ignorato"
+  },
+  {
+    "id": "urgente",
+    "name": "Urgente",
+    "hearthstone": "Assalto",
+    "text": "Può attaccare servitori nel turno in cui entra"
+  },
+  {
+    "id": "smart_working",
+    "name": "Smart working",
+    "hearthstone": "Furtività",
+    "text": "Non può essere bersagliato finché non attacca"
+  },
+  {
+    "id": "mani_in_merda",
+    "name": "Mani in merda",
+    "hearthstone": "Veleno",
+    "text": "Distrugge qualunque servitore a cui infligge danni"
+  },
+  {
+    "id": "ultimo_sorso",
+    "name": "Ultimo sorso",
+    "hearthstone": "Rantolo di morte",
+    "text": "Effetto quando il servitore muore"
+  },
+  {
+    "id": "bloccato",
+    "name": "Bloccato in riunione",
+    "hearthstone": "Congelato",
+    "text": "Non può attaccare nel suo prossimo turno"
+  },
+  {
+    "id": "task",
+    "name": "Task",
+    "hearthstone": "Missione",
+    "text": "Obiettivo da completare per ottenere una ricompensa"
+  }
+]

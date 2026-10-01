@@ -1,0 +1,128 @@
+[
+  {
+    "id": "dottor-scudo",
+    "name": "Dottor Scudo",
+    "faction": "ufficio",
+    "heroPower": {
+      "name": "Alza lo scudo",
+      "cost": 2,
+      "text": "Un tuo collega diventa Scudato, oppure ottieni 2 di armatura",
+      "effects": []
+    },
+    "portrait": "assets/avatar/avatar-1.jpg",
+    "portraitConfirmed": true,
+    "lore": "Albi #1, #119"
+  },
+  {
+    "id": "nikson",
+    "name": "Nikson",
+    "faction": "ufficio",
+    "heroPower": {
+      "name": "Raccogli sassi",
+      "cost": 2,
+      "text": "Aggiungi un Sasso alla tua mano",
+      "effects": []
+    },
+    "portrait": "assets/avatar/avatar-2.jpg",
+    "portraitConfirmed": true,
+    "lore": "Albi #3, #6, #25"
+  },
+  {
+    "id": "jackson",
+    "name": "Jackson",
+    "faction": "ufficio",
+    "heroPower": {
+      "name": "Scoppio d'ira",
+      "cost": 2,
+      "text": "Infliggi 1 danno a tutti i servitori nemici e 1 al tuo eroe",
+      "effects": []
+    },
+    "portrait": "assets/avatar/avatar-3.jpg",
+    "portraitConfirmed": false,
+    "lore": "Albo #5"
+  },
+  {
+    "id": "milet",
+    "name": "Milet",
+    "faction": "ufficio",
+    "heroPower": {
+      "name": "La via del Giappi",
+      "cost": 2,
+      "text": "La prossima Pratica che giochi in questo turno costa 2 in meno",
+      "effects": []
+    },
+    "portrait": "assets/avatar/avatar-5.jpg",
+    "portraitConfirmed": false,
+    "lore": "Albo #4"
+  },
+  {
+    "id": "ale",
+    "name": "Ale",
+    "faction": "ufficio",
+    "heroPower": {
+      "name": "Fuga dalla riunione",
+      "cost": 2,
+      "text": "Rimanda in mano un tuo collega: costa 1 in meno",
+      "effects": []
+    },
+    "portrait": null,
+    "portraitConfirmed": false,
+    "lore": "Albi #10, #11, #12, #28"
+  },
+  {
+    "id": "il-creatore",
+    "name": "Il Creatore",
+    "faction": "ufficio",
+    "heroPower": {
+      "name": "Nuova tavola",
+      "cost": 2,
+      "text": "Scopri un collega dell'Ufficio (scegline 1 tra 3) e aggiungilo alla tua mano",
+      "effects": []
+    },
+    "portrait": null,
+    "portraitConfirmed": false,
+    "lore": "Autore di tutti gli albi (Enriquez da Sosa), tag #SOSA"
+  },
+  {
+    "id": "dr-grappolo",
+    "name": "Dr Grappolo",
+    "faction": "soci",
+    "heroPower": {
+      "name": "Lavaggio del cervello",
+      "cost": 2,
+      "text": "Evoca uno Studente plagiato 1/1",
+      "effects": []
+    },
+    "portrait": "assets/avatar/avatar-7.jpg",
+    "portraitConfirmed": false,
+    "lore": "Albi #1, #10"
+  },
+  {
+    "id": "il-calabrone",
+    "name": "Il Calabrone",
+    "faction": "soci",
+    "heroPower": {
+      "name": "Pungiglione",
+      "cost": 2,
+      "text": "Infliggi 2 danni all'eroe nemico",
+      "effects": []
+    },
+    "portrait": null,
+    "portraitConfirmed": false,
+    "lore": "Albi #31, #51"
+  },
+  {
+    "id": "lord-capognus",
+    "name": "Lord Capognus",
+    "faction": "soci",
+    "heroPower": {
+      "name": "L'esperimento",
+      "cost": 2,
+      "text": "Dai +2 attacco a un tuo servitore; subisce 1 danno",
+      "effects": []
+    },
+    "portrait": null,
+    "portraitConfirmed": false,
+    "lore": "Albo #24"
+  }
+]
