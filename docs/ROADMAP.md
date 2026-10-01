@@ -103,15 +103,25 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 
 ---
 
-## M4 — Client (React + Vite)
+## M4 — Client (Phaser + React + Vite)
+
+Decisione: **Phaser** disegna la plancia, **React** fa i menu (lobby, codice invito, scelta eroe e mazzo).
+Phaser è solo presentazione e input:
+- **Niente regole né stato di partita nelle scene**: niente fisica, niente `update()` che modifica la partita.
+- **Flusso dati**: il server invia `PlayerView` + `GameEvent[]`. La `BoardScene` riproduce gli eventi in coda come
+  animazioni, poi si riallinea alla vista ricevuta (la vista vince sempre).
+- **Input**: gesto su un oggetto Phaser → `Action` candidata → controllo con `getLegalActions` solo per evidenziare →
+  invio al server, che resta l'unico a validare.
+- **Test**: gli adattatori puri (vista → modello di scena, gesto → `Action`) si testano senza Phaser.
 
 | Id | Task | Fatto quando |
 |---|---|---|
-| T4.1 | Init React + Vite, connessione Colyseus, schermata crea / unisciti con codice. | `npm run dev:client` apre la lobby. |
-| T4.2 | Plancia funzionale: mano, scrivanie, eroi, caffettini, potere eroe, log. Mosse legali evidenziate con `getLegalActions` sulla vista. | Partita completa giocabile tra due browser. |
-| T4.3 | Interazioni: giocare carte (click o drag), scegliere il bersaglio, attaccare, mulligan, Scopri (1 tra 3). | Tutte le azioni dell'engine raggiungibili dall'interfaccia. |
-| T4.4 | Fine partita, riconnessione nell'interfaccia, timer visibile. | Ricaricare la pagina riporta alla partita. |
-| T4.5 | Passata estetica: frame delle carte, animazioni di danno e morte, tema "ufficio". | Revisione visiva approvata. |
+| T4.1 | Init client dal template ufficiale Phaser + React + Vite (ultima major stabile di Phaser, versione esatta). Connessione Colyseus, lobby in React: crea / unisciti con codice. | `npm run dev:client` apre la lobby e avvia una scena Phaser vuota. |
+| T4.2 | Adattatori puri: `PlayerView` → modello di scena, gesto → `Action`, coda di `GameEvent`. | Test Vitest senza Phaser. |
+| T4.3 | `BoardScene`: mano, scrivanie, eroi, caffettini, potere eroe, Strumento, Task, log. Mosse legali evidenziate con `getLegalActions` sulla vista. | Partita completa giocabile tra due browser. |
+| T4.4 | Input: drag per giocare, scelta del bersaglio con freccia, attacco, mulligan, Scopri (1 tra 3). | Tutte le azioni dell'engine raggiungibili dall'interfaccia. |
+| T4.5 | Animazioni guidate dagli eventi (danni, morti, Scudato, Bloccato), fine partita, timer visibile, riconnessione. | Ricaricare la pagina riporta alla partita. |
+| T4.6 | Passata estetica: frame delle carte, effetti con le particelle di Phaser, tema "ufficio", audio pronto per M5. | Revisione visiva approvata. |
 
 ---
 

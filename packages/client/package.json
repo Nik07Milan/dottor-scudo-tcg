@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "echo \"Milestone 4: inizializzare qui React + Vite\"",
+    "dev": "echo \"Milestone 4: inizializzare qui Phaser + React + Vite\"",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
