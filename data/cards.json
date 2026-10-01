@@ -400,6 +400,40 @@
     "art": "assets/albi/albo-019.webp"
   },
   {
+    "id": "il-cannellone",
+    "name": "Il Cannellone",
+    "faction": "ufficio",
+    "signatureOf": null,
+    "rarity": "rare",
+    "type": "minion",
+    "cost": 3,
+    "attack": 3,
+    "health": 3,
+    "keywords": [
+      "ultimo_sorso"
+    ],
+    "text": "Pesca una carta",
+    "effects": [],
+    "lore": "Albo #70",
+    "art": "assets/albi/albo-070.webp"
+  },
+  {
+    "id": "bici-fiammante",
+    "name": "Bici fiammante",
+    "faction": "ufficio",
+    "signatureOf": "ale",
+    "rarity": "rare",
+    "type": "weapon",
+    "cost": 3,
+    "attack": 2,
+    "durability": 2,
+    "keywords": [],
+    "text": "Dopo che il tuo eroe attacca, pesca una carta",
+    "effects": [],
+    "lore": "Albi #57, #99",
+    "art": "assets/albi/albo-057.webp"
+  },
+  {
     "id": "la-zanzara",
     "name": "La Zanzara",
     "faction": "soci",
@@ -707,6 +741,20 @@
     "art": null
   },
   {
+    "id": "i-dogmi-del-calabrone",
+    "name": "I dogmi del Calabrone",
+    "faction": "soci",
+    "signatureOf": "il-calabrone",
+    "rarity": "common",
+    "type": "spell",
+    "cost": 2,
+    "keywords": [],
+    "text": "Infliggi 2 danni all'eroe nemico. Pesca una carta",
+    "effects": [],
+    "lore": "Albi #103, #104",
+    "art": "assets/albi/albo-104.webp"
+  },
+  {
     "id": "caffettino",
     "name": "Caffettino",
     "faction": "neutrale",
@@ -761,6 +809,94 @@
     "effects": [],
     "lore": "Albo #15",
     "art": "assets/albi/albo-015.webp"
+  },
+  {
+    "id": "piccione-urbano",
+    "name": "Piccione urbano",
+    "faction": "neutrale",
+    "signatureOf": null,
+    "rarity": "common",
+    "type": "minion",
+    "cost": 1,
+    "attack": 2,
+    "health": 1,
+    "keywords": [],
+    "text": "",
+    "effects": [],
+    "lore": "Albo #71",
+    "art": "assets/albi/albo-071.webp"
+  },
+  {
+    "id": "cliente-insistente",
+    "name": "Cliente insistente",
+    "faction": "neutrale",
+    "signatureOf": null,
+    "rarity": "common",
+    "type": "minion",
+    "cost": 2,
+    "attack": 2,
+    "health": 2,
+    "keywords": [
+      "urgente"
+    ],
+    "text": "",
+    "effects": [],
+    "lore": "Albo #97",
+    "art": "assets/albi/albo-097.webp"
+  },
+  {
+    "id": "pinguino-glaciale",
+    "name": "Pinguino glaciale",
+    "faction": "neutrale",
+    "signatureOf": null,
+    "rarity": "common",
+    "type": "minion",
+    "cost": 3,
+    "attack": 2,
+    "health": 3,
+    "keywords": [
+      "deploy"
+    ],
+    "text": "Un servitore nemico è Bloccato in riunione",
+    "effects": [],
+    "lore": "Albo #101",
+    "art": "assets/albi/albo-101.webp"
+  },
+  {
+    "id": "uomo-rana",
+    "name": "L'Uomo Rana",
+    "faction": "neutrale",
+    "signatureOf": null,
+    "rarity": "rare",
+    "type": "minion",
+    "cost": 4,
+    "attack": 3,
+    "health": 5,
+    "keywords": [
+      "deploy"
+    ],
+    "text": "Infliggi 1 danno a tutti gli altri servitori",
+    "effects": [],
+    "lore": "Albo #29",
+    "art": "assets/albi/albo-029.webp"
+  },
+  {
+    "id": "fila-del-giovedi",
+    "name": "La fila del giovedì",
+    "faction": "neutrale",
+    "signatureOf": null,
+    "rarity": "common",
+    "type": "minion",
+    "cost": 5,
+    "attack": 4,
+    "health": 6,
+    "keywords": [
+      "burocrazia"
+    ],
+    "text": "",
+    "effects": [],
+    "lore": "Albo #73",
+    "art": "assets/albi/albo-073.webp"
   },
   {
     "id": "studente-plagiato",

@@ -177,12 +177,46 @@ Ogni potere eroe costa 2 caffettini e si usa una volta per turno. Un potere con 
 un bersaglio non si può usare se non ci sono bersagli validi.
 
 ## 5. Set di carte
-Vedi `data/cards.json` (52 carte incluse i token). Le carte con rarità `token` non si mettono nel mazzo:
+Vedi `data/cards.json` (60 carte incluse i token). Le carte con rarità `token` non si mettono nel mazzo:
 vengono generate da altri effetti.
 
+### 5.1 Carte aggiunte in v0.4
+Il set v0.3 non permetteva un mazzo legale ad Ale (28 carte massime) e a Nikson (29), e i mazzi dell'Ufficio
+avevano 8–11 slot per servitori su 30, perché le Neutrali erano tutte Pratiche. Aggiunte 8 carte dagli albi non ancora usati:
+
+| Carta | Fazione | Tipo | Costo | Stat | Testo | Albo |
+|---|---|---|---|---|---|---|
+| Piccione urbano | Neutrale | Collega, comune | 1 | 2/1 | — | #71 |
+| Cliente insistente | Neutrale | Collega, comune | 2 | 2/2 | Urgente | #97 |
+| Pinguino glaciale | Neutrale | Collega, comune | 3 | 2/3 | Deploy: un servitore nemico è Bloccato in riunione | #101 |
+| L'Uomo Rana | Neutrale | Collega, rara | 4 | 3/5 | Deploy: 1 danno a tutti gli altri servitori | #29 |
+| La fila del giovedì | Neutrale | Collega, comune | 5 | 4/6 | Burocrazia | #73 |
+| Il Cannellone | Ufficio | Collega, rara | 3 | 3/3 | Ultimo sorso: pesca una carta | #70 |
+| Bici fiammante | Ufficio, firma Ale | Strumento, rara | 3 | 2/2 | Dopo che il tuo eroe attacca, pesca una carta | #57, #99 |
+| I dogmi del Calabrone | Soci, firma Il Calabrone | Pratica, comune | 2 | — | 2 danni all'eroe nemico, pesca una carta | #103, #104 |
+
+Numeri provvisori come il resto del set: da tarare con le partite bot-contro-bot (M2).
+
 ## 6. Mazzi precostruiti v1
-Da definire in Milestone 1: un mazzo da 30 per ciascun eroe, composto da carte di fazione + firma + neutrali.
-Il set attuale potrebbe non bastare per 30 carte uniche per fazione: si accettano 2 copie di comuni/rare/epiche.
+Da definire in Milestone 1: un mazzo da 30 per ciascun eroe, composto da carte di fazione + firma + neutrali,
+con 2 copie di comuni/rare/epiche e 1 di ogni leggendaria.
+
+Carte disponibili per eroe con il set v0.4 (slot = 2 per carta, 1 per leggendaria). Il test
+`mazzi possibili per eroe` in `packages/engine/test/data.test.ts` richiede almeno 30 slot totali e 15 per servitori.
+
+| Eroe | Fazione | Carte uniche | Slot totali | Slot servitori | Carte firma |
+|---|---|---|---|---|---|
+| Dottor Scudo | Ufficio | 23 | 43 | 21 | 3 |
+| Nikson | Ufficio | 22 | 41 | 23 | 2 |
+| Jackson | Ufficio | 22 | 42 | 22 | 2 |
+| Milet | Ufficio | 22 | 42 | 22 | 2 |
+| Ale | Ufficio | 22 | 42 | 20 | 2 |
+| Il Creatore | Ufficio | 23 | 43 | 20 | 3 |
+| Dr Grappolo | Soci & Nemici | 25 | 44 | 26 | 2 |
+| Il Calabrone | Soci & Nemici | 24 | 43 | 23 | 1 |
+| Lord Capognus | Soci & Nemici | 24 | 42 | 24 | 1 |
+
+I Soci non hanno Strumenti: è una scelta di identità (nessun eroe dei Soci attacca da sé), da rivedere dopo M2.
 
 ## 7. Multiplayer
 - Partite su invito (codice stanza / link). Niente matchmaking pubblico in v1.

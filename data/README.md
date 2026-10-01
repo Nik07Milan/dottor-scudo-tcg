@@ -8,6 +8,7 @@
 ## Aggiunte rispetto al foglio xlsx
 Il foglio non è più l'unica fonte: queste carte esistono solo in `cards.json` e vanno riportate nel foglio se lo si rigenera.
 - `nettuno` (token 8/8, Burocrazia, costo 8) — ricompensa di `progetto-nettuno`. Il costo conta se torna in mano (es. *Retcon*).
+- Le 8 carte di GDD §5.1 (T0.3): `piccione-urbano`, `cliente-insistente`, `pinguino-glaciale`, `uomo-rana`, `fila-del-giovedi`, `il-cannellone`, `bici-fiammante`, `i-dogmi-del-calabrone`.
 
 ## Ricompense delle Task
 Le ricompense sono **effetti**, non carte: si risolvono subito al completamento (GDD §3.3).
