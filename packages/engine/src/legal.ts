@@ -59,7 +59,8 @@ function playCardActions(state: GameState, player: PlayerId): Action[] {
   const ps = state.players[player];
   const actions: Action[] = [];
   for (const card of ps.hand) {
-    const def = CARDS_BY_ID.get(card.cardId)!;
+    const def = CARDS_BY_ID.get(card.cardId);
+    if (!def) continue; // carta nascosta in una PlayerView: non giocabile da chi guarda
     if (effectiveCost(state, player, card) > ps.mana.available) continue;
     if (def.task && ps.task) continue; // una sola Task attiva (GDD §3.3)
     const targets = chosenTargets(state, player, def);
