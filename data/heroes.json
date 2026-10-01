@@ -73,7 +73,7 @@
     "heroPower": {
       "name": "Scoppio d'ira",
       "cost": 2,
-      "text": "Infliggi 1 danno a tutti i servitori nemici e 1 al tuo eroe",
+      "text": "Infliggi 1 danno a tutti i servitori nemici e 2 al tuo eroe",
       "effects": [
         {
           "trigger": "on_play",
@@ -87,7 +87,7 @@
           "trigger": "on_play",
           "action": {
             "kind": "damage",
-            "amount": 1,
+            "amount": 2,
             "target": "friendly_hero"
           }
         }
@@ -104,8 +104,15 @@
     "heroPower": {
       "name": "La via del Giappi",
       "cost": 2,
-      "text": "La prossima Pratica che giochi in questo turno costa 2 in meno",
+      "text": "Pesca una carta. La prossima Pratica che giochi in questo turno costa 1 in meno",
       "effects": [
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "draw",
+            "count": 1
+          }
+        },
         {
           "trigger": "on_play",
           "action": {
@@ -113,7 +120,7 @@
             "filter": {
               "type": "spell"
             },
-            "amount": -2,
+            "amount": -1,
             "expiresEndOfTurn": true
           }
         }
@@ -227,7 +234,7 @@
     "heroPower": {
       "name": "L'esperimento",
       "cost": 2,
-      "text": "Dai +2 attacco a un tuo servitore; subisce 1 danno",
+      "text": "Dai +2 attacco a un tuo servitore",
       "effects": [
         {
           "trigger": "on_play",
@@ -235,17 +242,6 @@
             "kind": "buff",
             "attack": 2,
             "health": 0,
-            "target": "chosen",
-            "filter": {
-              "side": "friendly"
-            }
-          }
-        },
-        {
-          "trigger": "on_play",
-          "action": {
-            "kind": "damage",
-            "amount": 1,
             "target": "chosen",
             "filter": {
               "side": "friendly"

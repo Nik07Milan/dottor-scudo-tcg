@@ -86,7 +86,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 | T2.2 ✅ | Bot `greedy`: euristica su ferie, campo e mano, sceglie la migliore azione a un passo. | Batte `random` in più del 70% delle partite. |
 | T2.3 ✅ | `npm run botmatch -- --games N`: winrate per eroe e per matchup, durata media, carte più giocate. Seed riproducibili. | Report stampato a terminale e in JSON. |
 | T2.4 ✅ | Fuzz: migliaia di partite casuali con invarianti (nessuna eccezione, max 7 servitori, mano ≤ 10, partita conclusa entro N turni). | Ogni crash trovato diventa un test di regressione. |
-| T2.5 | Primo giro di bilanciamento dei numeri in `cards.json`. | Nessun eroe sotto il 40% o sopra il 60% di winrate; modifiche annotate nel GDD §8. |
+| T2.5 ✅ | Primo giro di bilanciamento dei numeri in `cards.json`. | Nessun eroe sotto il 40% o sopra il 60% di winrate; modifiche annotate nel GDD §8. |
 
 ---
 

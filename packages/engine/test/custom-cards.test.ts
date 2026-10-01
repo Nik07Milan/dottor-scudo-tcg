@@ -19,13 +19,13 @@ describe("Uomo Sasso: +1/+1 per ogni Sasso giocato in questa partita", () => {
     addMinion(state, me);
     state.players[me].played = ["sasso", "klaudioken", "sasso", "sasso"];
     const r = applyAction(state, { type: "play_card", player: me, card: ids[0]!, position: 1 }).state;
-    expect(r.players[me].board[1]).toMatchObject({ cardId: "uomo-sasso", attack: 4 + 3, health: 6 + 3, maxHealth: 6 + 3 });
+    expect(r.players[me].board[1]).toMatchObject({ cardId: "uomo-sasso", attack: 4 + 3, health: 5 + 3, maxHealth: 5 + 3 });
   });
 
-  it("senza Sassi giocati resta 4/6", () => {
+  it("senza Sassi giocati resta 4/5", () => {
     const { state, me, ids } = table(["uomo-sasso"]);
     const r = applyAction(state, { type: "play_card", player: me, card: ids[0]!, position: 0 }).state;
-    expect(r.players[me].board[0]).toMatchObject({ attack: 4, health: 6 });
+    expect(r.players[me].board[0]).toMatchObject({ attack: 4, health: 5 });
   });
 
   it("contano solo i Sassi del suo controllore", () => {

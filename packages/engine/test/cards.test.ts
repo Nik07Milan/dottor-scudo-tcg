@@ -68,7 +68,7 @@ const SCENARIOS: Record<string, (t: T) => void> = {
   },
   "uomo-sasso": (t) => {
     t.s.players[t.me].played = ["sasso", "sasso"];
-    expect(played(t.play(), t.me, "uomo-sasso")).toMatchObject({ attack: 6, health: 8 });
+    expect(played(t.play(), t.me, "uomo-sasso")).toMatchObject({ attack: 6, health: 7 }); // 4/5 + 2 Sassi
   },
   serranikson: (t) => {
     const weak = t.theirs({ attack: 3 });
@@ -110,7 +110,7 @@ const SCENARIOS: Record<string, (t: T) => void> = {
     expect(find(t.play({ target: minionRef(m) }), m.instanceId)!.frozenTurns).toBe(1);
   },
   klaudioken: (t) => {
-    expect(t.play({ target: heroRef(t.foe) }).players[t.foe].hero.health).toBe(rules.HERO_MAX_HEALTH - 5);
+    expect(t.play({ target: heroRef(t.foe) }).players[t.foe].hero.health).toBe(rules.HERO_MAX_HEALTH - 4);
   },
   "re-klaudio": (t) => {
     const r = t.play();

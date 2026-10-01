@@ -87,14 +87,14 @@ describe("i 9 poteri", () => {
     expect(power(state, me).state.players[me].hand.map((c) => c.cardId)).toEqual(["sasso"]);
   });
 
-  it("Jackson — Scoppio d'ira: 1 danno ai servitori nemici e al proprio eroe", () => {
+  it("Jackson — Scoppio d'ira: 1 danno ai servitori nemici e 2 al proprio eroe", () => {
     const { state, me, foe } = as("jackson");
     addMinion(state, foe, { health: 3 });
     addMinion(state, me, { health: 3 });
     const s = power(state, me).state;
     expect(s.players[foe].board[0]!.health).toBe(2);
     expect(s.players[me].board[0]!.health).toBe(3);
-    expect(s.players[me].hero.health).toBe(rules.HERO_MAX_HEALTH - 1);
+    expect(s.players[me].hero.health).toBe(rules.HERO_MAX_HEALTH - 2);
   });
 
   it("Jackson a 1 ferie si sconfigge da solo", () => {
@@ -103,10 +103,11 @@ describe("i 9 poteri", () => {
     expect(power(state, me).state.result).toEqual({ winner: foe, reason: "hero_defeated" });
   });
 
-  it("Milet — La via del Giappi: la prossima Pratica di questo turno costa 2 in meno", () => {
+  it("Milet — La via del Giappi: pesca una carta e la prossima Pratica di questo turno costa 1 in meno", () => {
     const { state, me } = as("milet", ["klaudioken"]);
     const s = power(state, me).state;
-    expect(effectiveCost(s, me, s.players[me].hand[0]!)).toBe(2);
+    expect(s.players[me].hand).toHaveLength(2);
+    expect(effectiveCost(s, me, s.players[me].hand[0]!)).toBe(3);
     expect(endTurn(s).state.players[me].costModifiers).toEqual([]);
   });
 
@@ -139,12 +140,12 @@ describe("i 9 poteri", () => {
     expect(power(state, me).state.players[foe].hero.health).toBe(rules.HERO_MAX_HEALTH - 2);
   });
 
-  it("Lord Capognus — L'esperimento: +2 attacco a un proprio servitore, che subisce 1 danno", () => {
+  it("Lord Capognus — L'esperimento: +2 attacco a un proprio servitore", () => {
     const { state, me, foe } = as("lord-capognus");
     const m = addMinion(state, me, { attack: 1, health: 3 });
     addMinion(state, foe);
     expect(powerActions(state, me)).toEqual([{ type: "hero_power", player: me, target: minionRef(m) }]);
-    expect(power(state, me, { target: minionRef(m) }).state.players[me].board[0]).toMatchObject({ attack: 3, health: 2 });
+    expect(power(state, me, { target: minionRef(m) }).state.players[me].board[0]).toMatchObject({ attack: 3, health: 3 });
     expect(codeOf(state, { type: "hero_power", player: me, target: heroRef(me) })).toBe("invalid_target");
   });
 });

@@ -6,7 +6,7 @@
     "signatureOf": "dottor-scudo",
     "rarity": "rare",
     "type": "spell",
-    "cost": 1,
+    "cost": 2,
     "keywords": [],
     "text": "Dai Scudato a un collega. Pesca una carta",
     "effects": [
@@ -37,7 +37,7 @@
     "rarity": "common",
     "type": "weapon",
     "cost": 3,
-    "attack": 3,
+    "attack": 2,
     "durability": 2,
     "keywords": [],
     "text": "Dopo che il tuo eroe attacca, ottieni 1 armatura",
@@ -61,8 +61,8 @@
     "rarity": "legendary",
     "type": "minion",
     "cost": 8,
-    "attack": 8,
-    "health": 8,
+    "attack": 7,
+    "health": 7,
     "keywords": [
       "burocrazia",
       "deploy"
@@ -88,7 +88,7 @@
     "signatureOf": "nikson",
     "rarity": "token",
     "type": "spell",
-    "cost": 0,
+    "cost": 1,
     "keywords": [],
     "text": "Dai +1/+1 a un collega",
     "effects": [
@@ -114,7 +114,7 @@
     "type": "minion",
     "cost": 5,
     "attack": 4,
-    "health": 6,
+    "health": 5,
     "keywords": [
       "burocrazia",
       "deploy"
@@ -140,7 +140,7 @@
     "rarity": "legendary",
     "type": "minion",
     "cost": 6,
-    "attack": 6,
+    "attack": 5,
     "health": 5,
     "keywords": [
       "deploy"
@@ -279,7 +279,7 @@
     "keywords": [
       "bloccato"
     ],
-    "text": "Un servitore nemico è Bloccato in riunione",
+    "text": "Un servitore nemico è Bloccato in riunione. Pesca una carta",
     "effects": [
       {
         "trigger": "on_play",
@@ -290,6 +290,13 @@
           "filter": {
             "side": "enemy"
           }
+        }
+      },
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "draw",
+          "count": 1
         }
       }
     ],
@@ -305,13 +312,13 @@
     "type": "spell",
     "cost": 4,
     "keywords": [],
-    "text": "Infliggi 5 danni",
+    "text": "Infliggi 4 danni",
     "effects": [
       {
         "trigger": "on_play",
         "action": {
           "kind": "damage",
-          "amount": 5,
+          "amount": 4,
           "target": "chosen"
         }
       }
@@ -426,7 +433,7 @@
     "signatureOf": "il-creatore",
     "rarity": "legendary",
     "type": "spell",
-    "cost": 6,
+    "cost": 5,
     "keywords": [],
     "text": "Evoca 3 colleghi casuali dell'Ufficio con costo 3 o meno",
     "effects": [
@@ -966,7 +973,7 @@
     "rarity": "rare",
     "type": "minion",
     "cost": 3,
-    "attack": 2,
+    "attack": 3,
     "health": 2,
     "keywords": [
       "ultimo_sorso"

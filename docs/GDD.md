@@ -232,5 +232,34 @@ I Soci non hanno Strumenti: è una scelta di identità (nessun eroe dei Soci att
 ## 8. Questioni aperte
 - Conferma avatar ↔ personaggi (avatar 3–8).
 - Conferma ruoli: chi è in ufficio e chi è socio.
-- Bilanciamento: tutti i numeri sono provvisori, da tarare con le partite bot-contro-bot.
+- Bilanciamento: tutti i numeri sono provvisori, da tarare con le partite bot-contro-bot (vedi §8.1).
+
+### 8.1 Primo giro di bilanciamento (T2.5)
+Misura: `npm run botmatch -- --games 810 --seed S` (greedy contro greedy, 10 giri delle 81 coppie di eroi,
+180 partite per eroe, rumore circa ±4%). Obiettivo: ogni eroe tra 40% e 60%.
+
+Partenza (seed 1): Nikson 67%, Dottor Scudo 66%, Jackson 62% … Il Creatore 40%, Lord Capognus 39%, Milet 27%.
+
+| Modifica | Prima | Dopo | Perché |
+|---|---|---|---|
+| Sasso (token di Nikson) | costo 0 | costo 1 | carta gratuita a ogni potere |
+| Uomo Sasso | 4/6 | 4/5 | Nikson sopra il 60% |
+| Serranikson | 6/5 | 5/5 | Nikson sopra il 60% |
+| Scudo dell'ultimo momento | costo 1 | costo 2 | Scudato + pesca troppo efficiente |
+| Scudo-bike | 3/2 | 2/2 | Dottor Scudo sopra il 60% |
+| Scudozord | 8/8 | 7/7 | Dottor Scudo sopra il 60% |
+| Klaudioken | 5 danni | 4 danni | Ufficio nel complesso sopra i Soci |
+| La Canalis | 2/2 | 3/2 | Soci nel complesso sotto l'Ufficio |
+| Potere di Jackson | 1 danno a sé | 2 danni a sé | effetto ad area troppo economico |
+| Potere di Milet | prossima Pratica −2 | pesca 1 + prossima Pratica −1 | Milet al 27% |
+| Potere di Lord Capognus | +2 attacco e 1 danno | +2 attacco | richiedeva un servitore e lo indeboliva |
+| La Lore dell'ufficio | costo 6 | costo 5 | troppo cara per tre servitori da ≤ 3 |
+| Incatenato alla postazione | blocca | blocca + pesca 1 | firma di Ale troppo debole |
+| Mazzo di Milet | 2 Scorte di Teresa | 2 File del giovedì | cura da 3 poco utile |
+| Mazzo di Il Creatore | 2 Bozze a matita, 1 L'ultimo sorso | 1 e 2 | Scopri a 1 caffettino rallentava |
+
+Risultato su tre seed (1, 5000, 12345): tutti gli eroi tra **40,6% e 58,3%**.
+
+Limiti noti del bot greedy (guarda un solo passo avanti): non usa quasi mai *Fuga dalla riunione* (Ale) né il
+Caffettino, e sottovaluta le Task. I numeri di Ale e delle Task vanno ricontrollati con partite reali.
 - Arte: ritagli dalle tavole in `assets/albi/`; consenso dell'autore per l'uso delle immagini.

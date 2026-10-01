@@ -16,6 +16,12 @@ const WEIGHTS = {
   board: 1.4, // valore dei servitori
   hand: 0.6, // carte in mano
   weapon: 0.5, // attacco × durabilità
+  // Valori "futuri": senza, un bot a un passo non userebbe mai sconti, Task né Caffettino.
+  discount: 0.5, // per caffettino di sconto in attesa
+  task: 6, // Task attiva: vale in proporzione al progresso
+  // Niente peso sui caffettini: spenderli non deve "costare", conta solo ciò che si ottiene.
+  // (Effetto collaterale accettato: il bot non gioca il Caffettino.)
+  discover: 1.5, // una scelta di Scopri in sospeso vale più di una pescata
 };
 
 function minionValue(m: MinionInstance): number {
@@ -41,7 +47,18 @@ export function evaluate(state: GameState, me: PlayerId): number {
     const hero = Math.max(0, ps.hero.health) + ps.hero.armor;
     const board = ps.board.filter((m) => m.health > 0).reduce((s, m) => s + minionValue(m), 0);
     const weapon = ps.weapon ? ps.weapon.attack * ps.weapon.durability : 0;
-    return WEIGHTS.hero * hero + WEIGHTS.board * board + WEIGHTS.hand * ps.hand.length + WEIGHTS.weapon * weapon;
+    const discount = ps.costModifiers.reduce((s, m) => s - m.amount, 0);
+    const task = ps.task ? (1 + ps.task.progress) / (1 + ps.task.goal) : 0;
+    // Una scelta di Scopri in sospeso è una carta (scelta) che sta per arrivare in mano.
+    const incoming = state.pendingChoice?.player === p ? WEIGHTS.discover : 0;
+    return (
+      WEIGHTS.hero * hero +
+      WEIGHTS.board * board +
+      WEIGHTS.hand * (ps.hand.length + incoming) +
+      WEIGHTS.weapon * weapon +
+      WEIGHTS.discount * discount +
+      WEIGHTS.task * task
+    );
   };
   return side(me) - side(foe);
 }
