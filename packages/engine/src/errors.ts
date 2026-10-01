@@ -16,6 +16,12 @@ export type IllegalActionCode =
   | "board_full"
   /** Servitore senza posizione o fuori da 0..n, oppure posizione data a una carta che non è un servitore. */
   | "invalid_position"
+  /** L'attaccante non esiste o non è un tuo personaggio. */
+  | "invalid_attacker"
+  /** Esiste ma ora non può attaccare: appena entrato, 0 attacco, ha già attaccato, eroe senza Strumento. */
+  | "cannot_attack"
+  /** Il difensore non esiste o non è un personaggio nemico attaccabile. */
+  | "invalid_target"
   /** Tipo di azione previsto ma non ancora implementato nell'engine. */
   | "not_implemented"
   /** Ben formata ma non tra le mosse legali, senza un motivo più preciso. */

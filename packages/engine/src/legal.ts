@@ -1,6 +1,8 @@
 // Mosse legali (T1.5). getLegalActions è l'unica fonte di cosa si può fare: applyAction accetta
 // un'azione solo se la sua forma canonica compare qui. Ogni nuova azione va aggiunta in questo file.
 
+import { attackersOf, attackTargetsOf, canAttackNow, controls } from "./combat";
+import { opponentOf } from "./context";
 import { effectiveCost } from "./costs";
 import { CARDS_BY_ID } from "./data";
 import type { IllegalActionCode } from "./errors";
@@ -34,7 +36,12 @@ function phaseActions(state: GameState, player: PlayerId): Action[] {
   if (player !== state.activePlayer) return [];
   // Con una scelta in sospeso l'unica azione sarà `choose` (Scopri, T1.13).
   if (state.pendingChoice) return [];
-  return [...playCardActions(state, player), { type: "end_turn", player }];
+  return [...playCardActions(state, player), ...attackActions(state, player), { type: "end_turn", player }];
+}
+
+function attackActions(state: GameState, player: PlayerId): Action[] {
+  const targets = attackTargetsOf(state, player);
+  return attackersOf(state, player).flatMap((attacker) => targets.map((defender): Action => ({ type: "attack", player, attacker, defender })));
 }
 
 /** Una mossa per carta giocabile; per i servitori una per ogni posizione 0..n sulla scrivania. */
@@ -95,9 +102,19 @@ export function checkShape(action: unknown): "malformed" | "unknown_action" | nu
       return isId(a.card) && (a.position === undefined || isId(a.position)) ? null : "malformed";
     case "choose":
       return isId(a.index) ? null : "malformed";
+    case "attack":
+      return isCharacterRef(a.attacker) && isCharacterRef(a.defender) ? null : "malformed";
     default:
       return null;
   }
+}
+
+function isCharacterRef(v: unknown): boolean {
+  if (typeof v !== "object" || v === null) return false;
+  const r = v as Record<string, unknown>;
+  if (r.kind === "hero") return typeof r.player === "string" && PLAYER_IDS.includes(r.player);
+  if (r.kind === "minion") return isId(r.instanceId);
+  return false;
 }
 
 /** Motivo più utile per cui un'azione ben formata non è legale. */
@@ -133,8 +150,18 @@ export function diagnose(state: GameState, action: Action): IllegalActionCode {
       return "not_legal";
     }
 
+    case "attack": {
+      if (state.phase !== "main") return "wrong_phase";
+      if (action.player !== state.activePlayer) return "not_your_turn";
+      if (state.pendingChoice) return "pending_choice";
+      if (!controls(state, action.player, action.attacker)) return "invalid_attacker";
+      if (!canAttackNow(state, action.player, action.attacker)) return "cannot_attack";
+      if (!controls(state, opponentOf(action.player), action.defender)) return "invalid_target";
+      return "not_legal";
+    }
+
     default:
-      // attack, hero_power, choose: arrivano nei task T1.8–T1.16.
+      // hero_power, choose: arrivano nei task T1.13–T1.16.
       return "not_implemented";
   }
 }

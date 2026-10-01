@@ -2,6 +2,7 @@
 // Accetta un'azione solo se è in getLegalActions (forma canonica); altrimenti IllegalActionError.
 // Lo stato in ingresso non viene mai modificato: si lavora su una copia profonda.
 
+import { performAttack } from "./combat";
 import { opponentOf, type Ctx } from "./context";
 import { IllegalActionError } from "./errors";
 import { actionKey, checkShape, diagnose, getLegalActions } from "./legal";
@@ -29,6 +30,9 @@ export function applyAction(state: GameState, action: Action): ApplyResult {
     case "play_card":
       playCard(ctx, action.player, action.card, action.position);
       break;
+    case "attack":
+      performAttack(ctx, action.player, action.attacker, action.defender);
+      break;
     case "end_turn":
       endTurn(ctx, action.player);
       break;
@@ -55,5 +59,8 @@ const MESSAGES: Partial<Record<string, string>> = {
   not_enough_mana: "Caffettini insufficienti",
   board_full: "Scrivanie piene",
   invalid_position: "Posizione non valida",
+  invalid_attacker: "Non puoi attaccare con questo personaggio",
+  cannot_attack: "Questo personaggio non può attaccare adesso",
+  invalid_target: "Bersaglio non valido",
   not_implemented: "Azione non ancora supportata",
 };

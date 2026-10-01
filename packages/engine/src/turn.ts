@@ -1,6 +1,7 @@
 // Mulligan, ciclo di turno, caffettini, pesca, burnout e mano piena (T1.4, GDD §1.1, §1.2, §1.6).
 
 import { newCard, newInstanceId, opponentOf, type Ctx } from "./context";
+import { damageHero } from "./damage";
 import { checkHeroes, finishGame } from "./outcome";
 import { shuffle } from "./rng";
 import { COIN_CARD_ID, MAX_HAND, MAX_MANA, TURN_LIMIT } from "./rules";
@@ -97,14 +98,4 @@ export function addToHand(ctx: Ctx, player: PlayerId, card: CardInstance, how: "
   }
   ps.hand.push(card);
   ctx.events.push({ type: how === "draw" ? "card_drawn" : "card_added", player, instanceId: card.instanceId, cardId: card.cardId });
-}
-
-/** Danno all'eroe: prima l'armatura, poi le ferie. La sconfitta si controlla a fine azione (checkHeroes). */
-export function damageHero(ctx: Ctx, player: PlayerId, amount: number): void {
-  if (amount <= 0) return;
-  const hero = ctx.state.players[player].hero;
-  const absorbed = Math.min(hero.armor, amount);
-  hero.armor -= absorbed;
-  hero.health -= amount - absorbed;
-  ctx.events.push({ type: "damage", target: { kind: "hero", player }, amount });
 }
