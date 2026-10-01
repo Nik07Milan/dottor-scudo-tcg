@@ -2,9 +2,10 @@
 // Accetta un'azione solo se è in getLegalActions (forma canonica); altrimenti IllegalActionError.
 // Lo stato in ingresso non viene mai modificato: si lavora su una copia profonda.
 
-import type { Ctx } from "./context";
+import { opponentOf, type Ctx } from "./context";
 import { IllegalActionError } from "./errors";
 import { actionKey, checkShape, diagnose, getLegalActions } from "./legal";
+import { checkHeroes, finishGame } from "./outcome";
 import type { Action, ApplyResult, GameState } from "./state";
 import { endTurn, mulligan } from "./turn";
 
@@ -27,10 +28,15 @@ export function applyAction(state: GameState, action: Action): ApplyResult {
     case "end_turn":
       endTurn(ctx, action.player);
       break;
+    case "concede":
+      finishGame(ctx, { winner: opponentOf(action.player), reason: "concede" });
+      break;
     default:
       // Irraggiungibile: getLegalActions non propone altri tipi finché non sono implementati qui.
       throw new IllegalActionError("not_implemented", `Azione non ancora supportata: ${action.type}`);
   }
+  // Fine partita controllata solo a risoluzione completa (GDD §1.5.7).
+  if (ctx.state.phase !== "ended") checkHeroes(ctx);
   return { state: ctx.state, events: ctx.events };
 }
 

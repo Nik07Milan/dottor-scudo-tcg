@@ -50,7 +50,8 @@ function* randomWalk(seed: number, steps: number): Generator<GameState> {
   let rng = seed;
   for (let i = 0; i < steps; i++) {
     yield state;
-    const legal = PLAYERS.flatMap((p) => getLegalActions(state, p));
+    // Senza concede: altrimenti le partite finirebbero subito senza esplorare stati.
+    const legal = PLAYERS.flatMap((p) => getLegalActions(state, p)).filter((a) => a.type !== "concede");
     if (legal.length === 0) return;
     const r = nextRandom(rng);
     rng = r.seed;
@@ -64,22 +65,24 @@ describe("getLegalActions", () => {
     const s = created();
     for (const p of PLAYERS) {
       const legal = getLegalActions(s, p);
-      expect(legal).toHaveLength(2 ** s.players[p].hand.length);
-      expect(legal.every((a) => a.type === "mulligan")).toBe(true);
+      const mulligans = legal.filter((a) => a.type === "mulligan");
+      expect(mulligans).toHaveLength(2 ** s.players[p].hand.length);
+      expect(legal).toHaveLength(mulligans.length + 1); // + concede
       expect(legal).toContainEqual({ type: "mulligan", player: p, replace: [] });
     }
   });
 
   it("dopo il proprio mulligan un giocatore aspetta, l'altro può ancora sceglierlo", () => {
     const s = applyAction(created(), { type: "mulligan", player: "p1", replace: [] }).state;
-    expect(getLegalActions(s, "p1")).toEqual([]);
-    expect(getLegalActions(s, "p2").length).toBeGreaterThan(0);
+    expect(getLegalActions(s, "p1")).toEqual([{ type: "concede", player: "p1" }]);
+    expect(getLegalActions(s, "p2").filter((a) => a.type === "mulligan").length).toBeGreaterThan(0);
   });
 
-  it("nella fase principale il giocatore attivo può finire il turno, l'altro non ha mosse", () => {
+  it("nella fase principale il giocatore attivo può finire il turno, l'altro può solo arrendersi", () => {
     const s = startedGame();
     expect(getLegalActions(s, s.activePlayer)).toContainEqual({ type: "end_turn", player: s.activePlayer });
-    expect(getLegalActions(s, other(s.activePlayer))).toEqual([]);
+    const idle = other(s.activePlayer);
+    expect(getLegalActions(s, idle)).toEqual([{ type: "concede", player: idle }]);
   });
 
   it("con una scelta in sospeso o a partita finita non c'è end_turn", () => {

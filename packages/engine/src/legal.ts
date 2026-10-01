@@ -9,6 +9,11 @@ const ACTION_TYPES: readonly ActionType[] = ["mulligan", "play_card", "attack", 
 
 export function getLegalActions(state: GameState, player: PlayerId): Action[] {
   if (state.phase === "ended" || !PLAYER_IDS.includes(player)) return [];
+  // Arrendersi è sempre possibile, per entrambi, finché la partita è in corso.
+  return [...phaseActions(state, player), { type: "concede", player }];
+}
+
+function phaseActions(state: GameState, player: PlayerId): Action[] {
   const ps = state.players[player];
 
   if (state.phase === "mulligan") {
@@ -92,7 +97,7 @@ export function diagnose(state: GameState, action: Action): IllegalActionCode {
       return "not_legal";
 
     default:
-      // play_card, attack, hero_power, choose, concede: arrivano nei task T1.6–T1.16.
+      // play_card, attack, hero_power, choose: arrivano nei task T1.7–T1.16.
       return "not_implemented";
   }
 }

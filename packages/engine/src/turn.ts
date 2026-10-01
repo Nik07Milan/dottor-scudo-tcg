@@ -1,8 +1,9 @@
 // Mulligan, ciclo di turno, caffettini, pesca, burnout e mano piena (T1.4, GDD §1.1, §1.2, §1.6).
 
 import { newCard, newInstanceId, opponentOf, type Ctx } from "./context";
+import { checkHeroes, finishGame } from "./outcome";
 import { shuffle } from "./rng";
-import { COIN_CARD_ID, MAX_HAND, MAX_MANA } from "./rules";
+import { COIN_CARD_ID, MAX_HAND, MAX_MANA, TURN_LIMIT } from "./rules";
 import type { CardInstance, InstanceId, PlayerId } from "./state";
 
 /** Mulligan già validato da applyAction tramite getLegalActions. */
@@ -43,7 +44,11 @@ export function endTurn(ctx: Ctx, player: PlayerId): void {
   // Trigger di fine turno: T1.12. Scalare Bloccato in riunione: T1.10.
   ps.costModifiers = ps.costModifiers.filter((m) => !m.expiresEndOfTurn);
   ctx.events.push({ type: "turn_ended", player, turn: state.turn });
-  // Limite di turni e fine partita: T1.6.
+  if (state.turn >= TURN_LIMIT) {
+    // Un eroe a 0 nell'ultimo turno conta più del pareggio per limite.
+    if (!checkHeroes(ctx)) finishGame(ctx, { winner: null, reason: "turn_limit" });
+    return;
+  }
   startTurn(ctx, opponentOf(player));
 }
 
@@ -94,7 +99,7 @@ export function addToHand(ctx: Ctx, player: PlayerId, card: CardInstance, how: "
   ctx.events.push({ type: how === "draw" ? "card_drawn" : "card_added", player, instanceId: card.instanceId, cardId: card.cardId });
 }
 
-/** Danno all'eroe: prima l'armatura, poi le ferie. La sconfitta a 0 ferie è T1.6. */
+/** Danno all'eroe: prima l'armatura, poi le ferie. La sconfitta si controlla a fine azione (checkHeroes). */
 export function damageHero(ctx: Ctx, player: PlayerId, amount: number): void {
   if (amount <= 0) return;
   const hero = ctx.state.players[player].hero;
