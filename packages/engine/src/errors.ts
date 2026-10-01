@@ -12,6 +12,10 @@ export type IllegalActionCode =
   | "card_not_in_hand"
   | "duplicate_card"
   | "pending_choice"
+  | "not_enough_mana"
+  | "board_full"
+  /** Servitore senza posizione o fuori da 0..n, oppure posizione data a una carta che non è un servitore. */
+  | "invalid_position"
   /** Tipo di azione previsto ma non ancora implementato nell'engine. */
   | "not_implemented"
   /** Ben formata ma non tra le mosse legali, senza un motivo più preciso. */

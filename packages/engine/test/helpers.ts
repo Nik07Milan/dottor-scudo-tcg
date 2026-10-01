@@ -23,6 +23,36 @@ export function startedGame(seed = 1): GameState {
   return state;
 }
 
+/**
+ * Copia dello stato con la mano di `player` sostituita da `cardIds` (id nuovi) e caffettini a `mana`.
+ * Restituisce lo stato e gli instanceId delle carte in mano, nello stesso ordine.
+ */
+export function withHand(state: GameState, player: PlayerId, cardIds: string[], mana = 10): { state: GameState; ids: number[] } {
+  const s = structuredClone(state);
+  s.players[player].hand = cardIds.map((cardId) => ({ instanceId: s.nextInstanceId++, cardId, costModifier: 0 }));
+  s.players[player].mana = { max: mana, available: mana };
+  return { state: s, ids: s.players[player].hand.map((c) => c.instanceId) };
+}
+
+/** Riempie la scrivania di `player` con `count` copie di un servitore base. */
+export function fillBoard(state: GameState, player: PlayerId, count: number, cardId = "il-crudo"): void {
+  for (let i = 0; i < count; i++) {
+    state.players[player].board.push({
+      instanceId: state.nextInstanceId++,
+      cardId,
+      owner: player,
+      attack: 5,
+      health: 6,
+      maxHealth: 6,
+      keywords: [],
+      frozenTurns: 0,
+      frozenOnTurn: null,
+      attacksThisTurn: 0,
+      summonedThisTurn: false,
+    });
+  }
+}
+
 /** Fine turno del giocatore attivo. */
 export const endTurn = (state: GameState) => applyAction(state, { type: "end_turn", player: state.activePlayer });
 

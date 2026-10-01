@@ -6,6 +6,7 @@ import { opponentOf, type Ctx } from "./context";
 import { IllegalActionError } from "./errors";
 import { actionKey, checkShape, diagnose, getLegalActions } from "./legal";
 import { checkHeroes, finishGame } from "./outcome";
+import { playCard } from "./play";
 import type { Action, ApplyResult, GameState } from "./state";
 import { endTurn, mulligan } from "./turn";
 
@@ -24,6 +25,9 @@ export function applyAction(state: GameState, action: Action): ApplyResult {
   switch (action.type) {
     case "mulligan":
       mulligan(ctx, action.player, action.replace);
+      break;
+    case "play_card":
+      playCard(ctx, action.player, action.card, action.position);
       break;
     case "end_turn":
       endTurn(ctx, action.player);
@@ -48,5 +52,8 @@ const MESSAGES: Partial<Record<string, string>> = {
   card_not_in_hand: "Carta non in mano",
   duplicate_card: "Carta ripetuta",
   pending_choice: "C'è una scelta in sospeso",
+  not_enough_mana: "Caffettini insufficienti",
+  board_full: "Scrivanie piene",
+  invalid_position: "Posizione non valida",
   not_implemented: "Azione non ancora supportata",
 };

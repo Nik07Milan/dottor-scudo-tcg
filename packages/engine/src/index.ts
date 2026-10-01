@@ -8,4 +8,5 @@ export * from "./game";
 export * from "./apply";
 export * from "./errors";
 export { actionKey, getLegalActions } from "./legal";
+export { effectiveCost } from "./costs";
 // Milestone 1: getPlayerView

@@ -1,7 +1,10 @@
 // Mosse legali (T1.5). getLegalActions è l'unica fonte di cosa si può fare: applyAction accetta
 // un'azione solo se la sua forma canonica compare qui. Ogni nuova azione va aggiunta in questo file.
 
+import { effectiveCost } from "./costs";
+import { CARDS_BY_ID } from "./data";
 import type { IllegalActionCode } from "./errors";
+import { MAX_BOARD } from "./rules";
 import type { Action, ActionType, GameState, PlayerId } from "./state";
 
 const PLAYER_IDS: readonly string[] = ["p1", "p2"];
@@ -31,7 +34,27 @@ function phaseActions(state: GameState, player: PlayerId): Action[] {
   if (player !== state.activePlayer) return [];
   // Con una scelta in sospeso l'unica azione sarà `choose` (Scopri, T1.13).
   if (state.pendingChoice) return [];
-  return [{ type: "end_turn", player }];
+  return [...playCardActions(state, player), { type: "end_turn", player }];
+}
+
+/** Una mossa per carta giocabile; per i servitori una per ogni posizione 0..n sulla scrivania. */
+function playCardActions(state: GameState, player: PlayerId): Action[] {
+  const ps = state.players[player];
+  const actions: Action[] = [];
+  for (const card of ps.hand) {
+    const def = CARDS_BY_ID.get(card.cardId)!;
+    if (effectiveCost(state, player, card) > ps.mana.available) continue;
+    if (def.type === "minion") {
+      if (ps.board.length >= MAX_BOARD) continue;
+      for (let position = 0; position <= ps.board.length; position++) {
+        actions.push({ type: "play_card", player, card: card.instanceId, position });
+      }
+    } else {
+      // Bersagli delle Pratiche: arrivano con gli effetti (T1.12).
+      actions.push({ type: "play_card", player, card: card.instanceId });
+    }
+  }
+  return actions;
 }
 
 /** Forma canonica e confrontabile di un'azione: chiavi ordinate, campi assenti omessi, `replace` ordinato. */
@@ -69,7 +92,7 @@ export function checkShape(action: unknown): "malformed" | "unknown_action" | nu
     case "mulligan":
       return Array.isArray(a.replace) && a.replace.every(isId) ? null : "malformed";
     case "play_card":
-      return isId(a.card) ? null : "malformed";
+      return isId(a.card) && (a.position === undefined || isId(a.position)) ? null : "malformed";
     case "choose":
       return isId(a.index) ? null : "malformed";
     default:
@@ -96,8 +119,22 @@ export function diagnose(state: GameState, action: Action): IllegalActionCode {
       if (state.pendingChoice) return "pending_choice";
       return "not_legal";
 
+    case "play_card": {
+      if (state.phase !== "main") return "wrong_phase";
+      if (action.player !== state.activePlayer) return "not_your_turn";
+      if (state.pendingChoice) return "pending_choice";
+      const card = ps.hand.find((c) => c.instanceId === action.card);
+      if (!card) return "card_not_in_hand";
+      if (effectiveCost(state, action.player, card) > ps.mana.available) return "not_enough_mana";
+      const isMinion = CARDS_BY_ID.get(card.cardId)!.type === "minion";
+      if (isMinion && ps.board.length >= MAX_BOARD) return "board_full";
+      const { position } = action;
+      if (isMinion ? position === undefined || position < 0 || position > ps.board.length : position !== undefined) return "invalid_position";
+      return "not_legal";
+    }
+
     default:
-      // play_card, attack, hero_power, choose: arrivano nei task T1.7–T1.16.
+      // attack, hero_power, choose: arrivano nei task T1.8–T1.16.
       return "not_implemented";
   }
 }

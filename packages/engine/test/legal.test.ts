@@ -150,7 +150,9 @@ describe("rifiuto delle azioni illegali", () => {
     expect(codeOf(mull, { type: "mulligan", player: "p1", replace: [mull.players.p2.hand[0]!.instanceId] })).toBe("card_not_in_hand");
     expect(codeOf(mull, { type: "mulligan", player: "p1", replace: [handId, handId] })).toBe("duplicate_card");
     expect(codeOf(pending, { type: "end_turn", player: main.activePlayer })).toBe("pending_choice");
-    expect(codeOf(main, { type: "play_card", player: main.activePlayer, card: 1 })).toBe("not_implemented");
+    expect(
+      codeOf(main, { type: "attack", player: main.activePlayer, attacker: { kind: "hero", player: main.activePlayer }, defender: { kind: "hero", player: idle } }),
+    ).toBe("not_implemented");
   });
 
   it("le azioni malformate danno errore 'malformed', mai un crash", () => {
