@@ -1,10 +1,12 @@
 // Lobby (T4.1): scelta dell'eroe, crea una stanza o entra con il codice invito. Tutto in Phaser;
 // il campo del codice è un elemento DOM (this.add.dom).
 
-import { HEROES, HEROES_BY_ID, greedyBot, randomBot, type Bot } from "@dottorscudo/engine";
+import { HEROES, HEROES_BY_ID, deckFromCounts, greedyBot, randomBot, type Bot } from "@dottorscudo/engine";
 import { ART_READY, croppedImage, heroPortrait, requestArt } from "../ui/art";
 import { LocalMatch } from "../local";
 import { mountAccountPanel } from "../overlay/accountPanel";
+import { openDeckBuilder } from "../overlay/deckBuilder";
+import { mountDeckPicker, type DeckPicker } from "../overlay/deckPicker";
 import { TutorialMatch } from "../tutorial/tutorial";
 import { Scene } from "phaser";
 import type { ServerMessages } from "../../../server/src/protocol";
@@ -17,6 +19,7 @@ export class LobbyScene extends Scene {
   private status!: Phaser.GameObjects.Text;
   private busy = false;
   private connection = new Connection();
+  private decks!: DeckPicker;
 
   constructor() {
     super("lobby");
@@ -31,9 +34,13 @@ export class LobbyScene extends Scene {
 
     this.drawHeroPicker();
     mountAccountPanel(this, WIDTH - 175, 70);
+    // Da collegato: scelta tra precostruito e i propri mazzi (T5.3).
+    this.decks = mountDeckPicker(this, WIDTH / 2, 508, () => this.heroId, () =>
+      openDeckBuilder(this, this.heroId, (changed) => changed && this.decks.refresh()),
+    );
 
     const create = button(this, WIDTH / 2 - 200, 560, "Crea partita", 220, 50);
-    create.on("pointerdown", () => this.run(() => this.connection.create(this.heroId)));
+    create.on("pointerdown", () => this.run(() => this.connection.create(this.heroId, this.decks.selected()?.id)));
 
     const input = this.add.dom(WIDTH / 2 + 120, 560, "input", "width: 150px; height: 40px; font-size: 22px; text-align: center; text-transform: uppercase; border-radius: 8px; border: 2px solid #d8b26a; background: #f4eedc;");
     const field = input.node as HTMLInputElement;
@@ -43,7 +50,7 @@ export class LobbyScene extends Scene {
     const doJoin = () => {
       const code = field.value.trim().toUpperCase();
       if (code.length !== 6) return this.setStatus("Il codice ha 6 caratteri.");
-      this.run(() => this.connection.join(code, this.heroId));
+      this.run(() => this.connection.join(code, this.heroId, this.decks.selected()?.id));
     };
     join.on("pointerdown", doJoin);
     field.addEventListener("keydown", (e) => e.key === "Enter" && doJoin());
@@ -94,6 +101,7 @@ export class LobbyScene extends Scene {
       c.setData("labels", [name, faction]);
       c.on("pointerdown", () => {
         this.heroId = hero.id;
+        this.decks.refresh();
         for (const other of cards) (other.getData("draw") as (s: boolean) => void)(other.getData("heroId") === hero.id);
       });
       draw(hero.id === this.heroId);
@@ -142,7 +150,9 @@ export class LobbyScene extends Scene {
   private playLocal(bot: Bot): void {
     if (this.busy) return;
     this.busy = true;
-    this.scene.start("board", { connection: new LocalMatch({ heroId: this.heroId, bot }) });
+    const saved = this.decks.selected();
+    const deck = saved ? deckFromCounts(saved.cards) : undefined;
+    this.scene.start("board", { connection: new LocalMatch({ heroId: this.heroId, deck, bot }) });
   }
 
   private playTutorial(): void {

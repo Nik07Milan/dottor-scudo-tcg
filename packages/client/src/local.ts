@@ -22,6 +22,8 @@ import type { MatchConnection, MatchHandlers } from "./match";
 
 export interface LocalOptions {
   heroId: string;
+  /** Il tuo mazzo (T5.3, mazzo salvato); se manca, il precostruito dell'eroe. */
+  deck?: string[];
   bot: Bot;
   /** Eroe del bot; se manca, uno a caso diverso dal tuo. */
   botHeroId?: string;
@@ -71,7 +73,7 @@ export class LocalMatch implements MatchConnection {
       createGame({
         seed,
         players: [
-          { heroId: options.heroId, deck: deckCards(options.heroId) },
+          { heroId: options.heroId, deck: options.deck ?? deckCards(options.heroId) },
           { heroId: botHero, deck: deckCards(botHero) },
         ],
       });
