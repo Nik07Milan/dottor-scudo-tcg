@@ -77,7 +77,10 @@ describe("concede", () => {
 
     const pending = startedGame();
     pending.pendingChoice = { kind: "discover", player: pending.activePlayer, options: ["sasso"] };
-    expect(getLegalActions(pending, pending.activePlayer)).toEqual([{ type: "concede", player: pending.activePlayer }]);
+    expect(getLegalActions(pending, pending.activePlayer)).toEqual([
+      { type: "choose", player: pending.activePlayer, index: 0 },
+      { type: "concede", player: pending.activePlayer },
+    ]);
   });
 
   it("concede è sempre tra le mosse legali di entrambi finché la partita è in corso", () => {

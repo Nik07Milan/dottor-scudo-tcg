@@ -57,7 +57,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 | Id | Task | Fatto quando |
 |---|---|---|
 | T1.12 ✅ | Interprete delle `EffectAction` esistenti. Bersaglio `chosen` passato nell'azione e validato da `getLegalActions`; `random_*` tramite RNG dello stato. | Un test per ogni `kind`. |
-| T1.13 | Estensioni del DSL per evitare codice custom: `discover`, `cost_modifier` (prossima carta / per tipo / per id), `take_control`, `summon_copy`, filtri bersaglio (`maxAttack`, solo colleghi, solo nemici), trigger `on_damaged` e `after_hero_attack`, `extra_attack`. | Ogni estensione ha un test; tipi aggiornati in `types.ts`. |
+| T1.13 ✅ | Estensioni del DSL per evitare codice custom: `discover`, `cost_modifier` (prossima carta / per tipo / per id), `take_control`, `summon_copy`, filtri bersaglio (`maxAttack`, solo colleghi, solo nemici), trigger `on_damaged` e `after_hero_attack`, `extra_attack`. | Ogni estensione ha un test; tipi aggiornati in `types.ts`. |
 | T1.14 | Handler custom in `packages/engine/src/cards/custom/` solo dove il DSL non basta. Candidati: `uomo-sasso` (conta i Sassi giocati), `portinaio-dell-aldila` (cimitero), `re-klaudio` (pesca con sconto), `margherita` (sconto su Grappolaccio). | Ogni file ha un commento che spiega perché è custom; test per carta. |
 
 ### 1F. Contenuti

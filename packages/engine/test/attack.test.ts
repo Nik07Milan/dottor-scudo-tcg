@@ -176,7 +176,8 @@ describe("attacco dell'eroe con uno Strumento", () => {
     state.players[me].hero.armor = 1;
     const { state: s } = attack(state, hero(me), minion(d));
     expect(s.players[foe].board[0]!.health).toBe(3);
-    expect(s.players[me].hero).toMatchObject({ armor: 0, health: rules.HERO_MAX_HEALTH - 2, attacksThisTurn: 1 });
+    // L'armatura (1) assorbe parte del contrattacco (3); poi Scudo-bike ridà 1 armatura dopo l'attacco.
+    expect(s.players[me].hero).toMatchObject({ armor: 1, health: rules.HERO_MAX_HEALTH - 2, attacksThisTurn: 1 });
     expect(s.players[me].weapon?.durability).toBe(1);
   });
 

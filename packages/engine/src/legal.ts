@@ -34,9 +34,12 @@ function phaseActions(state: GameState, player: PlayerId): Action[] {
     return actions;
   }
 
+  // Con una scelta in sospeso l'unica azione di chi sceglie è `choose` (Scopri, GDD §3.2).
+  if (state.pendingChoice) {
+    if (state.pendingChoice.player !== player) return [];
+    return state.pendingChoice.options.map((_, index): Action => ({ type: "choose", player, index }));
+  }
   if (player !== state.activePlayer) return [];
-  // Con una scelta in sospeso l'unica azione sarà `choose` (Scopri, T1.13).
-  if (state.pendingChoice) return [];
   return [...playCardActions(state, player), ...attackActions(state, player), { type: "end_turn", player }];
 }
 
@@ -182,8 +185,17 @@ export function diagnose(state: GameState, action: Action): IllegalActionCode {
       return "not_legal";
     }
 
+    case "choose": {
+      if (state.phase !== "main") return "wrong_phase";
+      const choice = state.pendingChoice;
+      if (!choice) return "no_pending_choice";
+      if (choice.player !== action.player) return "not_your_turn";
+      if (action.index < 0 || action.index >= choice.options.length) return "invalid_choice";
+      return "not_legal";
+    }
+
     default:
-      // hero_power, choose: arrivano nei task T1.13–T1.16.
+      // hero_power: arriva con T1.16.
       return "not_implemented";
   }
 }

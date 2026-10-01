@@ -15,6 +15,8 @@ export interface Ctx {
   steps?: number;
   /** Superato RESOLUTION_STEP_LIMIT: si smette di risolvere e la partita finisce in pareggio (GDD §1.5.8). */
   aborted?: boolean;
+  /** Servitori che hanno subito danni > 0, in attesa dei loro trigger `on_damaged`. */
+  damaged?: InstanceId[];
 }
 
 export const opponentOf = (p: PlayerId): PlayerId => (p === "p1" ? "p2" : "p1");

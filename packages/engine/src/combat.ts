@@ -3,10 +3,18 @@
 import { opponentOf, type Ctx } from "./context";
 import { damageHero, damageMinion, findMinion, loseKeyword } from "./damage";
 import { deathPhase } from "./deaths";
+import { effectsOf, flushDamageTriggers, resolveEffects } from "./effects";
 import type { CharacterRef, GameState, MinionInstance, PlayerId } from "./state";
 
 const MINION_ATTACKS_PER_TURN = 1;
-const HERO_ATTACKS_PER_TURN = 1; // Tatine-mobile lo porta a 2: T1.13
+const HERO_ATTACKS_PER_TURN = 1;
+
+/** Attacchi per turno dell'eroe: 1 + gli `extra_attack` statici dello Strumento (Tatine-mobile). */
+export function heroAttacksPerTurn(state: GameState, player: PlayerId): number {
+  const weapon = state.players[player].weapon;
+  const extra = weapon ? effectsOf(weapon.cardId, "static").reduce((n, e) => n + (e.action.kind === "extra_attack" ? e.action.amount : 0), 0) : 0;
+  return HERO_ATTACKS_PER_TURN + extra;
+}
 
 /** Attacco attuale dell'eroe: oggi solo dallo Strumento. */
 export function heroAttack(state: GameState, player: PlayerId): number {
@@ -21,7 +29,7 @@ export function minionCanAttack(m: MinionInstance): boolean {
 }
 
 export function heroCanAttack(state: GameState, player: PlayerId): boolean {
-  return heroAttack(state, player) > 0 && state.players[player].hero.attacksThisTurn < HERO_ATTACKS_PER_TURN;
+  return heroAttack(state, player) > 0 && state.players[player].hero.attacksThisTurn < heroAttacksPerTurn(state, player);
 }
 
 /** Il personaggio esiste ed è controllato da `player`. */
@@ -87,6 +95,7 @@ export function performAttack(ctx: Ctx, player: PlayerId, attacker: CharacterRef
   else damageHero(ctx, (defender as { player: PlayerId }).player, attackValue);
   if (attackerMinion) damageMinion(ctx, attackerMinion, counterValue, defenderMinion ?? undefined);
   else damageHero(ctx, player, counterValue);
+  flushDamageTriggers(ctx);
 
   if (attackerMinion) {
     attackerMinion.attacksThisTurn += 1;
@@ -94,6 +103,8 @@ export function performAttack(ctx: Ctx, player: PlayerId, attacker: CharacterRef
     const ps = state.players[player];
     ps.hero.attacksThisTurn += 1;
     const weapon = ps.weapon!;
+    // "Dopo che il tuo eroe attacca": prima che lo Strumento perda durabilità.
+    resolveEffects(ctx, effectsOf(weapon.cardId, "after_hero_attack"), { player, cardId: weapon.cardId });
     weapon.durability -= 1;
     if (weapon.durability <= 0) {
       ps.weapon = null;

@@ -26,6 +26,10 @@ export type IllegalActionCode =
   | "taunt_required"
   /** C'è già una Task attiva: non se ne gioca un'altra. */
   | "task_active"
+  /** `choose` senza nessuna scelta in sospeso. */
+  | "no_pending_choice"
+  /** Indice fuori dalle opzioni offerte. */
+  | "invalid_choice"
   /** Tipo di azione previsto ma non ancora implementato nell'engine. */
   | "not_implemented"
   /** Ben formata ma non tra le mosse legali, senza un motivo più preciso. */

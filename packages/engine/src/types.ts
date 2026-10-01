@@ -23,8 +23,24 @@ export type TargetSelector =
   | "all_enemy_minions"
   | "all_friendly_minions"
   | "all_other_minions"
+  | "all_other_friendly_minions" // "tutti gli altri tuoi colleghi": esclude la sorgente
   | "all_minions"
   | "random_enemy_minion";
+
+/**
+ * Filtro sui bersagli, relativo a chi controlla la sorgente. Per `chosen` restringe i bersagli legali;
+ * per gli altri selettori scarta i personaggi che non corrispondono.
+ */
+export interface TargetFilter {
+  side?: "enemy" | "friendly";
+  maxAttack?: number;
+}
+
+/** Filtro sulle carte (Scopri). Le carte firma di altri eroi e i token sono sempre esclusi. */
+export interface CardFilter {
+  type?: CardType;
+  faction?: FactionId;
+}
 
 /** Quando scatta un effetto. */
 export type Trigger =
@@ -32,23 +48,35 @@ export type Trigger =
   | "on_death" // Ultimo sorso
   | "start_of_turn"
   | "end_of_turn"
-  | "on_damaged"
-  | "after_hero_attack";
+  | "on_damaged" // quando il servitore subisce danni > 0
+  | "after_hero_attack" // Strumenti: dopo che il tuo eroe attacca
+  | "static"; // sempre attivo finché la carta è in gioco (es. extra_attack di uno Strumento)
 
 /** DSL degli effetti. Estendere qui invece di scrivere codice per singola carta. */
 export type EffectAction =
-  | { kind: "damage"; amount: number; target: TargetSelector }
-  | { kind: "heal"; amount: number; target: TargetSelector }
+  | { kind: "damage"; amount: number; target: TargetSelector; filter?: TargetFilter }
+  | { kind: "heal"; amount: number; target: TargetSelector; filter?: TargetFilter }
   | { kind: "armor"; amount: number }
-  | { kind: "buff"; attack: number; health: number; target: TargetSelector }
-  | { kind: "give_keyword"; keyword: Keyword; target: TargetSelector }
+  | { kind: "buff"; attack: number; health: number; target: TargetSelector; filter?: TargetFilter }
+  | { kind: "give_keyword"; keyword: Keyword; target: TargetSelector; filter?: TargetFilter }
+  | { kind: "lose_keyword"; keyword: Keyword; target: TargetSelector; filter?: TargetFilter }
   | { kind: "summon"; cardId: string; count: number; forOpponent?: boolean }
-  | { kind: "draw"; count: number; forOpponent?: boolean }
+  /** Evoca a destra del bersaglio una copia della sua carta con statistiche fisse (keyword base, niente buff). */
+  | { kind: "summon_copy"; target: TargetSelector; attack: number; health: number; filter?: TargetFilter }
+  /** `costModifier` si applica alle carte pescate (es. Re Klaudio: -1). */
+  | { kind: "draw"; count: number; forOpponent?: boolean; costModifier?: number }
   | { kind: "add_to_hand"; cardId: string; count: number }
-  | { kind: "destroy"; target: TargetSelector; maxAttack?: number }
-  | { kind: "return_to_hand"; target: TargetSelector }
-  | { kind: "freeze"; target: TargetSelector; turns: number }
+  | { kind: "discover"; filter: CardFilter }
+  | { kind: "destroy"; target: TargetSelector; maxAttack?: number; filter?: TargetFilter }
+  /** `costModifier` si applica alla carta che torna in mano (es. Fuga dalla riunione: -1). */
+  | { kind: "return_to_hand"; target: TargetSelector; filter?: TargetFilter; costModifier?: number }
+  | { kind: "take_control"; target: TargetSelector; filter?: TargetFilter }
+  | { kind: "freeze"; target: TargetSelector; turns: number; filter?: TargetFilter }
   | { kind: "gain_mana"; amount: number; temporary: boolean }
+  /** Sconto sulla prossima carta che corrisponde al filtro (GDD §1.2). */
+  | { kind: "cost_modifier"; filter: { type?: CardType; cardId?: string }; amount: number; expiresEndOfTurn: boolean }
+  /** Attacchi in più per turno dell'eroe (trigger `static` di uno Strumento). */
+  | { kind: "extra_attack"; amount: number }
   | { kind: "custom"; handler: string }; // rimanda a packages/engine/src/cards/custom/<handler>.ts
 
 export interface Effect {

@@ -41,7 +41,15 @@
     "durability": 2,
     "keywords": [],
     "text": "Dopo che il tuo eroe attacca, ottieni 1 armatura",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "after_hero_attack",
+        "action": {
+          "kind": "armor",
+          "amount": 1
+        }
+      }
+    ],
     "lore": "Albo #38",
     "art": "assets/albi/albo-038.webp"
   },
@@ -60,7 +68,16 @@
       "deploy"
     ],
     "text": "Dai Scudato a tutti gli altri tuoi colleghi",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "give_keyword",
+          "keyword": "scudato",
+          "target": "all_other_friendly_minions"
+        }
+      }
+    ],
     "lore": "Saga Zanzagallo e Sociozilla (#81-86)",
     "art": "assets/albi/albo-081.webp"
   },
@@ -121,7 +138,19 @@
       "deploy"
     ],
     "text": "Distruggi un servitore nemico con 3 o meno attacco",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "destroy",
+          "target": "chosen",
+          "filter": {
+            "side": "enemy",
+            "maxAttack": 3
+          }
+        }
+      }
+    ],
     "lore": "Albo #25",
     "art": "assets/albi/albo-025.webp"
   },
@@ -160,7 +189,16 @@
     "health": 3,
     "keywords": [],
     "text": "Quando subisce danni, infligge 1 danno a tutti gli altri servitori",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_damaged",
+        "action": {
+          "kind": "damage",
+          "amount": 1,
+          "target": "all_other_minions"
+        }
+      }
+    ],
     "lore": "Albo #5",
     "art": "assets/albi/albo-005.webp"
   },
@@ -234,7 +272,19 @@
       "bloccato"
     ],
     "text": "Un servitore nemico è Bloccato in riunione",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "freeze",
+          "target": "chosen",
+          "turns": 1,
+          "filter": {
+            "side": "enemy"
+          }
+        }
+      }
+    ],
     "lore": "Albi #10-12",
     "art": "assets/albi/albo-010.webp"
   },
@@ -275,7 +325,16 @@
       "deploy"
     ],
     "text": "Pesca 2 carte; costano 1 in meno",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "draw",
+          "count": 2,
+          "costModifier": -1
+        }
+      }
+    ],
     "lore": "Albi #111, #115",
     "art": "assets/albi/albo-111.webp"
   },
@@ -307,7 +366,18 @@
     "cost": 1,
     "keywords": [],
     "text": "Scopri una Pratica dell'Ufficio",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "discover",
+          "filter": {
+            "type": "spell",
+            "faction": "ufficio"
+          }
+        }
+      }
+    ],
     "lore": "Tag #SOSA",
     "art": null
   },
@@ -379,7 +449,17 @@
       "deploy"
     ],
     "text": "Dai +2/+2 a tutti gli altri tuoi colleghi",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "buff",
+          "attack": 2,
+          "health": 2,
+          "target": "all_other_friendly_minions"
+        }
+      }
+    ],
     "lore": "Albi #47-49",
     "art": "assets/albi/albo-047.webp"
   },
@@ -418,7 +498,15 @@
     "durability": 3,
     "keywords": [],
     "text": "Il tuo eroe può attaccare due volte per turno",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "static",
+        "action": {
+          "kind": "extra_attack",
+          "amount": 1
+        }
+      }
+    ],
     "lore": "Albi #55, #56",
     "art": "assets/albi/albo-055.webp"
   },
@@ -466,7 +554,20 @@
     "cost": 2,
     "keywords": [],
     "text": "Evoca una copia 1/1 di un tuo collega",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "summon_copy",
+          "target": "chosen",
+          "attack": 1,
+          "health": 1,
+          "filter": {
+            "side": "friendly"
+          }
+        }
+      }
+    ],
     "lore": "Tag #CIAO GUIDO SONO GUIDO",
     "art": null
   },
@@ -561,7 +662,15 @@
     "durability": 2,
     "keywords": [],
     "text": "Dopo che il tuo eroe attacca, pesca una carta",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "after_hero_attack",
+        "action": {
+          "kind": "draw",
+          "count": 1
+        }
+      }
+    ],
     "lore": "Albi #57, #99",
     "art": "assets/albi/albo-057.webp"
   },
@@ -598,7 +707,19 @@
       "deploy"
     ],
     "text": "Un collega nemico è Bloccato in riunione per 2 turni",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "freeze",
+          "target": "chosen",
+          "turns": 2,
+          "filter": {
+            "side": "enemy"
+          }
+        }
+      }
+    ],
     "lore": "Albi #78, #84, #120",
     "art": "assets/albi/albo-084.webp"
   },
@@ -722,7 +843,19 @@
       "deploy"
     ],
     "text": "Il tuo prossimo Grappolaccio costa 3 in meno",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "cost_modifier",
+          "filter": {
+            "cardId": "il-grappolaccio"
+          },
+          "amount": -3,
+          "expiresEndOfTurn": false
+        }
+      }
+    ],
     "lore": "Albo #9",
     "art": "assets/albi/albo-009.webp"
   },
@@ -758,7 +891,19 @@
       "deploy"
     ],
     "text": "Prendi il controllo di un collega nemico con 2 o meno attacco",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "take_control",
+          "target": "chosen",
+          "filter": {
+            "side": "enemy",
+            "maxAttack": 2
+          }
+        }
+      }
+    ],
     "lore": "Albi #24-26",
     "art": "assets/albi/albo-024.webp"
   },
@@ -933,7 +1078,30 @@
       "bloccato"
     ],
     "text": "Un collega nemico è Bloccato in riunione e perde Burocrazia",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "freeze",
+          "target": "chosen",
+          "turns": 1,
+          "filter": {
+            "side": "enemy"
+          }
+        }
+      },
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "lose_keyword",
+          "keyword": "burocrazia",
+          "target": "chosen",
+          "filter": {
+            "side": "enemy"
+          }
+        }
+      }
+    ],
     "lore": "Albo #52",
     "art": "assets/albi/albo-052.webp"
   },
@@ -1158,7 +1326,19 @@
       "deploy"
     ],
     "text": "Un servitore nemico è Bloccato in riunione",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "freeze",
+          "target": "chosen",
+          "turns": 1,
+          "filter": {
+            "side": "enemy"
+          }
+        }
+      }
+    ],
     "lore": "Albo #101",
     "art": "assets/albi/albo-101.webp"
   },

@@ -3,13 +3,13 @@
 // Lo stato in ingresso non viene mai modificato: si lavora su una copia profonda.
 
 import { performAttack } from "./combat";
-import { opponentOf, type Ctx } from "./context";
+import { newCard, opponentOf, type Ctx } from "./context";
 import { IllegalActionError } from "./errors";
 import { actionKey, checkShape, diagnose, getLegalActions } from "./legal";
 import { checkHeroes, finishGame } from "./outcome";
 import { playCard } from "./play";
 import type { Action, ApplyResult, GameState } from "./state";
-import { endTurn, mulligan } from "./turn";
+import { addToHand, endTurn, mulligan } from "./turn";
 
 export function applyAction(state: GameState, action: Action): ApplyResult {
   // L'azione può arrivare dal client come JSON qualsiasi: prima la forma, poi la legalità.
@@ -33,6 +33,14 @@ export function applyAction(state: GameState, action: Action): ApplyResult {
     case "attack":
       performAttack(ctx, action.player, action.attacker, action.defender);
       break;
+    case "choose": {
+      const choice = ctx.state.pendingChoice!;
+      const cardId = choice.options[action.index]!;
+      ctx.state.pendingChoice = null;
+      ctx.events.push({ type: "card_chosen", player: action.player, cardId });
+      addToHand(ctx, action.player, newCard(ctx, cardId));
+      break;
+    }
     case "end_turn":
       endTurn(ctx, action.player);
       break;
@@ -67,5 +75,7 @@ const MESSAGES: Partial<Record<string, string>> = {
   invalid_target: "Bersaglio non valido",
   taunt_required: "Devi prima attaccare un servitore con Burocrazia",
   task_active: "Hai già una Task attiva",
+  no_pending_choice: "Non c'è nessuna scelta da fare",
+  invalid_choice: "Scelta non valida",
   not_implemented: "Azione non ancora supportata",
 };

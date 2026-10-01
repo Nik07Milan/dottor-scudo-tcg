@@ -87,25 +87,26 @@ export function startTurn(ctx: Ctx, player: PlayerId): void {
 }
 
 /** Pesca 1 carta: burnout a mazzo vuoto, scarto a mano piena. */
-export function drawCard(ctx: Ctx, player: PlayerId): void {
+export function drawCard(ctx: Ctx, player: PlayerId): CardInstance | null {
   const ps = ctx.state.players[player];
   const card = ps.deck.shift();
   if (!card) {
     ps.fatigue += 1;
     ctx.events.push({ type: "fatigue", player, damage: ps.fatigue });
     damageHero(ctx, player, ps.fatigue);
-    return;
+    return null;
   }
-  addToHand(ctx, player, card, "draw");
+  return addToHand(ctx, player, card, "draw");
 }
 
 /** Aggiunge una carta alla mano; con la mano piena la carta è scartata e mostrata a entrambi. */
-export function addToHand(ctx: Ctx, player: PlayerId, card: CardInstance, how: "draw" | "generate" = "generate"): void {
+export function addToHand(ctx: Ctx, player: PlayerId, card: CardInstance, how: "draw" | "generate" = "generate"): CardInstance | null {
   const ps = ctx.state.players[player];
   if (ps.hand.length >= MAX_HAND) {
     ctx.events.push({ type: "card_burned", player, cardId: card.cardId });
-    return;
+    return null;
   }
   ps.hand.push(card);
   ctx.events.push({ type: how === "draw" ? "card_drawn" : "card_added", player, instanceId: card.instanceId, cardId: card.cardId });
+  return card;
 }

@@ -45,6 +45,7 @@ export function damageMinion(ctx: Ctx, minion: MinionInstance, amount: number, s
   }
   minion.health -= amount;
   ctx.events.push({ type: "damage", target, amount });
+  (ctx.damaged ??= []).push(minion.instanceId);
   if (source?.keywords.includes("mani_in_merda")) doom(ctx, minion.instanceId);
   return amount;
 }
