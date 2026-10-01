@@ -1,0 +1,101 @@
+[
+  {
+    "heroId": "dottor-scudo",
+    "name": "Lo scudo dell'ufficio",
+    "cards": {
+      "scudo-dell-ultimo-momento": 2, "scudo-bike": 2, "scudozord": 1, "emergenza-ritardi": 1,
+      "piccione-urbano": 2, "cliente-insistente": 2, "il-cursore": 2, "chiamata-api": 2,
+      "pinguino-glaciale": 2, "il-cannellone": 2, "portinaio-dell-aldila": 1, "l-ultimo-sorso": 2,
+      "uomo-rana": 2, "klaudioken": 1, "il-crudo": 2, "fila-del-giovedi": 2,
+      "re-klaudio": 1, "super-crudo": 1
+    }
+  },
+  {
+    "heroId": "nikson",
+    "name": "Finché c'è sasso c'è speranza",
+    "cards": {
+      "uomo-sasso": 2, "serranikson": 1, "emergenza-ritardi": 1,
+      "piccione-urbano": 2, "cliente-insistente": 2, "il-cursore": 2, "chiamata-api": 2,
+      "pinguino-glaciale": 2, "il-cannellone": 2, "portinaio-dell-aldila": 2, "l-ultimo-sorso": 2,
+      "uomo-rana": 2, "klaudioken": 2, "il-crudo": 2, "fila-del-giovedi": 2,
+      "re-klaudio": 1, "super-crudo": 1
+    }
+  },
+  {
+    "heroId": "jackson",
+    "name": "L'ira di Jackson",
+    "cards": {
+      "scoppio-d-ira": 2, "collega-furioso": 2, "tatine-mobile": 1,
+      "piccione-urbano": 2, "cliente-insistente": 2, "il-cursore": 2, "chiamata-api": 2,
+      "pinguino-glaciale": 2, "il-cannellone": 2, "portinaio-dell-aldila": 1, "l-ultimo-sorso": 2,
+      "uomo-rana": 2, "klaudioken": 2, "il-crudo": 2, "fila-del-giovedi": 2,
+      "re-klaudio": 1, "super-crudo": 1
+    }
+  },
+  {
+    "heroId": "milet",
+    "name": "La via del Giappi",
+    "cards": {
+      "sushi-di-fiducia": 2, "miletta": 2, "le-task": 1, "scorta-di-teresa": 2,
+      "emergenza-ritardi": 1, "ciao-guido-sono-guido": 1, "mezza-giornata": 1,
+      "piccione-urbano": 2, "cliente-insistente": 2, "il-cursore": 2, "chiamata-api": 2,
+      "pinguino-glaciale": 2, "il-cannellone": 2, "uomo-rana": 2, "klaudioken": 2,
+      "il-crudo": 2, "re-klaudio": 1, "super-crudo": 1
+    }
+  },
+  {
+    "heroId": "ale",
+    "name": "Fuga dai task",
+    "cards": {
+      "incatenato-alla-postazione": 2, "bici-fiammante": 2, "mezza-giornata": 1,
+      "piccione-urbano": 2, "cliente-insistente": 2, "il-cursore": 2, "chiamata-api": 2,
+      "pinguino-glaciale": 2, "il-cannellone": 2, "portinaio-dell-aldila": 2, "l-ultimo-sorso": 1,
+      "uomo-rana": 2, "klaudioken": 2, "il-crudo": 2, "fila-del-giovedi": 2,
+      "re-klaudio": 1, "super-crudo": 1
+    }
+  },
+  {
+    "heroId": "il-creatore",
+    "name": "Nuova tavola",
+    "cards": {
+      "bozza-a-matita": 2, "retcon": 1, "la-lore-dell-ufficio": 1, "scorta-di-teresa": 1,
+      "piccione-urbano": 2, "cliente-insistente": 2, "il-cursore": 2, "chiamata-api": 2,
+      "pinguino-glaciale": 2, "il-cannellone": 2, "portinaio-dell-aldila": 2, "l-ultimo-sorso": 1,
+      "uomo-rana": 2, "klaudioken": 2, "il-crudo": 2, "fila-del-giovedi": 2,
+      "re-klaudio": 1, "super-crudo": 1
+    }
+  },
+  {
+    "heroId": "dr-grappolo",
+    "name": "Il ritorno del Grappolaccio",
+    "cards": {
+      "margherita": 2, "il-grappolaccio": 1, "dr-grappolo": 1, "assedio-dei-call-center": 1,
+      "piccione-urbano": 2, "cliente-insistente": 2, "chiamata-api": 2, "troiaio-comunicazioni": 2,
+      "pinguino-glaciale": 2, "la-canalis": 2, "la-maledizione-della-tapparella": 1, "uomo-rana": 2,
+      "il-serramanico": 2, "zanzagallo": 2, "fila-del-giovedi": 2, "il-ragno": 1,
+      "la-zanzara": 1, "il-serpentone": 2
+    }
+  },
+  {
+    "heroId": "il-calabrone",
+    "name": "Dittatura pungente",
+    "cards": {
+      "i-dogmi-del-calabrone": 2, "il-calabrone": 1, "sermig-reparto-sfruttamento": 1,
+      "piccione-urbano": 2, "cliente-insistente": 2, "chiamata-api": 2, "troiaio-comunicazioni": 2,
+      "pinguino-glaciale": 2, "la-canalis": 2, "la-zanzara": 1, "il-serramanico": 2,
+      "uomo-rana": 2, "zanzagallo": 2, "fila-del-giovedi": 2, "l-ultimo-sorso": 1,
+      "il-serpentone": 2, "sociozilla": 1, "il-ragno": 1
+    }
+  },
+  {
+    "heroId": "lord-capognus",
+    "name": "L'esperimento",
+    "cards": {
+      "lord-capognus": 1, "riunione-infinita": 1, "mezza-giornata": 1,
+      "piccione-urbano": 2, "cliente-insistente": 2, "chiamata-api": 2, "troiaio-comunicazioni": 2,
+      "la-maledizione-della-tapparella": 2, "pinguino-glaciale": 2, "la-canalis": 2, "uomo-rana": 2,
+      "il-serramanico": 2, "zanzagallo": 2, "fila-del-giovedi": 2, "il-ragno": 1,
+      "la-zanzara": 1, "il-serpentone": 2, "il-calabrone": 1
+    }
+  }
+]

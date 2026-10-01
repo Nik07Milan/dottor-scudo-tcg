@@ -201,8 +201,11 @@ avevano 8–11 slot per servitori su 30, perché le Neutrali erano tutte Pratich
 Numeri provvisori come il resto del set: da tarare con le partite bot-contro-bot (M2).
 
 ## 6. Mazzi precostruiti v1
-Da definire in Milestone 1: un mazzo da 30 per ciascun eroe, composto da carte di fazione + firma + neutrali,
-con 2 copie di comuni/rare/epiche e 1 di ogni leggendaria.
+Un mazzo da 30 per ciascun eroe in `data/decks.json` (formato `id carta → copie`), composto da carte di
+fazione + firma + neutrali, con 2 copie di comuni/rare/epiche e 1 di ogni leggendaria, 14–18 servitori.
+Identità: Dottor Scudo (Scudato e armatura), Nikson (Sassi), Jackson (danni ad area), Milet (Pratiche e cure),
+Ale (Deploy da rigiocare), Il Creatore (Scopri), Dr Grappolo (evocazioni), Il Calabrone (danni all'eroe),
+Lord Capognus (controllo). Composizioni provvisorie, da tarare con i bot (M2).
 
 Carte disponibili per eroe con il set v0.4 (slot = 2 per carta, 1 per leggendaria). Il test
 `mazzi possibili per eroe` in `packages/engine/test/data.test.ts` richiede almeno 30 slot totali e 15 per servitori.

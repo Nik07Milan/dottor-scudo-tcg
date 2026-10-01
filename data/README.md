@@ -3,6 +3,7 @@
 - `cards.json` — set di carte v0.3 (generato dal foglio `dottorscudo-tcg-carte-v0.3.xlsx`). Il campo `effects` è vuoto: va compilato nella Milestone 1 traducendo `text` nel formato `Effect` definito in `packages/engine/src/types.ts`.
 - `heroes.json` — eroi giocabili con potere eroe.
 - `keywords.json` — keyword a tema e loro equivalente Hearthstone.
+- `decks.json` — un mazzo precostruito da 30 per eroe (`heroId`, `name`, `cards`: id carta → copie). Validato in `test/decks.test.ts`.
 - `dottorscudo-albi.json` — lore scaricata dal sito: 122 albi con `numero`, `saga`, `titolo`, `trama`, `sigla`, `data_pubblicazione`, `autore`, `url`. Fonte per nuove carte, testi di colore e sigle (M5). Non è usata dalle regole: l'engine non la importa, la legge solo il test che verifica i riferimenti `#N` nel campo `lore` di carte ed eroi.
 
 ## Aggiunte rispetto al foglio xlsx
