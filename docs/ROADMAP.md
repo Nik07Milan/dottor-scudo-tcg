@@ -63,7 +63,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 ### 1F. Contenuti
 | Id | Task | Fatto quando |
 |---|---|---|
-| T1.15 | Compilare `effects` per tutte le carte di `data/cards.json`, divise per fazione (Ufficio, Soci & Nemici, Neutrali). 27 già compilate in T1.12 con il DSL di base. | Test: ogni carta con `text` non vuoto ha almeno un effetto; un test di integrazione per carta (giocata → stato atteso). |
+| T1.15 ✅ | Compilare `effects` per tutte le carte di `data/cards.json`, divise per fazione (Ufficio, Soci & Nemici, Neutrali). 27 già compilate in T1.12 con il DSL di base. | Test: ogni carta con `text` non vuoto ha almeno un effetto; un test di integrazione per carta (giocata → stato atteso). |
 | T1.16 | Poteri eroe dei 9 eroi: costo 2, una volta per turno. *Alza lo scudo* ha una scelta: azione con `option`. | Un test per eroe. |
 | T1.17 | Mazzi precostruiti in `data/decks.json`, uno per eroe. | Test: ogni mazzo passa `validateDeck`. |
 
