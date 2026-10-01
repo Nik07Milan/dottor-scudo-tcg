@@ -5,4 +5,6 @@ export * from "./data";
 export * from "./rng";
 export * from "./deck";
 export * from "./game";
-// Milestone 1: applyAction, getLegalActions, getPlayerView
+export * from "./apply";
+export * from "./errors";
+// Milestone 1: getLegalActions, getPlayerView

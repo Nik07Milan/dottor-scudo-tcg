@@ -183,6 +183,8 @@ export type GameEvent =
   | { type: "turn_started"; player: PlayerId; turn: number }
   | { type: "turn_ended"; player: PlayerId; turn: number }
   | { type: "card_drawn"; player: PlayerId; instanceId: InstanceId; cardId: string }
+  /** Carta generata e messa in mano senza pescarla (Caffettino, Sasso, Scopri, ricompense). */
+  | { type: "card_added"; player: PlayerId; instanceId: InstanceId; cardId: string }
   /** Mano piena: carta scartata, visibile a entrambi (GDD §1.6). */
   | { type: "card_burned"; player: PlayerId; cardId: string }
   | { type: "fatigue"; player: PlayerId; damage: number }
