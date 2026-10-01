@@ -29,7 +29,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 ### 1A. Modello di stato
 | Id | Task | Fatto quando |
 |---|---|---|
-| T1.1 | Tipi `GameState`, `PlayerState`, `MinionInstance` (instanceId, stats correnti, keyword, turni di Bloccato, attacchi nel turno, evocato in questo turno), `Action`, `GameEvent`. `rng` dentro lo stato. | Typecheck verde; tipi esportati da `index.ts`. |
+| T1.1 ✅ | Tipi `GameState`, `PlayerState`, `MinionInstance` (instanceId, stats correnti, keyword, turni di Bloccato, attacchi nel turno, evocato in questo turno), `Action`, `GameEvent`. `rng` dentro lo stato. | Typecheck verde; tipi esportati da `index.ts`. |
 | T1.2 | `createGame({ seed, players })`: mescola con RNG, mani 3 / 4 + Caffettino, fase mulligan. | Test: stesso seed → stesse mani; seed diverso → mani diverse. |
 | T1.3 | `validateDeck(heroId, cardIds)`: 30 carte, max 2 copie, 1 per leggendaria, niente token, solo fazione + firma propria + neutrali. | Un test per ogni regola violata. |
 
