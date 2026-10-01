@@ -8,6 +8,7 @@
     "test": "npm run test --workspace=@dottorscudo/engine",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "simulate": "npm run simulate --workspace=@dottorscudo/engine --",
+    "botmatch": "npm run botmatch --workspace=@dottorscudo/engine --",
     "dev:server": "npm run dev --workspace=@dottorscudo/server",
     "dev:client": "npm run dev --workspace=@dottorscudo/client"
   },
