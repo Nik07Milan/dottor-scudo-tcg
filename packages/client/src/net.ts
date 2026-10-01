@@ -3,14 +3,15 @@
 
 import { Client, type Room } from "@colyseus/sdk";
 import type { ClientAction, ServerMessages } from "../../server/src/protocol";
+import type { MatchConnection, MatchHandlers } from "./match";
 
 const ROOM = "game";
 const TOKEN_KEY = "dottorscudo.reconnect";
 const SERVER_URL = (import.meta.env.VITE_SERVER_URL as string | undefined) ?? `${location.protocol}//${location.hostname}:2567`;
 
-type Handlers = { [K in keyof ServerMessages]?: (payload: ServerMessages[K]) => void };
+type Handlers = MatchHandlers;
 
-export class Connection {
+export class Connection implements MatchConnection {
   private readonly client = new Client(SERVER_URL);
   private room: Room | null = null;
   private handlers: Handlers = {};

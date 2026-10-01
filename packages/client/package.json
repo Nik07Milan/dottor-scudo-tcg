@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "e2e": "node e2e/play.mjs && node e2e/reconnect.mjs"
+    "e2e": "node e2e/play.mjs && node e2e/reconnect.mjs && node e2e/vs-ai.mjs && node e2e/tutorial.mjs",
+    "e2e:solo": "node e2e/vs-ai.mjs && node e2e/tutorial.mjs"
   },
   "dependencies": {
     "@colyseus/sdk": "0.18.4",

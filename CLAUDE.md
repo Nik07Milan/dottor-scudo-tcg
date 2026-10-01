@@ -19,7 +19,7 @@ docs/GDD.md       game design document
 1. **L'engine è un reducer puro**: `applyAction(state, action) -> { state, events }`. Niente `Math.random`, niente `Date.now`, niente I/O.
 2. **Casualità con RNG a seed** salvato nello stato (`state.rng`). Stessa sequenza di azioni + stesso seed = stessa partita. Serve per test, replay e anti-cheat.
 3. **Le carte sono dati**: gli effetti si descrivono in `data/cards.json` con il tipo `Effect` (piccolo DSL in `packages/engine/src/types.ts`). Codice specifico per una carta solo se il DSL non basta, in `packages/engine/src/cards/custom/` con un commento che spiega perché.
-4. **Il server è l'unica autorità**: valida ogni azione con l'engine. Il client usa l'engine solo per mostrare le mosse legali.
+4. **Il server è l'unica autorità**: valida ogni azione con l'engine. Il client usa l'engine solo per mostrare le mosse legali. Unica eccezione: partite contro l'IA e tutorial girano interamente nel client (`LocalMatch`, `TutorialMatch`), perché non c'è nessuno da imbrogliare; non contano per storico e classifica.
 5. **Viste filtrate**: `getPlayerView(state, playerId)` nasconde mano e mazzo avversari e il seed RNG. Mai inviare lo stato completo al client.
 6. **Validazione**: `getLegalActions(state, playerId)` è la fonte unica di cosa si può fare. `applyAction` rifiuta tutto il resto.
 7. **Phaser solo presentazione**: nessuna regola né stato di partita nelle scene. Gli eventi dell'engine diventano animazioni; la vista ricevuta dal server vince sempre.
@@ -40,7 +40,7 @@ Non passare alla milestone successiva finché la precedente non ha test verdi.
 - `npm run simulate -- --seed 42` — una partita tra bot casuali con il log; `--games 100` per il riepilogo, `--p1 <eroe> --p2 <eroe>` per scegliere gli eroi
 - `npm run botmatch -- --games 162` — bot contro bot (default greedy contro greedy): winrate per eroe e scontro, durata, carte più giocate; `--bots greedy,random`, `--json report.json`
 - `npm run dev:server` / `npm run dev:client` — server su ws://localhost:2567, client su http://localhost:5173
-- `npm run e2e` — prove end-to-end nel browser (due giocatori, partita e ricarica pagina); richiede server e client avviati e Chrome installato (`E2E_CHANNEL=chromium` per il Chromium di Playwright)
+- `npm run e2e` — prove end-to-end nel browser (due giocatori, ricarica pagina, contro l'IA, tutorial); richiede server e client avviati e Chrome installato (`E2E_CHANNEL=chromium` per il Chromium di Playwright). `npm run e2e:solo --workspace=@dottorscudo/client`: solo IA e tutorial, basta il client
 
 ## Convenzioni
 - Id carte ed eroi: slug kebab-case (es. `uomo-sasso`), stabili: non rinominarli dopo M1.

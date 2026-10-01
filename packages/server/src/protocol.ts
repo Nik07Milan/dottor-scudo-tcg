@@ -28,7 +28,14 @@ export interface ServerMessages {
    * `actor`: chi ha causato l'aggiornamento (null all'avvio e alla riconnessione). Un client con un'azione
    * in volo aspetta l'update con `actor` uguale a sé (o un `error`) prima di decidere di nuovo.
    */
-  update: { view: PlayerView; events: GameEvent[]; deadline: number | null; actor: PlayerId | null };
+  update: {
+    view: PlayerView;
+    events: GameEvent[];
+    deadline: number | null;
+    actor: PlayerId | null;
+    /** Solo nel tutorial (client): suggerimento da mostrare al giocatore. Il server non lo invia. */
+    hint?: string;
+  };
   /** Azione rifiutata. */
   error: { code: string; message: string };
   /** L'avversario si è disconnesso o è tornato. */

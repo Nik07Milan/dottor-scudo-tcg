@@ -123,6 +123,8 @@ Phaser è solo presentazione e input:
 | T4.4 ✅ | Input: drag per giocare, scelta del bersaglio con freccia, attacco, mulligan, Scopri (1 tra 3). | Tutte le azioni dell'engine raggiungibili dall'interfaccia. |
 | T4.5 ✅ | Animazioni guidate dagli eventi (danni, morti, Scudato, Bloccato), fine partita, timer visibile, riconnessione. | Ricaricare la pagina riporta alla partita. |
 | T4.6 🟡 | Passata estetica (fatta: cornici per fazione e rarità, tema ufficio, particelle, audio predisposto; **in attesa di approvazione visiva**): frame delle carte, effetti con le particelle di Phaser, tema "ufficio", audio pronto per M5. | Revisione visiva approvata. |
+| T4.7 ✅ | Partita contro l'IA nel browser (`LocalMatch`): Facile (bot casuale) o Normale (greedy), senza server. | Test con orologio finto + e2e `vs-ai.mjs`. |
+| T4.8 ✅ | Tutorial guidato (`TutorialMatch`): 10 passi con fumetti, solo la mossa spiegata è proposta. | Test del copione + e2e `tutorial.mjs` completato. |
 
 ---
 

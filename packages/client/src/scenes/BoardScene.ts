@@ -10,7 +10,7 @@ import { playSound } from "../audio";
 import { EventQueue } from "../eventQueue";
 import { NONE, click, highlightsFor, type Click, type Highlights, type Selection } from "../input";
 import { viewToModel, type BoardModel } from "../model";
-import type { Connection } from "../net";
+import type { MatchConnection } from "../match";
 import { COLORS, DURATION, FONT, HEIGHT, WIDTH } from "../theme";
 import { CARD_H, CARD_W, HERO_H, HERO_W, MINION_H, MINION_W, button, cardBack, cardView, glow, heroView, minionView } from "../ui/cards";
 
@@ -51,7 +51,7 @@ interface HitArea {
 }
 
 export class BoardScene extends Scene {
-  private connection!: Connection;
+  private connection!: MatchConnection;
   private view: PlayerView | null = null;
   private model: BoardModel | null = null;
   private legal: Action[] = [];
@@ -63,6 +63,8 @@ export class BoardScene extends Scene {
   private animating = false;
   private inFlight = false;
   private opponentAway = false;
+  /** Suggerimento del tutorial per il passo corrente. */
+  private hint: string | null = null;
 
   private layer!: Container;
   private overlay!: Container;
@@ -82,7 +84,7 @@ export class BoardScene extends Scene {
     super("board");
   }
 
-  init(data: { connection: Connection; first?: ServerMessages["update"] }): void {
+  init(data: { connection: MatchConnection; first?: ServerMessages["update"] }): void {
     this.connection = data.connection;
     this.view = null;
     this.model = null;
@@ -92,6 +94,7 @@ export class BoardScene extends Scene {
     this.animating = false;
     this.inFlight = false;
     this.seenMinions = new Set();
+    this.hint = null;
   }
 
   create(): void {
@@ -144,6 +147,7 @@ export class BoardScene extends Scene {
 
   private onUpdate(u: ServerMessages["update"]): void {
     this.deadline = u.deadline;
+    this.hint = u.hint ?? null;
     if (!this.queue) {
       const heroes = { p1: u.view.players.p1.hero.heroId, p2: u.view.players.p2.hero.heroId };
       this.queue = new EventQueue(heroes);
@@ -161,6 +165,7 @@ export class BoardScene extends Scene {
 
   private async playQueue(): Promise<void> {
     this.animating = true;
+    if (import.meta.env.DEV) ((window as unknown as { __DS__?: Record<string, unknown> }).__DS__ ??= {}).animating = true;
     this.arrow.clear();
     let e: GameEvent | undefined;
     while ((e = this.queue!.next())) {
@@ -182,7 +187,9 @@ export class BoardScene extends Scene {
   private applyView(view: PlayerView): void {
     this.view = view;
     this.model = viewToModel(view, view.viewer);
-    this.legal = getLegalActions(view, view.viewer);
+    const legal = getLegalActions(view, view.viewer);
+    // Nel tutorial la partita restringe le mosse a quella spiegata.
+    this.legal = this.connection.filterLegal ? this.connection.filterLegal(legal) : legal;
     this.selection = NONE;
     this.render();
     // Solo in sviluppo: il modello disegnato, per i test end-to-end.
@@ -334,6 +341,8 @@ export class BoardScene extends Scene {
     if (m.phase === "mulligan") this.drawMulligan(m);
     else if (m.choice) this.drawChoice(m);
     if (m.result) this.drawGameOver(m);
+    // Il fumetto del tutorial va sopra tutto, anche sopra le schermate in primo piano.
+    this.drawHint();
 
     this.arrowFrom = this.selectionOrigin();
     if (!this.arrowFrom) this.arrow.clear();
@@ -341,6 +350,8 @@ export class BoardScene extends Scene {
       const debug = ((window as unknown as { __DS__?: Record<string, unknown> }).__DS__ ??= {});
       debug.selection = this.selection;
       debug.inFlight = this.inFlight;
+      debug.hint = this.hint;
+      debug.animating = this.animating;
       debug.highlights = { minions: [...h.minions], heroes: [...h.heroes], slots: h.slots, hand: [...h.hand] };
     }
   }
@@ -505,6 +516,22 @@ export class BoardScene extends Scene {
     const overflow = t.height - (LAYOUT.log.h - 30);
     if (overflow > 0) t.setCrop(0, overflow, LAYOUT.log.w, LAYOUT.log.h).setY(t.y - overflow);
     this.layer.add(t);
+  }
+
+  /** Fumetto del tutorial, sopra la plancia (anche sopra mulligan e fine partita). */
+  private drawHint(): void {
+    if (!this.hint) return;
+    const w = 560;
+    const g = this.add.graphics().setDepth(70);
+    g.fillStyle(0xfff6d8, 0.97).fillRoundedRect(-w / 2, -40, w, 80, 14);
+    g.lineStyle(3, 0xd8b26a, 1).strokeRoundedRect(-w / 2, -40, w, 80, 14);
+    const t = this.add
+      .text(0, 0, this.hint, { fontFamily: FONT, fontSize: "16px", color: COLORS.textDark, align: "center", wordWrap: { width: w - 30 } })
+      .setOrigin(0.5);
+    const bubble = this.add.container(LAYOUT.boardX, LAYOUT.center, [g, t]).setDepth(70);
+    // Il fumetto non deve coprire mosse: si sposta in alto se c'è una schermata in primo piano.
+    if (this.model?.phase === "mulligan" || this.model?.choice || this.model?.result) bubble.setY(70);
+    this.overlay.add(bubble);
   }
 
   private drawTimer(): void {

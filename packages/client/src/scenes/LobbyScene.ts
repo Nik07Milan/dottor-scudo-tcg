@@ -1,7 +1,9 @@
 // Lobby (T4.1): scelta dell'eroe, crea una stanza o entra con il codice invito. Tutto in Phaser;
 // il campo del codice è un elemento DOM (this.add.dom).
 
-import { HEROES } from "@dottorscudo/engine";
+import { HEROES, greedyBot, randomBot, type Bot } from "@dottorscudo/engine";
+import { LocalMatch } from "../local";
+import { TutorialMatch } from "../tutorial/tutorial";
 import { Scene } from "phaser";
 import type { ServerMessages } from "../../../server/src/protocol";
 import { Connection } from "../net";
@@ -43,7 +45,15 @@ export class LobbyScene extends Scene {
     join.on("pointerdown", doJoin);
     field.addEventListener("keydown", (e) => e.key === "Enter" && doJoin());
 
-    this.status = this.add.text(WIDTH / 2, 630, "", { fontFamily: FONT, fontSize: "20px", color: COLORS.text, align: "center" }).setOrigin(0.5);
+    // Da soli: contro l'IA (nel browser, senza server) o il tutorial guidato.
+    const easy = button(this, WIDTH / 2 - 260, 625, "Contro l'IA · Facile", 230, 44, 0x9fd0ff);
+    easy.on("pointerdown", () => this.playLocal(randomBot));
+    const normal = button(this, WIDTH / 2, 625, "Contro l'IA · Normale", 230, 44, 0x9fd0ff);
+    normal.on("pointerdown", () => this.playLocal(greedyBot));
+    const tutorial = button(this, WIDTH / 2 + 260, 625, "Tutorial", 230, 44, 0x9fe09a);
+    tutorial.on("pointerdown", () => this.playTutorial());
+
+    this.status = this.add.text(WIDTH / 2, 690, "", { fontFamily: FONT, fontSize: "18px", color: COLORS.text, align: "center" }).setOrigin(0.5);
 
     // Ricaricando la pagina durante una partita si torna al tavolo.
     void this.connection.resume().then((ok) => ok && this.goToBoard());
@@ -104,6 +114,19 @@ export class LobbyScene extends Scene {
       this.busy = false;
       this.setStatus(`Impossibile entrare: ${e instanceof Error ? e.message : String(e)}`);
     });
+  }
+
+  /** Partita contro l'IA nel browser: niente server, si parte subito. */
+  private playLocal(bot: Bot): void {
+    if (this.busy) return;
+    this.busy = true;
+    this.scene.start("board", { connection: new LocalMatch({ heroId: this.heroId, bot }) });
+  }
+
+  private playTutorial(): void {
+    if (this.busy) return;
+    this.busy = true;
+    this.scene.start("board", { connection: new TutorialMatch() });
   }
 
   /** `first`: l'update che ha fatto partire la partita (dopo una riconnessione arriva dalla coda della connessione). */
