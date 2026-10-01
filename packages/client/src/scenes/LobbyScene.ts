@@ -1,7 +1,8 @@
 // Lobby (T4.1): scelta dell'eroe, crea una stanza o entra con il codice invito. Tutto in Phaser;
 // il campo del codice è un elemento DOM (this.add.dom).
 
-import { HEROES, greedyBot, randomBot, type Bot } from "@dottorscudo/engine";
+import { HEROES, HEROES_BY_ID, greedyBot, randomBot, type Bot } from "@dottorscudo/engine";
+import { ART_READY, croppedImage, heroPortrait, requestArt } from "../ui/art";
 import { LocalMatch } from "../local";
 import { TutorialMatch } from "../tutorial/tutorial";
 import { Scene } from "phaser";
@@ -95,6 +96,22 @@ export class LobbyScene extends Scene {
       draw(hero.id === this.heroId);
       cards.push(c);
     });
+
+    // Ritratti confermati: appena caricati compaiono nell'angolo della scheda.
+    const placed = new Set<string>();
+    const addPortraits = () => {
+      for (const c of cards) {
+        const id = c.getData("heroId") as string;
+        if (placed.has(id)) continue;
+        const key = requestArt(this, heroPortrait(id) ? HEROES_BY_ID.get(id)!.portrait : null);
+        if (!key) continue;
+        placed.add(id);
+        c.add(croppedImage(this, key, -88, -56, 40, 40, 0.08));
+      }
+    };
+    this.events.off(ART_READY);
+    this.events.on(ART_READY, addPortraits);
+    addPortraits();
   }
 
   private setStatus(text: string): void {

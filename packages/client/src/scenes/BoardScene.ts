@@ -10,6 +10,7 @@ import { playSound } from "../audio";
 import { EventQueue } from "../eventQueue";
 import { NONE, click, highlightsFor, type Click, type Highlights, type Selection } from "../input";
 import { viewToModel, type BoardModel } from "../model";
+import { ART_READY } from "../ui/art";
 import type { MatchConnection } from "../match";
 import { COLORS, DURATION, FONT, HEIGHT, WIDTH } from "../theme";
 import { CARD_H, CARD_W, HERO_H, HERO_W, MINION_H, MINION_W, button, cardBack, cardView, glow, heroView, minionView } from "../ui/cards";
@@ -65,6 +66,7 @@ export class BoardScene extends Scene {
   private opponentAway = false;
   /** Suggerimento del tutorial per il passo corrente. */
   private hint: string | null = null;
+  private artRedraw: Phaser.Time.TimerEvent | null = null;
 
   private layer!: Container;
   private overlay!: Container;
@@ -94,6 +96,7 @@ export class BoardScene extends Scene {
     this.animating = false;
     this.inFlight = false;
     this.seenMinions = new Set();
+    this.artRedraw = null;
     this.hint = null;
   }
 
@@ -116,6 +119,17 @@ export class BoardScene extends Scene {
     this.input.keyboard?.on("keydown-ESC", () => this.onClick({ on: "cancel" }));
     this.input.mouse?.disableContextMenu();
 
+    // Arte caricata: un solo ridisegno per i caricamenti ravvicinati; durante le animazioni non serve
+    // (a fine coda la plancia si ridisegna comunque).
+    // Gli eventi della scena sopravvivono al riavvio: si toglie l'ascoltatore della partita precedente.
+    this.events.off(ART_READY);
+    this.events.on(ART_READY, () => {
+      if (this.artRedraw) return;
+      this.artRedraw = this.time.delayedCall(60, () => {
+        this.artRedraw = null;
+        if (!this.animating) this.render();
+      });
+    });
     this.connection.on({
       update: (u) => this.onUpdate(u),
       error: (e) => {

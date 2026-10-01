@@ -1,10 +1,15 @@
 // Disegno di carte, servitori ed eroi (T4.3, T4.6). Solo presentazione: riceve modelli già pronti.
 
+import { CARDS_BY_ID, HEROES_BY_ID } from "@dottorscudo/engine";
 import type { Scene } from "phaser";
+import { croppedImage, heroPortrait, requestArt } from "./art";
 import type { CardModel, ChoiceOption, HeroModel, MinionModel } from "../model";
 import { COLORS, FACTION_COLORS, FONT, RARITY_COLORS } from "../theme";
 
 type Container = Phaser.GameObjects.Container;
+
+/** Da che altezza della copertina parte il ritaglio: sotto il titolo, dove c'è il personaggio. */
+const COVER_FOCUS = 0.38;
 
 export const CARD_W = 118;
 export const CARD_H = 164;
@@ -40,17 +45,20 @@ export function cardView(scene: Scene, x: number, y: number, card: CardModel | (
   g.fillStyle(0x000000, 0.35).fillRoundedRect(-w / 2 + 3, -h / 2 + 5, w, h, 12);
   g.fillStyle(frame, 1).fillRoundedRect(-w / 2, -h / 2, w, h, 12);
   g.fillStyle(COLORS.paper, 1).fillRoundedRect(-w / 2 + 6, -h / 2 + 24, w - 12, h - 30, 8);
-  // Gemma della rarità al centro.
-  g.fillStyle(RARITY_COLORS[card.rarity ?? "common"] ?? 0xdcdcdc, 1).fillCircle(0, -h / 2 + 76, 6);
+  // Riquadro dell'arte (segnaposto finché l'immagine non è caricata).
+  const art = { x: -w / 2 + 8, y: -h / 2 + 26, w: w - 16, h: 48 };
+  g.fillStyle(0xd9d2bd, 1).fillRect(art.x, art.y, art.w, art.h);
+  // Gemma della rarità accanto al tipo.
+  g.fillStyle(RARITY_COLORS[card.rarity ?? "common"] ?? 0xdcdcdc, 1).fillCircle(-w / 2 + 16, -h / 2 + 82, 5);
 
   const name = scene.add
     .text(0, -h / 2 + 12, card.name, { fontFamily: FONT, fontSize: "12px", color: "#ffffff", fontStyle: "bold", align: "center", wordWrap: { width: w - 34 } })
     .setOrigin(0.5);
   const typeLabel = card.type === "minion" ? "Collega" : card.type === "spell" ? "Pratica" : "Strumento";
-  const kind = scene.add.text(0, -h / 2 + 36, typeLabel, { fontFamily: FONT, fontSize: "10px", color: "#6b6f7a" }).setOrigin(0.5);
+  const kind = scene.add.text(0, -h / 2 + 82, typeLabel, { fontFamily: FONT, fontSize: "10px", color: "#6b6f7a" }).setOrigin(0.5);
   const keywords = "keywords" in card && card.keywords?.length ? `${card.keywords.join(", ")}\n` : "";
   const body = scene.add
-    .text(0, -h / 2 + 90, `${keywords}${card.text ?? ""}`, {
+    .text(0, -h / 2 + 92, `${keywords}${card.text ?? ""}`, {
       fontFamily: FONT,
       fontSize: "10px",
       color: COLORS.textDark,
@@ -59,7 +67,10 @@ export function cardView(scene: Scene, x: number, y: number, card: CardModel | (
     })
     .setOrigin(0.5, 0);
 
-  const parts: Phaser.GameObjects.GameObject[] = [g, name, kind, body, badge(scene, -w / 2 + 8, -h / 2 + 8, COLORS.mana, card.cost, 14)];
+  const parts: Phaser.GameObjects.GameObject[] = [g];
+  const artKey = requestArt(scene, CARDS_BY_ID.get(card.cardId)?.art);
+  if (artKey) parts.push(croppedImage(scene, artKey, art.x, art.y, art.w, art.h, COVER_FOCUS));
+  parts.push(name, kind, body, badge(scene, -w / 2 + 8, -h / 2 + 8, COLORS.mana, card.cost, 14));
   if (card.attack !== undefined) parts.push(badge(scene, -w / 2 + 10, h / 2 - 10, COLORS.attack, card.attack, 13));
   if (card.health !== undefined) parts.push(badge(scene, w / 2 - 10, h / 2 - 10, COLORS.health, card.health, 13));
   if (card.durability !== undefined) parts.push(badge(scene, w / 2 - 10, h / 2 - 10, COLORS.armor, card.durability, 13));
@@ -86,25 +97,36 @@ export function minionView(scene: Scene, x: number, y: number, m: MinionModel): 
   g.fillStyle(0x000000, 0.35).fillEllipse(2, h / 2 - 4, w, 18);
   g.fillStyle(m.stealthy ? 0x4b4f5a : COLORS.paper, 1).fillRoundedRect(-w / 2, -h / 2, w, h, 16);
   g.lineStyle(3, m.frozen ? COLORS.frozen : COLORS.ink, 1).strokeRoundedRect(-w / 2, -h / 2, w, h, 16);
+  const art = { x: -w / 2 + 6, y: -h / 2 + 6, w: w - 12, h: 54 };
+  g.fillStyle(0xd9d2bd, 1).fillRoundedRect(art.x, art.y, art.w, art.h, 10);
   const name = scene.add
-    .text(0, -10, m.name, {
+    .text(0, 8, m.name, {
       fontFamily: FONT,
-      fontSize: "12px",
+      fontSize: "11px",
       color: m.stealthy ? COLORS.text : COLORS.textDark,
       fontStyle: "bold",
       align: "center",
       wordWrap: { width: w - 12 },
     })
-    .setOrigin(0.5);
-  const parts: Phaser.GameObjects.GameObject[] = [g, name];
+    .setOrigin(0.5, 0);
+  const parts: Phaser.GameObjects.GameObject[] = [g];
+  const artKey = requestArt(scene, CARDS_BY_ID.get(m.cardId)?.art);
+  if (artKey) {
+    const img = croppedImage(scene, artKey, art.x, art.y, art.w, art.h, COVER_FOCUS);
+    if (m.stealthy) img.setAlpha(0.45); // Smart working: mezzo nascosto
+    parts.push(img);
+  }
+  parts.push(name);
   if (m.shielded) {
     const s = scene.add.graphics();
     s.lineStyle(4, COLORS.shield, 0.9).strokeRoundedRect(-w / 2 - 3, -h / 2 - 3, w + 6, h + 6, 18);
     parts.push(s);
   }
-  if (m.frozen) parts.push(scene.add.text(0, -h / 2 + 12, "in riunione", { fontFamily: FONT, fontSize: "10px", color: "#2a6f9a" }).setOrigin(0.5));
+  if (m.frozen) {
+    parts.push(scene.add.text(0, -h / 2 + 14, "in riunione", { fontFamily: FONT, fontSize: "11px", color: "#ffffff", fontStyle: "bold" }).setOrigin(0.5).setStroke("#2a6f9a", 4));
+  }
   const icons = m.keywords.filter((k) => !["Deploy", "Burocrazia", "Scudato", "Smart working"].includes(k));
-  if (icons.length) parts.push(scene.add.text(0, 14, icons.join(" · "), { fontFamily: FONT, fontSize: "9px", color: "#6b6f7a", align: "center", wordWrap: { width: w - 10 } }).setOrigin(0.5));
+  if (icons.length) parts.push(scene.add.text(0, 34, icons.join(" · "), { fontFamily: FONT, fontSize: "9px", color: "#6b6f7a", align: "center", wordWrap: { width: w - 10 } }).setOrigin(0.5));
   parts.push(badge(scene, -w / 2 + 8, h / 2 - 10, COLORS.attack, m.attack, 14));
   const hp = badge(scene, w / 2 - 8, h / 2 - 10, m.damaged ? 0x9b2c25 : COLORS.health, m.health, 14);
   parts.push(hp);
@@ -126,8 +148,12 @@ export function heroView(scene: Scene, x: number, y: number, hero: HeroModel): C
     .map((p) => p[0])
     .join("")
     .slice(0, 2);
-  const portrait = scene.add.text(0, -12, initials, { fontFamily: FONT, fontSize: "40px", color: "#d8b26a", fontStyle: "bold" }).setOrigin(0.5);
-  const name = scene.add.text(0, h / 2 - 18, hero.name, { fontFamily: FONT, fontSize: "13px", color: COLORS.text, fontStyle: "bold" }).setOrigin(0.5);
+  // Ritratto (solo se confermato), altrimenti le iniziali.
+  const portraitKey = requestArt(scene, heroPortrait(hero.heroId) ? HEROES_BY_ID.get(hero.heroId)!.portrait : null);
+  const portrait = portraitKey
+    ? croppedImage(scene, portraitKey, -w / 2 + 8, -h / 2 + 6, w - 16, h - 34, 0.08)
+    : scene.add.text(0, -12, initials, { fontFamily: FONT, fontSize: "40px", color: "#d8b26a", fontStyle: "bold" }).setOrigin(0.5);
+  const name = scene.add.text(0, h / 2 - 16, hero.name, { fontFamily: FONT, fontSize: "13px", color: COLORS.text, fontStyle: "bold" }).setOrigin(0.5);
   const parts: Phaser.GameObjects.GameObject[] = [g, portrait, name, badge(scene, w / 2 - 6, h / 2 - 8, COLORS.health, hero.health, 18)];
   if (hero.armor > 0) parts.push(badge(scene, w / 2 - 6, h / 2 - 42, COLORS.armor, hero.armor, 14));
   if (hero.weapon) {
