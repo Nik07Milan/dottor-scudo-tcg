@@ -103,9 +103,10 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 
 ---
 
-## M4 — Client (Phaser + React + Vite)
+## M4 — Client (Phaser + Vite)
 
-Decisione: **Phaser** disegna la plancia, **React** fa i menu (lobby, codice invito, scelta eroe e mazzo).
+Decisione: **Phaser** disegna tutto il client: lobby, menu e plancia. I campi di testo (codice invito) usano gli
+elementi DOM di Phaser (`this.add.dom`). Per il deck builder (M5) si valuta un overlay HTML.
 Phaser è solo presentazione e input:
 - **Niente regole né stato di partita nelle scene**: niente fisica, niente `update()` che modifica la partita.
 - **Flusso dati**: il server invia `PlayerView` + `GameEvent[]`. La `BoardScene` riproduce gli eventi in coda come
@@ -116,7 +117,7 @@ Phaser è solo presentazione e input:
 
 | Id | Task | Fatto quando |
 |---|---|---|
-| T4.1 | Init client dal template ufficiale Phaser + React + Vite (ultima major stabile di Phaser, versione esatta). Connessione Colyseus, lobby in React: crea / unisciti con codice. | `npm run dev:client` apre la lobby e avvia una scena Phaser vuota. |
+| T4.1 | Init client Phaser + Vite dal template ufficiale (ultima major stabile di Phaser, versione esatta). Connessione Colyseus, `LobbyScene`: crea / unisciti con codice. | `npm run dev:client` apre la lobby. |
 | T4.2 | Adattatori puri: `PlayerView` → modello di scena, gesto → `Action`, coda di `GameEvent`. | Test Vitest senza Phaser. |
 | T4.3 | `BoardScene`: mano, scrivanie, eroi, caffettini, potere eroe, Strumento, Task, log. Mosse legali evidenziate con `getLegalActions` sulla vista. | Partita completa giocabile tra due browser. |
 | T4.4 | Input: drag per giocare, scelta del bersaglio con freccia, attacco, mulligan, Scopri (1 tra 3). | Tutte le azioni dell'engine raggiungibili dall'interfaccia. |
@@ -131,7 +132,7 @@ Phaser è solo presentazione e input:
 |---|---|---|
 | T5.1 | Arte delle carte ritagliata da `assets/albi/` e ritratti degli eroi (conferma avatar 3–8). **Serve il consenso dell'autore.** | Ogni carta ha `art` valorizzato. |
 | T5.2 | Audio: sigle come musica di sottofondo. | Musica attivabile e disattivabile. |
-| T5.3 | Postgres: utenti, mazzi personalizzati (deck builder con `validateDeck`), storico partite salvato come seed + azioni, quindi rigiocabile come replay. | Una partita salvata si rigioca identica. |
+| T5.3 | Postgres: utenti, mazzi personalizzati (deck builder con `validateDeck`; valutare un overlay HTML per liste e filtri), storico partite salvato come seed + azioni, quindi rigiocabile come replay. | Una partita salvata si rigioca identica. |
 | T5.4 | Classifica. | Pagina classifica con i dati reali. |
 | T5.5 | Nuove carte dalla lore di `dottorscudo-albi.json`. | Nuove carte con test e bilanciamento bot. |
 

@@ -1,2 +1,2 @@
-// Milestone 4: client Phaser (plancia) + React (menu) + Vite. Placeholder.
+// Milestone 4: client Phaser + Vite. Placeholder.
 export {};

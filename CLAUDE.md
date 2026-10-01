@@ -9,7 +9,7 @@ Lingua: codice e identificatori in inglese, testi di gioco e documentazione in i
 ```
 packages/engine   motore delle regole: puro, deterministico, senza I/O né UI
 packages/server   server autoritativo Colyseus (Node) che usa l'engine
-packages/client   client Phaser (plancia) + React (menu) + Vite
+packages/client   client Phaser + Vite
 data/             cards.json, heroes.json, keywords.json, dottorscudo-albi.json (lore)
 assets/           avatar/ e albi/ (immagini sorgente, non modificarle)
 docs/GDD.md       game design document
@@ -28,7 +28,7 @@ docs/GDD.md       game design document
 - **M1 — Engine**: tipi, stato iniziale, turni, caffettini, pesca, burnout, combattimento, tutte le keyword, DSL degli effetti, compilazione di `effects` per tutte le carte, poteri eroe, mazzi precostruiti. Test Vitest per ogni regola e ogni keyword. CLI che simula una partita.
 - **M2 — Bot**: IA semplice (greedy) + script bot-contro-bot che gioca N partite e stampa winrate per eroe. Serve per scovare bug e bilanciare.
 - **M3 — Server**: Colyseus, stanze con codice invito, stato filtrato per giocatore, timer 75s, riconnessione, abbandono.
-- **M4 — Client**: Phaser + Vite (menu in React), plancia giocabile (mano, scrivanie, eroi, caffettini, log), prima funzionale poi estetica.
+- **M4 — Client**: Phaser + Vite, plancia giocabile (mano, scrivanie, eroi, caffettini, log), prima funzionale poi estetica.
 - **M5 — Contenuti e persistenza**: arte delle carte, sigle come musica, Postgres per utenti/mazzi/storico, classifica.
 
 Non passare alla milestone successiva finché la precedente non ha test verdi.
