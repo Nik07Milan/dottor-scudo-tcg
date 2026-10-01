@@ -7,4 +7,5 @@ export * from "./deck";
 export * from "./game";
 export * from "./apply";
 export * from "./errors";
-// Milestone 1: getLegalActions, getPlayerView
+export { actionKey, getLegalActions } from "./legal";
+// Milestone 1: getPlayerView

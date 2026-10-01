@@ -37,7 +37,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 | Id | Task | Fatto quando |
 |---|---|---|
 | T1.4 ✅ | Azioni `mulligan` (a fine mulligan il Caffettino va al secondo giocatore, GDD §1.1) ed `end_turn`. Inizio turno: +1 caffettino massimo (fino a 10), ricarica, pesca. Burnout 1, 2, 3…. Mano piena: le carte oltre la decima vengono scartate. | Test per ogni regola, inclusi i limiti (10 caffettini, 10 carte, burnout crescente). |
-| T1.5 | `getLegalActions(state, playerId)` + `applyAction` che rifiuta tutto ciò che non è legale con un errore tipizzato. | Test di proprietà: un'azione è accettata ⇔ è in `getLegalActions`. |
+| T1.5 ✅ | `getLegalActions(state, playerId)` + `applyAction` che rifiuta tutto ciò che non è legale con un errore tipizzato. | Test di proprietà: un'azione è accettata ⇔ è in `getLegalActions`. |
 | T1.6 | Vittoria, sconfitta, pareggio simultaneo, `concede`. | Test per i 4 esiti. |
 
 ### 1C. Giocate e combattimento

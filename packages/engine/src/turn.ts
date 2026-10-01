@@ -1,20 +1,14 @@
 // Mulligan, ciclo di turno, caffettini, pesca, burnout e mano piena (T1.4, GDD §1.1, §1.2, §1.6).
 
 import { newCard, newInstanceId, opponentOf, type Ctx } from "./context";
-import { IllegalActionError } from "./errors";
 import { shuffle } from "./rng";
 import { COIN_CARD_ID, MAX_HAND, MAX_MANA } from "./rules";
 import type { CardInstance, InstanceId, PlayerId } from "./state";
 
+/** Mulligan già validato da applyAction tramite getLegalActions. */
 export function mulligan(ctx: Ctx, player: PlayerId, replace: readonly InstanceId[]): void {
   const { state } = ctx;
-  if (state.phase !== "mulligan") throw new IllegalActionError("wrong_phase", "Il mulligan è finito");
   const ps = state.players[player];
-  if (ps.mulliganDone) throw new IllegalActionError("already_done", `${player} ha già fatto il mulligan`);
-  if (new Set(replace).size !== replace.length) throw new IllegalActionError("duplicate_card", "Carta ripetuta nel mulligan");
-  for (const id of replace) {
-    if (!ps.hand.some((c) => c.instanceId === id)) throw new IllegalActionError("card_not_in_hand", `Carta ${id} non in mano`);
-  }
 
   // Prima si pescano le nuove (in cima al mazzo), poi le rimesse tornano nel mazzo e si rimescola:
   // così una carta appena rimessa non può tornare subito in mano.
