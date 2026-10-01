@@ -120,7 +120,15 @@
       "deploy"
     ],
     "text": "+1/+1 per ogni Sasso giocato in questa partita",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "custom",
+          "handler": "uomo-sasso"
+        }
+      }
+    ],
     "lore": "Albo #3",
     "art": "assets/albi/albo-003.webp"
   },
@@ -352,7 +360,15 @@
       "ultimo_sorso"
     ],
     "text": "Riporta in mano un tuo collega morto in questa partita",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_death",
+        "action": {
+          "kind": "custom",
+          "handler": "portinaio-dell-aldila"
+        }
+      }
+    ],
     "lore": "Albi #111, #115",
     "art": "assets/albi/albo-115.webp"
   },
@@ -413,7 +429,15 @@
     "cost": 6,
     "keywords": [],
     "text": "Evoca 3 colleghi casuali dell'Ufficio con costo 3 o meno",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "custom",
+          "handler": "la-lore-dell-ufficio"
+        }
+      }
+    ],
     "lore": "Saga La Lore dell'ufficio (#1-45)",
     "art": "assets/albi/albo-001.webp"
   },
