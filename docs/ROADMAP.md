@@ -94,12 +94,12 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 
 | Id | Task | Fatto quando |
 |---|---|---|
-| T3.1 | Setup Colyseus. `GameRoom` tiene il `GameState` dell'engine; ai client arriva la vista filtrata come messaggio, non uno schema sincronizzato. | Il server si avvia con `npm run dev:server`. |
-| T3.2 | Stanza privata con codice invito / link; scelta eroe e mazzo precostruito. | Due client entrano con lo stesso codice. |
-| T3.3 | Loop: il client manda un'`Action` → `applyAction` → a ogni giocatore la sua `getPlayerView` più gli eventi. Le azioni illegali vengono rifiutate. | Test: un'azione illegale non cambia lo stato. |
-| T3.4 | Timer di 75 s per turno: allo scadere viene eseguito `end_turn` automatico. | Test con clock simulato. |
-| T3.5 | Riconnessione entro il timer; l'abbandono vale come sconfitta. | Test di disconnessione e riconnessione. |
-| T3.6 | Test di integrazione: 2 bot giocano una partita intera passando dal server. | Test verde in CI. |
+| T3.1 ✅ | Setup Colyseus. `GameRoom` tiene il `GameState` dell'engine; ai client arriva la vista filtrata come messaggio, non uno schema sincronizzato. | Il server si avvia con `npm run dev:server`. |
+| T3.2 ✅ | Stanza privata con codice invito / link; scelta eroe e mazzo precostruito. | Due client entrano con lo stesso codice. |
+| T3.3 ✅ | Loop: il client manda un'`Action` → `applyAction` → a ogni giocatore la sua `getPlayerView` più gli eventi. Le azioni illegali vengono rifiutate. | Test: un'azione illegale non cambia lo stato. |
+| T3.4 ✅ | Timer di 75 s per turno: allo scadere viene eseguito `end_turn` automatico. | Test con clock simulato. |
+| T3.5 ✅ | Riconnessione entro il timer; l'abbandono vale come sconfitta. | Test di disconnessione e riconnessione. |
+| T3.6 ✅ | Test di integrazione: 2 bot giocano una partita intera passando dal server. | Test verde in CI. |
 
 ---
 

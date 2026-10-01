@@ -5,7 +5,7 @@
   "description": "Gioco di carte multiplayer ispirato al fumetto Dottor Scudo",
   "workspaces": ["packages/*"],
   "scripts": {
-    "test": "npm run test --workspace=@dottorscudo/engine",
+    "test": "npm run test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "simulate": "npm run simulate --workspace=@dottorscudo/engine --",
     "botmatch": "npm run botmatch --workspace=@dottorscudo/engine --",

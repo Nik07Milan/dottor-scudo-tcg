@@ -1,5 +1,7 @@
-// Milestone 3: server Colyseus autoritativo.
-// Aggiungere colyseus come dipendenza quando si inizia la M3 (vedi CLAUDE.md).
-import { CARDS } from "@dottorscudo/engine";
+// Avvio del server autoritativo (M3): `npm run dev:server`. Porta da PORT, default 2567.
+import { server } from "./app";
+import { DEFAULT_PORT } from "./config";
 
-console.log(`Server placeholder — ${CARDS.length} carte caricate.`);
+const port = Number(process.env.PORT ?? DEFAULT_PORT);
+await server.listen(port);
+console.log(`DottorScudo TCG — server in ascolto su ws://localhost:${port}`);
