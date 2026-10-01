@@ -79,7 +79,10 @@ Il motore risolve tutto in modo deterministico, senza scelte implicite.
    Scudato non conta).
 5. **Fase morti**: dopo ogni effetto completo (non a metà effetto) tutti i servitori con vita ≤ 0 muoiono
    insieme. Escono dal campo e i loro **Ultimo sorso** si risolvono nell'ordine sotto. Se questo produce
-   nuovi danni o morti, si ripete finché lo stato è stabile.
+   nuovi danni o morti, si ripete finché lo stato è stabile. "Effetto completo" = tutta la risoluzione
+   di una carta, di un potere o di un trigger. Nel frattempo un servitore distrutto o già a vita ≤ 0
+   non è più bersaglio degli effetti successivi (non può essere curato o potenziato per salvarlo).
+   Gli evocati da un servitore entrano alla sua destra; quelli evocati da una Pratica in fondo a destra.
 6. **Ordine dei trigger simultanei**: prima quelli del giocatore di turno, poi dell'avversario;
    a parità, in ordine di entrata in gioco (il più vecchio prima). Le carte con effetti contrapposti
    seguono lo stesso ordine.

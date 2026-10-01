@@ -28,7 +28,7 @@ export function applyAction(state: GameState, action: Action): ApplyResult {
       mulligan(ctx, action.player, action.replace);
       break;
     case "play_card":
-      playCard(ctx, action.player, action.card, action.position);
+      playCard(ctx, action.player, action.card, action.position, action.target);
       break;
     case "attack":
       performAttack(ctx, action.player, action.attacker, action.defender);

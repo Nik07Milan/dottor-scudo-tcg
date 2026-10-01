@@ -9,7 +9,23 @@
     "cost": 1,
     "keywords": [],
     "text": "Dai Scudato a un collega. Pesca una carta",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "give_keyword",
+          "keyword": "scudato",
+          "target": "chosen"
+        }
+      },
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "draw",
+          "count": 1
+        }
+      }
+    ],
     "lore": "Albo #119",
     "art": "assets/albi/albo-119.webp"
   },
@@ -58,7 +74,17 @@
     "cost": 0,
     "keywords": [],
     "text": "Dai +1/+1 a un collega",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "buff",
+          "attack": 1,
+          "health": 1,
+          "target": "chosen"
+        }
+      }
+    ],
     "lore": "Albo #6",
     "art": "assets/albi/albo-006.webp"
   },
@@ -109,7 +135,16 @@
     "cost": 3,
     "keywords": [],
     "text": "Infliggi 2 danni a tutti i servitori",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "damage",
+          "amount": 2,
+          "target": "all_minions"
+        }
+      }
+    ],
     "lore": "Albo #5",
     "art": "assets/albi/albo-005.webp"
   },
@@ -139,7 +174,23 @@
     "cost": 2,
     "keywords": [],
     "text": "Rigenera 4 ferie. Pesca una carta",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "heal",
+          "amount": 4,
+          "target": "friendly_hero"
+        }
+      },
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "draw",
+          "count": 1
+        }
+      }
+    ],
     "lore": "Albo #4",
     "art": "assets/albi/albo-004.webp"
   },
@@ -157,7 +208,17 @@
       "ultimo_sorso"
     ],
     "text": "Evoca uno Spirito zanzara 1/1 per l'avversario",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_death",
+        "action": {
+          "kind": "summon",
+          "cardId": "spirito-zanzara",
+          "count": 1,
+          "forOpponent": true
+        }
+      }
+    ],
     "lore": "Albi #74, #75",
     "art": "assets/albi/albo-074.webp"
   },
@@ -187,7 +248,16 @@
     "cost": 4,
     "keywords": [],
     "text": "Infliggi 5 danni",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "damage",
+          "amount": 5,
+          "target": "chosen"
+        }
+      }
+    ],
     "lore": "Albi #114, #119",
     "art": "assets/albi/albo-114.webp"
   },
@@ -251,7 +321,15 @@
     "cost": 4,
     "keywords": [],
     "text": "Rimanda tutti i servitori in mano ai rispettivi proprietari",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "return_to_hand",
+          "target": "all_minions"
+        }
+      }
+    ],
     "lore": "Tag #SOSA",
     "art": null
   },
@@ -315,7 +393,16 @@
     "cost": 1,
     "keywords": [],
     "text": "Rigenera 3 ferie",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "heal",
+          "amount": 3,
+          "target": "friendly_hero"
+        }
+      }
+    ],
     "lore": "Albi #115, #117",
     "art": "assets/albi/albo-115.webp"
   },
@@ -347,7 +434,25 @@
       "urgente"
     ],
     "text": "Un collega ottiene Urgente e +1 attacco",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "give_keyword",
+          "keyword": "urgente",
+          "target": "chosen"
+        }
+      },
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "buff",
+          "attack": 1,
+          "health": 0,
+          "target": "chosen"
+        }
+      }
+    ],
     "lore": "Tag #EMERGENZA RITARDI",
     "art": null
   },
@@ -379,7 +484,15 @@
       "deploy"
     ],
     "text": "Pesca una carta",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "draw",
+          "count": 1
+        }
+      }
+    ],
     "lore": "Albi #81-83",
     "art": "assets/albi/albo-081.webp"
   },
@@ -413,7 +526,15 @@
       "ultimo_sorso"
     ],
     "text": "Pesca una carta",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_death",
+        "action": {
+          "kind": "draw",
+          "count": 1
+        }
+      }
+    ],
     "lore": "Albo #70",
     "art": "assets/albi/albo-070.webp"
   },
@@ -482,7 +603,16 @@
     "health": 6,
     "keywords": [],
     "text": "All'inizio del tuo turno evoca una Zanzarina 1/1",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "start_of_turn",
+        "action": {
+          "kind": "summon",
+          "cardId": "zanzarina",
+          "count": 1
+        }
+      }
+    ],
     "lore": "Saga La tirannia del Calabrone",
     "art": "assets/albi/albo-051.webp"
   },
@@ -500,7 +630,16 @@
       "deploy"
     ],
     "text": "Evoca due Studenti plagiati 1/1",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "summon",
+          "cardId": "studente-plagiato",
+          "count": 2
+        }
+      }
+    ],
     "lore": "Albo #1",
     "art": "assets/albi/albo-001.webp"
   },
@@ -518,7 +657,16 @@
       "deploy"
     ],
     "text": "Infliggi 2 danni a tutti i colleghi nemici",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "damage",
+          "amount": 2,
+          "target": "all_enemy_minions"
+        }
+      }
+    ],
     "lore": "Albi #32, #33, #49",
     "art": "assets/albi/albo-032.webp"
   },
@@ -536,7 +684,16 @@
       "deploy"
     ],
     "text": "Infliggi 2 danni a tutti gli altri servitori",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "damage",
+          "amount": 2,
+          "target": "all_other_minions"
+        }
+      }
+    ],
     "lore": "Albi #79-83",
     "art": "assets/albi/albo-079.webp"
   },
@@ -608,7 +765,16 @@
       "burocrazia"
     ],
     "text": "Alla fine del tuo turno, infligge 1 danno a tutti i colleghi nemici",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "end_of_turn",
+        "action": {
+          "kind": "damage",
+          "amount": 1,
+          "target": "all_enemy_minions"
+        }
+      }
+    ],
     "lore": "Albi #76-78",
     "art": "assets/albi/albo-076.webp"
   },
@@ -626,7 +792,16 @@
       "ultimo_sorso"
     ],
     "text": "Infliggi 2 danni all'eroe nemico",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_death",
+        "action": {
+          "kind": "damage",
+          "amount": 2,
+          "target": "enemy_hero"
+        }
+      }
+    ],
     "lore": "Albi #63-66",
     "art": "assets/albi/albo-063.webp"
   },
@@ -658,7 +833,25 @@
     "cost": 3,
     "keywords": [],
     "text": "I tuoi servitori ottengono +2 attacco e subiscono 1 danno",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "buff",
+          "attack": 2,
+          "health": 0,
+          "target": "all_friendly_minions"
+        }
+      },
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "damage",
+          "amount": 1,
+          "target": "all_friendly_minions"
+        }
+      }
+    ],
     "lore": "Albi #7, #62, #64",
     "art": "assets/albi/albo-062.webp"
   },
@@ -672,7 +865,23 @@
     "cost": 2,
     "keywords": [],
     "text": "Pesca 2 carte. L'avversario pesca 1 carta",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "draw",
+          "count": 2
+        }
+      },
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "draw",
+          "count": 1,
+          "forOpponent": true
+        }
+      }
+    ],
     "lore": "Albi #67-69",
     "art": "assets/albi/albo-067.webp"
   },
@@ -688,7 +897,16 @@
       "burocrazia"
     ],
     "text": "Evoca tre Operatori 1/2 con Burocrazia",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "summon",
+          "cardId": "operatore",
+          "count": 3
+        }
+      }
+    ],
     "lore": "Albo #20",
     "art": "assets/albi/albo-020.webp"
   },
@@ -736,7 +954,16 @@
       "bloccato"
     ],
     "text": "Tutti i colleghi nemici sono Bloccati in riunione",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "freeze",
+          "target": "all_enemy_minions",
+          "turns": 1
+        }
+      }
+    ],
     "lore": "",
     "art": null
   },
@@ -750,7 +977,23 @@
     "cost": 2,
     "keywords": [],
     "text": "Infliggi 2 danni all'eroe nemico. Pesca una carta",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "damage",
+          "amount": 2,
+          "target": "enemy_hero"
+        }
+      },
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "draw",
+          "count": 1
+        }
+      }
+    ],
     "lore": "Albi #103, #104",
     "art": "assets/albi/albo-104.webp"
   },
@@ -764,7 +1007,16 @@
     "cost": 0,
     "keywords": [],
     "text": "Ottieni 1 caffettino solo per questo turno",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "gain_mana",
+          "amount": 1,
+          "temporary": true
+        }
+      }
+    ],
     "lore": "Tag #CAFFETTINO",
     "art": null
   },
@@ -778,7 +1030,16 @@
     "cost": 1,
     "keywords": [],
     "text": "Infliggi 2 danni",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "damage",
+          "amount": 2,
+          "target": "chosen"
+        }
+      }
+    ],
     "lore": "Albo #8",
     "art": "assets/albi/albo-008.webp"
   },
@@ -792,7 +1053,15 @@
     "cost": 2,
     "keywords": [],
     "text": "Rimanda un servitore in mano al proprietario",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "return_to_hand",
+          "target": "chosen"
+        }
+      }
+    ],
     "lore": "Tag #MEZZA GIORNATA",
     "art": null
   },
@@ -806,7 +1075,16 @@
     "cost": 3,
     "keywords": [],
     "text": "Distruggi un servitore con 3 o meno attacco",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "destroy",
+          "target": "chosen",
+          "maxAttack": 3
+        }
+      }
+    ],
     "lore": "Albo #15",
     "art": "assets/albi/albo-015.webp"
   },
@@ -876,7 +1154,16 @@
       "deploy"
     ],
     "text": "Infliggi 1 danno a tutti gli altri servitori",
-    "effects": [],
+    "effects": [
+      {
+        "trigger": "on_play",
+        "action": {
+          "kind": "damage",
+          "amount": 1,
+          "target": "all_other_minions"
+        }
+      }
+    ],
     "lore": "Albo #29",
     "art": "assets/albi/albo-029.webp"
   },

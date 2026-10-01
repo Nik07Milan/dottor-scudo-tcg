@@ -7,7 +7,8 @@ import { effectiveCost } from "./costs";
 import { CARDS_BY_ID } from "./data";
 import type { IllegalActionCode } from "./errors";
 import { MAX_BOARD } from "./rules";
-import type { Action, ActionType, GameState, PlayerId } from "./state";
+import type { Action, ActionType, CharacterRef, GameState, PlayerId } from "./state";
+import { chosenTargets } from "./targeting";
 
 const PLAYER_IDS: readonly string[] = ["p1", "p2"];
 const ACTION_TYPES: readonly ActionType[] = ["mulligan", "play_card", "attack", "hero_power", "choose", "end_turn", "concede"];
@@ -44,21 +45,27 @@ function attackActions(state: GameState, player: PlayerId): Action[] {
   return attackersOf(state, player).flatMap((attacker) => targets.map((defender): Action => ({ type: "attack", player, attacker, defender })));
 }
 
-/** Una mossa per carta giocabile; per i servitori una per ogni posizione 0..n sulla scrivania. */
+/**
+ * Una mossa per carta giocabile × posizione (servitori, 0..n) × bersaglio scelto (se la carta lo chiede).
+ * Pratica che chiede un bersaglio senza bersagli validi: non giocabile.
+ * Servitore con Deploy senza bersagli validi: si gioca senza bersaglio e il Deploy non ha effetto.
+ */
 function playCardActions(state: GameState, player: PlayerId): Action[] {
   const ps = state.players[player];
   const actions: Action[] = [];
   for (const card of ps.hand) {
     const def = CARDS_BY_ID.get(card.cardId)!;
     if (effectiveCost(state, player, card) > ps.mana.available) continue;
+    const targets = chosenTargets(state, player, def);
+    const targetOptions: (CharacterRef | undefined)[] = targets && targets.length > 0 ? targets : [undefined];
     if (def.type === "minion") {
       if (ps.board.length >= MAX_BOARD) continue;
       for (let position = 0; position <= ps.board.length; position++) {
-        actions.push({ type: "play_card", player, card: card.instanceId, position });
+        for (const target of targetOptions) actions.push({ type: "play_card", player, card: card.instanceId, position, ...(target ? { target } : {}) });
       }
     } else {
-      // Bersagli delle Pratiche: arrivano con gli effetti (T1.12).
-      actions.push({ type: "play_card", player, card: card.instanceId });
+      if (targets && targets.length === 0) continue;
+      for (const target of targetOptions) actions.push({ type: "play_card", player, card: card.instanceId, ...(target ? { target } : {}) });
     }
   }
   return actions;
@@ -99,7 +106,7 @@ export function checkShape(action: unknown): "malformed" | "unknown_action" | nu
     case "mulligan":
       return Array.isArray(a.replace) && a.replace.every(isId) ? null : "malformed";
     case "play_card":
-      return isId(a.card) && (a.position === undefined || isId(a.position)) ? null : "malformed";
+      return isId(a.card) && (a.position === undefined || isId(a.position)) && (a.target === undefined || isCharacterRef(a.target)) ? null : "malformed";
     case "choose":
       return isId(a.index) ? null : "malformed";
     case "attack":
@@ -108,6 +115,9 @@ export function checkShape(action: unknown): "malformed" | "unknown_action" | nu
       return null;
   }
 }
+
+const sameRef = (a: CharacterRef, b: CharacterRef): boolean =>
+  a.kind === "hero" ? b.kind === "hero" && a.player === b.player : b.kind === "minion" && a.instanceId === b.instanceId;
 
 function isCharacterRef(v: unknown): boolean {
   if (typeof v !== "object" || v === null) return false;
@@ -143,10 +153,16 @@ export function diagnose(state: GameState, action: Action): IllegalActionCode {
       const card = ps.hand.find((c) => c.instanceId === action.card);
       if (!card) return "card_not_in_hand";
       if (effectiveCost(state, action.player, card) > ps.mana.available) return "not_enough_mana";
-      const isMinion = CARDS_BY_ID.get(card.cardId)!.type === "minion";
+      const def = CARDS_BY_ID.get(card.cardId)!;
+      const isMinion = def.type === "minion";
       if (isMinion && ps.board.length >= MAX_BOARD) return "board_full";
-      const { position } = action;
+      const { position, target } = action;
       if (isMinion ? position === undefined || position < 0 || position > ps.board.length : position !== undefined) return "invalid_position";
+      const targets = chosenTargets(state, action.player, def);
+      const wanted = targets && targets.length > 0;
+      if (!wanted ? target !== undefined || (targets !== null && !isMinion) : !target || !targets.some((t) => sameRef(t, target))) {
+        return "invalid_target";
+      }
       return "not_legal";
     }
 

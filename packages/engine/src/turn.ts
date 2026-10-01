@@ -2,6 +2,7 @@
 
 import { newCard, newInstanceId, opponentOf, type Ctx } from "./context";
 import { damageHero } from "./damage";
+import { runBoardTrigger } from "./effects";
 import { checkHeroes, finishGame } from "./outcome";
 import { shuffle } from "./rng";
 import { COIN_CARD_ID, MAX_HAND, MAX_MANA, TURN_LIMIT } from "./rules";
@@ -42,7 +43,8 @@ export function mulligan(ctx: Ctx, player: PlayerId, replace: readonly InstanceI
 export function endTurn(ctx: Ctx, player: PlayerId): void {
   const { state } = ctx;
   const ps = state.players[player];
-  // Trigger di fine turno: T1.12. Scalare Bloccato in riunione: T1.10.
+  runBoardTrigger(ctx, player, "end_of_turn");
+  // Scalare Bloccato in riunione: T1.10.
   ps.costModifiers = ps.costModifiers.filter((m) => !m.expiresEndOfTurn);
   ctx.events.push({ type: "turn_ended", player, turn: state.turn });
   if (state.turn >= TURN_LIMIT) {
@@ -73,7 +75,7 @@ export function startTurn(ctx: Ctx, player: PlayerId): void {
   }
 
   drawCard(ctx, player);
-  // Trigger di inizio turno: T1.12.
+  runBoardTrigger(ctx, player, "start_of_turn");
 }
 
 /** Pesca 1 carta: burnout a mazzo vuoto, scarto a mano piena. */

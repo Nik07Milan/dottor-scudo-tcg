@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import albiJson from "../../../data/dottorscudo-albi.json";
 import { CARDS, CARDS_BY_ID, HEROES, HEROES_BY_ID, KEYWORDS } from "../src/data";
+import { CUSTOM_HANDLERS } from "../src/cards/custom";
 import { legalCardsForHero, maxCopies } from "../src/deck";
 import { nextRandom, randomInt, shuffle } from "../src/rng";
 
@@ -28,6 +29,16 @@ describe("dati di gioco", () => {
     for (const c of CARDS) {
       if (c.type === "minion") expect([c.attack, c.health].every((n) => typeof n === "number"), c.id).toBe(true);
       if (c.type === "weapon") expect([c.attack, c.durability].every((n) => typeof n === "number"), c.id).toBe(true);
+    }
+  });
+
+  it("gli effetti puntano a carte e handler esistenti", () => {
+    for (const { id, effects } of [...CARDS, ...HEROES.map((h) => ({ id: h.id, effects: h.heroPower.effects }))]) {
+      for (const { action } of effects) {
+        if (action.kind === "summon") expect(CARDS_BY_ID.get(action.cardId)?.type, `${id} → ${action.cardId}`).toBe("minion");
+        if (action.kind === "add_to_hand") expect(CARDS_BY_ID.has(action.cardId), `${id} → ${action.cardId}`).toBe(true);
+        if (action.kind === "custom") expect(CUSTOM_HANDLERS[action.handler], `${id} → ${action.handler}`).toBeDefined();
+      }
     }
   });
 

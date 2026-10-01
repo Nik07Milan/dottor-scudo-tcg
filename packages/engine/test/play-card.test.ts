@@ -35,20 +35,20 @@ describe("mosse legali di play_card", () => {
   });
 
   it("Pratiche e Strumenti non hanno posizione", () => {
-    const { state, ids } = withHand(base, me, ["chiamata-api", "scudo-bike"]);
+    const { state, ids } = withHand(base, me, ["scorta-di-teresa", "scudo-bike"]);
     expect(playsOf(state, ids[0]!)).toEqual([{ type: "play_card", player: me, card: ids[0] }]);
     expect(playsOf(state, ids[1]!)).toEqual([{ type: "play_card", player: me, card: ids[1] }]);
   });
 
   it("le carte troppo costose non sono giocabili", () => {
-    const { state, ids } = withHand(base, me, ["klaudioken", "chiamata-api"], 3); // 4 e 1
+    const { state, ids } = withHand(base, me, ["riunione-infinita", "scorta-di-teresa"], 3); // 4 e 1
     expect(playsOf(state, ids[0]!)).toEqual([]);
     expect(playsOf(state, ids[1]!)).toHaveLength(1);
     expect(codeOf(state, { type: "play_card", player: me, card: ids[0]! })).toBe("not_enough_mana");
   });
 
   it("con la scrivania piena i servitori non si giocano, le Pratiche sì", () => {
-    const { state, ids } = withHand(base, me, ["il-cursore", "chiamata-api"]);
+    const { state, ids } = withHand(base, me, ["cliente-insistente", "scorta-di-teresa"]);
     fillBoard(state, me, rules.MAX_BOARD);
     expect(playsOf(state, ids[0]!)).toEqual([]);
     expect(codeOf(state, { type: "play_card", player: me, card: ids[0]!, position: 0 })).toBe("board_full");
@@ -56,7 +56,7 @@ describe("mosse legali di play_card", () => {
   });
 
   it("solo il giocatore attivo, solo nella fase principale", () => {
-    const { state, ids } = withHand(base, other(me), ["chiamata-api"]);
+    const { state, ids } = withHand(base, other(me), ["scorta-di-teresa"]);
     expect(codeOf(state, { type: "play_card", player: other(me), card: ids[0]! })).toBe("not_your_turn");
     const mull = structuredClone(state);
     mull.phase = "mulligan";
@@ -65,7 +65,7 @@ describe("mosse legali di play_card", () => {
   });
 
   it("rifiuta carte non in mano e posizioni sbagliate", () => {
-    const { state, ids } = withHand(base, me, ["il-cursore", "chiamata-api"]);
+    const { state, ids } = withHand(base, me, ["cliente-insistente", "scorta-di-teresa"]);
     expect(codeOf(state, { type: "play_card", player: me, card: 999_999 })).toBe("card_not_in_hand");
     expect(codeOf(state, { type: "play_card", player: me, card: ids[0]! })).toBe("invalid_position");
     expect(codeOf(state, { type: "play_card", player: me, card: ids[0]!, position: 1 })).toBe("invalid_position");
@@ -76,7 +76,7 @@ describe("mosse legali di play_card", () => {
 
 describe("giocare un servitore", () => {
   it("paga i caffettini, lascia la mano ed entra nella posizione scelta con un id nuovo", () => {
-    const { state, ids } = withHand(base, me, ["il-cursore", "chiamata-api"], 5);
+    const { state, ids } = withHand(base, me, ["cliente-insistente", "scorta-di-teresa"], 5);
     fillBoard(state, me, 2);
     const [left, right] = state.players[me].board.map((m) => m.instanceId);
     const { state: s, events } = play(state, ids[0]!, 1);
@@ -88,10 +88,10 @@ describe("giocare un servitore", () => {
     const minion = p.board[1]!;
     expect(minion.instanceId).not.toBe(ids[0]);
     expect(minion.instanceId).toBeGreaterThanOrEqual(state.nextInstanceId);
-    const def = CARDS_BY_ID.get("il-cursore")!;
+    const def = CARDS_BY_ID.get("cliente-insistente")!;
     expect(minion).toEqual({
       instanceId: minion.instanceId,
-      cardId: "il-cursore",
+      cardId: "cliente-insistente",
       owner: me,
       attack: def.attack,
       health: def.health,
@@ -102,21 +102,21 @@ describe("giocare un servitore", () => {
       attacksThisTurn: 0,
       summonedThisTurn: true,
     });
-    expect(p.played).toEqual(["il-cursore"]);
+    expect(p.played).toEqual(["cliente-insistente"]);
     expect(events).toEqual([
-      { type: "card_played", player: me, instanceId: ids[0], cardId: "il-cursore" },
+      { type: "card_played", player: me, instanceId: ids[0], cardId: "cliente-insistente" },
       { type: "mana_changed", player: me, max: 5, available: 3 },
-      { type: "minion_summoned", player: me, instanceId: minion.instanceId, cardId: "il-cursore", position: 1 },
+      { type: "minion_summoned", player: me, instanceId: minion.instanceId, cardId: "cliente-insistente", position: 1 },
     ]);
   });
 
   it("posizione 0 = sinistra, posizione n = destra", () => {
-    const { state, ids } = withHand(base, me, ["il-cursore", "il-cursore"]);
+    const { state, ids } = withHand(base, me, ["cliente-insistente", "cliente-insistente"]);
     fillBoard(state, me, 1);
     const first = play(state, ids[0]!, 0).state;
-    expect(first.players[me].board[0]!.cardId).toBe("il-cursore");
+    expect(first.players[me].board[0]!.cardId).toBe("cliente-insistente");
     const second = play(first, ids[1]!, 2).state;
-    expect(second.players[me].board.map((m) => m.cardId)).toEqual(["il-cursore", "il-crudo", "il-cursore"]);
+    expect(second.players[me].board.map((m) => m.cardId)).toEqual(["cliente-insistente", "il-crudo", "cliente-insistente"]);
   });
 
   it("le keyword della carta vengono copiate, non condivise", () => {
@@ -130,13 +130,13 @@ describe("giocare un servitore", () => {
 
 describe("giocare una Pratica", () => {
   it("paga, lascia la mano e finisce in `played` senza toccare la scrivania", () => {
-    const { state, ids } = withHand(base, me, ["chiamata-api"], 2);
+    const { state, ids } = withHand(base, me, ["scorta-di-teresa"], 2);
     const { state: s, events } = play(state, ids[0]!);
     expect(s.players[me].hand).toEqual([]);
     expect(s.players[me].mana.available).toBe(1);
     expect(s.players[me].board).toEqual([]);
-    expect(s.players[me].played).toEqual(["chiamata-api"]);
-    expect(events[0]).toEqual({ type: "card_played", player: me, instanceId: ids[0], cardId: "chiamata-api" });
+    expect(s.players[me].played).toEqual(["scorta-di-teresa"]);
+    expect(events[0]).toEqual({ type: "card_played", player: me, instanceId: ids[0], cardId: "scorta-di-teresa" });
   });
 
   it("il Caffettino costa 0 e si gioca anche senza caffettini", () => {
@@ -167,7 +167,7 @@ describe("giocare uno Strumento", () => {
 
 describe("costo effettivo", () => {
   it("lo sconto sulla carta riduce il costo, mai sotto 0", () => {
-    const { state, ids } = withHand(base, me, ["klaudioken", "chiamata-api"], 3);
+    const { state, ids } = withHand(base, me, ["riunione-infinita", "scorta-di-teresa"], 3);
     state.players[me].hand[0]!.costModifier = -1;
     state.players[me].hand[1]!.costModifier = -5;
     expect(effectiveCost(state, me, state.players[me].hand[0]!)).toBe(3);
@@ -176,7 +176,7 @@ describe("costo effettivo", () => {
   });
 
   it("gli sconti in attesa si applicano solo alle carte che corrispondono e si consumano", () => {
-    const { state, ids } = withHand(base, me, ["il-cursore", "klaudioken", "klaudioken"], 10);
+    const { state, ids } = withHand(base, me, ["cliente-insistente", "riunione-infinita", "riunione-infinita"], 10);
     state.players[me].costModifiers = [
       { filter: { type: "spell" }, amount: -2, expiresEndOfTurn: true },
       { filter: { cardId: "il-grappolaccio" }, amount: -3, expiresEndOfTurn: false },
@@ -195,10 +195,10 @@ describe("costo effettivo", () => {
   });
 
   it("più sconti che corrispondono si sommano", () => {
-    const { state } = withHand(base, me, ["klaudioken"]);
+    const { state } = withHand(base, me, ["riunione-infinita"]);
     state.players[me].costModifiers = [
       { filter: { type: "spell" }, amount: -2, expiresEndOfTurn: true },
-      { filter: { cardId: "klaudioken" }, amount: -1, expiresEndOfTurn: false },
+      { filter: { cardId: "riunione-infinita" }, amount: -1, expiresEndOfTurn: false },
     ];
     expect(effectiveCost(state, me, state.players[me].hand[0]!)).toBe(1);
   });
