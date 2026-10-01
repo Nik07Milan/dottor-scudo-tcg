@@ -16,9 +16,9 @@ le 51 carte e nei 9 poteri eroe.
 | Id | Task | Fatto quando |
 |---|---|---|
 | T0.1 ✅ | Completare il GDD §1 con le regole mancanti: **armatura** (usata da Scudo-bike e Alza lo scudo), **mulligan** (quante carte, una volta sola), **attacco dell'eroe** con Strumento, significato di **Scopri** (1 tra 3, pool, duplicati), **Task** (progresso visibile all'avversario?), **ordine di risoluzione** di trigger simultanei e morti. | Il GDD risponde a ognuna delle domande senza ambiguità. |
-| T0.2 | Dati mancanti: token `nettuno` 8/8 Burocrazia (ricompensa di `progetto-nettuno`); decidere come modellare "Ferie arretrate" di `le-task` (effetto, non carta). Importare `data/dottorscudo-albi.json` (serve per M5). | `nettuno` in `cards.json`; test dati verde. |
+| T0.2 ✅ | Dati mancanti: token `nettuno` 8/8 Burocrazia (ricompensa di `progetto-nettuno`); decidere come modellare "Ferie arretrate" di `le-task` (effetto, non carta). Importare `data/dottorscudo-albi.json` (serve per M5). | `nettuno` in `cards.json`; test dati verde. |
 | T0.3 | Verifica mazzi: Il Calabrone ha 0 carte firma, Ale 1. Calcolare per ogni eroe se si arriva a 30 carte legali (max 2 copie, 1 leggendaria, niente token). | Tabella eroe → carte disponibili nel GDD §6; nuove carte aggiunte se servono. |
-| T0.4 | Documentare che `dr-grappolo`, `il-calabrone`, `lord-capognus` sono sia id di eroe sia id di carta (mappe separate, nessun conflitto). | Nota in `data/README.md`. |
+| T0.4 ✅ | Documentare che `dr-grappolo`, `il-calabrone`, `lord-capognus` sono sia id di eroe sia id di carta (mappe separate, nessun conflitto). | Nota in `data/README.md`. |
 
 ---
 

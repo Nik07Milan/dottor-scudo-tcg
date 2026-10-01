@@ -1,0 +1,1227 @@
+{
+  "serie": "Dottor Scudo",
+  "fonte": "dottorscudo.guidomoroni.com",
+  "estratto": "2026-10-01",
+  "albi": [
+    {
+      "numero": 1,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "La vendetta del Dr Grappolo!",
+      "data_pubblicazione": "30 maggio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il Dottor Scudo affronta il malvagio Dr Grappolo, un imprenditore di ignote origini che punta a fare il lavaggio del cervello agli studenti della scuola che ha creato. Riuscirà il Dottor Scudo a fermare questo piano di dominio?",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/1"
+    },
+    {
+      "numero": 2,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "L'origine del Crudo",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo la lotta contro il malvagio Dr Grappolo il Dottor Scudo capisce che il suo nuovo ruolo lo pone sotto la prospettiva di eroe agli occhi di molte persone, quindi si avventura in un viaggio per capire meglio questo cosa comporta e ritrovare se stesso. Questo pellegrinaggio lo porterà al misterioso tempio del sacro Crudo.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/2"
+    },
+    {
+      "numero": 3,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "...e l'Uomo Sasso contro il subdolo Serramanico!",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo si ritrova a dover affrontare un nuovo nemico: il Serramanico, questa subdola entità mira al dominio di Milano. fortunatamente Nikson, il collega di Dottor Scudo, grazie alla sua ossessione per i sassi guadagna dei poteri che aiuteranno il nostro eroe ad affrontare questa nuova minaccia.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/3"
+    },
+    {
+      "numero": 4,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "La via del Giappi",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il saggio Milet cerca di istruire il Dottor Scudo ai valori della via del Giappi portandolo al suo ristorante di sushi di fiducia. Tuttavia il nostro eroe è dubbioso sul rinunciare alla pizzeria che tanto ama.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/4"
+    },
+    {
+      "numero": 5,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "L'ira di Jackson!",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il silenzio dell'ufficio viene squarciato dallo scoppio d'ira di Jackson, scatenato dal famigerato Incubo Lipigen. Riuscirà il Dottor Scudo a portare in salvo i civili coinvolti in questo cataclisma e contemporaneamente a placare il suo collega?",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/5"
+    },
+    {
+      "numero": 6,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Nella fabbrica di sassi",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo va a fare visita all'imponente fabbrica di sassi eretta dal suo collega Nikson, conosciuto anche col suo pseudonimo Uomo Sasso.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/6"
+    },
+    {
+      "numero": 7,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Fuga da Sermig!",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo indaga sulle voci che ricollegano il centro Sermig a gravi nefandezze, come abusi sui dipendenti, riciclaggio di denaro e riti satanici. Per sua fortuna sarà assistito da Ale, il suo collega famoso per la grande abilità negli sport estremi che è coinvolto da tempo in questo caso.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/7"
+    },
+    {
+      "numero": 8,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "E le chiamate api",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "I telefoni non smettono di squillare, le api sono irrequiete ed è compito del Dottor Scudo rispondere.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/8"
+    },
+    {
+      "numero": 9,
+      "saga": "Grappolo",
+      "titolo": "La macchinazione di Margherita",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo scopre il piano di Margherita per portare Dr Grappolo alla sua forma finale. Quindi si ritrova costretto a lanciarsi alla carica per impedirglielo ma il tempo non è a suo favore, dovrà correre rischi ma i tranelli di Margherita non mancheranno!",
+      "sigla": "Dottor Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/9"
+    },
+    {
+      "numero": 10,
+      "saga": "Grappolo",
+      "titolo": "Il ritorno del Dr Grappolo!",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La macchinazione di Margherita viene portata a termine e il ritorno del Dr Grappolo nella sua forma finale è ufficiale. Dottor scudo dovrà combattere contro un avversario come non ce ne sono mai stati.",
+      "sigla": "Dottor Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/10"
+    },
+    {
+      "numero": 11,
+      "saga": "Grappolo",
+      "titolo": "La caduta del Crudo",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La forma finale del Dr Grappolo è insuperabile e il Dottor Scudo ne cade vittima, perdendo il controllo totale della città di Milano e pianifica di conquistare anche il mondo. Lo scontro ha portato una profonda spaccatura sullo scudo del Dottore e anche nella fiducia che ripone in sé stesso.",
+      "sigla": "Dottor Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/11"
+    },
+    {
+      "numero": 12,
+      "saga": "Grappolo",
+      "titolo": "Finché c'è sasso c'è speranza!",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Un bagliore di speranza risplende all'orizzonte, Dottor Scudo viene accolto nella fabbrica di sassi dove grazie all'aiuto del collega Nikson e al potenziale dei Sassi Srl riesce a riparare il suo scudo. Nella fabbrica ad aspettarlo è presente anche il suo collega Jackson, pronto ad iniziare i preparativi per la battaglia finale.",
+      "sigla": "Dottor Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/12"
+    },
+    {
+      "numero": 13,
+      "saga": "Grappolo",
+      "titolo": "La resa dei conti",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La battaglia per la liberazione di Milano ha inizio, Dottor Scudo è pronto ad affrontare il temibile Dr Grappolo. Al fianco del nostro eroe ci sarà ad assisterlo Jackson, che ha imparato a sfruttare la sua ira per il bene dei suoi compagni. Tornerà a risplendere la luce del sole a Milano?",
+      "sigla": "Dottor Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/13"
+    },
+    {
+      "numero": 14,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Il tormento dello sciame",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo affronta il temibile sciame di zanzare che da tempo disturba e rovina il clima dell'ufficio.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/14"
+    },
+    {
+      "numero": 15,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "L'ultimo sorso!",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo senza timore sfida le autorità e si prende l'ultimo calice di vino, ma quali saranno le conseguenze di questo gesto?",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/15"
+    },
+    {
+      "numero": 16,
+      "saga": "Serramanico & Lord Capognus",
+      "titolo": "Nella foresta di cazzi",
+      "data_pubblicazione": "03 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Ciò che dovrebbe restare celato nella foresta di cazzi rischia di uscire, Dottor Scudo si ritrova costretto ad entrarci per impedire che ciò accada. Tuttavia i pericoli che si nascondono nella fallica vegetazione sono molteplici.",
+      "sigla": "Cuore dei sassi",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/16"
+    },
+    {
+      "numero": 17,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "La strada per il lavoro",
+      "data_pubblicazione": "06 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo ama lavorare da casa, tuttavia è costretto a presentarsi in sede di tanto in tanto. Come se non bastasse le strade di Milano sono peggiorate e arrivare sani e salvi a lavoro è sempre più una sfida, ci sono zanzare che incolpano il sindaco di questo crescente degrado. Nonostante ciò Dottor Scudo affronta questi pericoli e combatte duramente per ottenere il full remote e poi in futuro chissà... una settimana lavorativa di quattro giorni?",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/17"
+    },
+    {
+      "numero": 18,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "L'upgrade dell'indirizzo informatico",
+      "data_pubblicazione": "06 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La nemesi di Dottor Scudo non perde tempo e torna subito all'attacco. Il Dr Grappolo scaglia contro il nostro eroe un esercito di studenti bionici potenziati con parti cybernetiche, implementate grazie alle clausole che hanno dovuto firmare al momento dell'iscrizione.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/18"
+    },
+    {
+      "numero": 19,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Mi sta rovinando la vita",
+      "data_pubblicazione": "06 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo sta vivendo un momento difficile, le continue task affidategli, i clienti fastidiosi che deve seguire e le tecnologie arretrate che deve usare lo stanno mettendo a dura prova. Riuscirà a non perdere lo spirito del crudo e superare questo momento?",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/19"
+    },
+    {
+      "numero": 20,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "L'assedio dei call center!",
+      "data_pubblicazione": "06 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Da tempo Milet era preso di mira da operatori di call center ma mai si aspettava che sarebbero arrivati a tanto. Per sua fortuna Dottor Scudo è lì ad assisterlo per respingere l'invasione.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/20"
+    },
+    {
+      "numero": 21,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Le esplorazioni dell'indirizzo di turismo",
+      "data_pubblicazione": "11 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dr Grappolo non ha scrupoli, con la creazione di un indirizzo apposito e l'organizzazione di gite tramite le sue Onlus nate per il riciclaggio di denaro sporco si avvia a saccheggiare reperti antichi per i suoi subdoli fini. Dottor Scudo non ha intenzione di lasciare questi comportamenti impuniti.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/21"
+    },
+    {
+      "numero": 22,
+      "saga": "Serramanico & Lord Capognus",
+      "titolo": "Una scomparsa inaspettata",
+      "data_pubblicazione": "11 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo viene interrotto dal suo fedele compagno Cursor che lo avvisa della scomparsa del suo collega Nikson, conosciuto anche come l'uomo dei sassi. Gli unici indizi ritrovati in ufficio sono segni di tagli e dei capelli rossi... Riuscirà il nostro segugio a ritrovare Nikson?",
+      "sigla": "Cuore dei sassi",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/22"
+    },
+    {
+      "numero": 23,
+      "saga": "Serramanico & Lord Capognus",
+      "titolo": "Alla ricerca di Nikson!",
+      "data_pubblicazione": "11 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Gli indizi riportano il nostro eroe nella Foresta di Cazzi, fortunatamente ad accompagnarlo tra gli alberi fallici c'è il suo collega Milet. I due individuano un edificio molto sospetto negli oscuri meandri della vegetazione ma la strada è lunga e tortuosa, meglio mettersi in cammino.",
+      "sigla": "Cuore dei sassi",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/23"
+    },
+    {
+      "numero": 24,
+      "saga": "Serramanico & Lord Capognus",
+      "titolo": "L'esperimento di Lord Capognus",
+      "data_pubblicazione": "12 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo riesce ad infiltrarsi nel sinistro edificio di Smart Eventi, rivelando una complessa struttura di laboratori. Nel piano più profondo della struttura riesce a trovare Nikson ma il subdolo Lord Capognus gli blocca la strada minacciando di sguinzagliare il feroce Serramanico. Tuttavia il tempo non è a favore di Scudo, uno scienziato si avvicina all'Uomo Sasso con una siringa sospetta, non c'è un secondo da perdere!",
+      "sigla": "Cuore dei sassi",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/24"
+    },
+    {
+      "numero": 25,
+      "saga": "Serramanico & Lord Capognus",
+      "titolo": "La nascita di Serranikson!",
+      "data_pubblicazione": "13 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Lord Capognus riesce nell'obiettivo di ostacolare l'intervento di Dottor Scudo e l'esperimento va a termine, nasce così una creatura spaventosa: Serranikson. Il suo potere incontrollabile rischia di radere al suolo intere città, Dottor Scudo deve fermarlo ma riuscirà anche a salvare il suo collega?",
+      "sigla": "Cuore dei sassi",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/25"
+    },
+    {
+      "numero": 26,
+      "saga": "Serramanico & Lord Capognus",
+      "titolo": "Il ritorno del sasso",
+      "data_pubblicazione": "16 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La lotta è feroce e spietata ma a spuntarla è il Dottor Scudo. E credendo nel cuore dei sassi riesce a riportare indietro anche il suo collega Nikson, che si può lasciare alle spalle questa traumatica esperienza nella sede di Smart Eventi. Lord Capognus ha approfittato del caos della battaglia per fuggire e probabilmente torneremo a sentire parlare di lui ma per il momento i nostri eroi pensano a godersi questa vittoria!",
+      "sigla": "Cuore dei sassi",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/26"
+    },
+    {
+      "numero": 27,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "La sgommata della vergogna",
+      "data_pubblicazione": "16 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Sembrava un giorno come tanti ma Dottor Scudo deve ricredersi quando trova il bagno dell'ufficio in uno stato di degrado che mai avrebbe potuto aspettarsi. Il disgustoso affresco marrone che è stato lasciato dimostra un forte segno di mancanza di rispetto, oltre che una evidente problematica digestiva. Scudo non lascierà l'autore di questo gesto impunito e i suoi sospetti sembrano ricadere sui lavoratori di PC Planet presenti in ufficio per una installazione...",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/27"
+    },
+    {
+      "numero": 28,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "L'equazione finale dell'indirizzo scientifico",
+      "data_pubblicazione": "17 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dr Grappolo continua a elaborare malefatte con nuovi indirizzi, questa volta è il turno dello scientifico. Sfruttando gli studenti (non solo economicamente) è riuscito a creare un'equazione per poter generare ancora più introiti. È compito di Dottor Scudo impedire che questa equazione venga messa in pratica!",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/28"
+    },
+    {
+      "numero": 29,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Il richiamo dell'Uomo Rana!",
+      "data_pubblicazione": "17 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor scudo si stava rilassando dopo aver mangiato la sua pizza preferita ma viene bruscamente interrotto... L'Uomo Rana fa la sua comparsa con un roboante peto e uno sguardo di sfida rivolto a Scudo.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/29"
+    },
+    {
+      "numero": 30,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Ciao Guido, sono Guido",
+      "data_pubblicazione": "17 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo viene sorpreso da una sua copia, quale sarà il suo obiettivo? Rubare l'identità di Scudo? O aiutarlo nelle sue avventure?",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/30"
+    },
+    {
+      "numero": 31,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "L'agguato del calabrone",
+      "data_pubblicazione": "23 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo si stava godendo una meritata pausa caffettino assieme al suo fidato collega Nikson, questa pace viene però squarciata dall'attacco a tradimento del Calabrone. Il vile insetto scaglia parole pungenti contro l'uomo sasso mentre il Dottor Scudo è costretto ad assistere a questa terrificante scena.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/31"
+    },
+    {
+      "numero": 32,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Le manipolazioni mentali dell'indirizzo economico sociale",
+      "data_pubblicazione": "30 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dr Grappolo continua a creare nuovi indirizzi, in molti li definirebbero inutili e insensati ma gli iscritti non mancano e le schiere di servitori del Grappolaccio crescono. Dottor Scudo continua ad indagare su questo problema imbattendosi con l'indirizzo economico sociale, un gruppo di studenti modificati geneticamente per manipolare le menti inferiori.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/32"
+    },
+    {
+      "numero": 33,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "La scoperta del Diario di Sborro",
+      "data_pubblicazione": "30 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Tutte le recenti macchinazioni del Dr Grappolo non la raccontano giusta a Dottor Scudo che decide di indagare. Grazie all'aiuto del suo collega Jackson riescono a recuperare il malefico Diario di Sborro, contenente i piani di conquista del mondo del Grappolaccio oltre che svariati errori grammaticali, in particolare tra i vari progetti riportati risalta una parola in particolare: \"Nettuno\"...",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/33"
+    },
+    {
+      "numero": 34,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "L'avvio del progetto Nettuno!",
+      "data_pubblicazione": "30 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor scudo accorre alla base operativa del Dr Grappolo, la sede dell'istituto Freud, per impedire l'inizio del progetto Nettuno. Tuttavia arriva tardi e schiere di androidi stanno già creando il panico per le strade di Milano e viene preso di mira anche lui. Nel frattempo si vedono risplendere dalla base del malvagio dottore varie luci colorate, che diavolerie sta architettando sfruttando i quattro indirizzi??",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/34"
+    },
+    {
+      "numero": 35,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Gli indirizzi dell'infinito",
+      "data_pubblicazione": "30 giugno 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il dado è tratto, il progetto Nettuno è stato completato. La creazione dei quattro indirizzi ha portato il Dr Grappolo a recuperare le 4 gemme degli indirizzi dell'infinito avendo così potere su spazio (turismo), materia (scientifico), mente (economico sociale) e tecnologia (informatico). Le conseguenze di ciò saranno catastrofiche.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/35"
+    },
+    {
+      "numero": 36,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Uniti contro la minaccia!",
+      "data_pubblicazione": "02 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La minaccia che rappresenta Dr Grappolo è immensa, per fortuna i colleghi di Dottor Scudo accorrono in suo aiuto per questa battaglia! Riusciranno a vincere o cadranno vittima del potere degli indirizzi dell'infinito?",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/36"
+    },
+    {
+      "numero": 37,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Il grappolo ineluttabile",
+      "data_pubblicazione": "07 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "L'unione di tutti gli eroi sembrava avere la meglio ma il Grappolo ribalta la situazione con uno schiocco di dita. Tutti i colleghi di Dottor Scudo si dissolvono nel vento come polvere, il potere degli indirizzi dell'infinito è immenso e Scudo non può niente per fermarlo. Il sadico Dr Grappolo lascia in vita solo il nostro eroe, poiché soffrire per questa perdita è una punizione peggiore dell'essere semplicemente eliminato.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/37"
+    },
+    {
+      "numero": 38,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Fuga da Milano",
+      "data_pubblicazione": "08 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo è a pezzi ma non può concedersi il lusso di piangere i suoi compagni caduti. Per il momento è costretto a darsi alla fuga in sella alla sua fedele Scudobike, Milano non è più un luogo sicuro: oltre ai robot del progetto Nettuno si sono aggiunti i sottoposti della Zanzara, che ha approfittato della situazione per arruffianarsi il Dr Grappolo.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/38"
+    },
+    {
+      "numero": 39,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Il nemico del mio nemico",
+      "data_pubblicazione": "08 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo punta alla foresta di Cazzi, non un luogo in cui ha piacere ad addentrarsi ma la situazione lo richiede. Riesce a stabilire una tregua con il Serramanico, che è stato inviato da Lord Capognus come messaggero per un'alleanza temporanea poiché anche lui è danneggiato da una Milano in cui non si possono organizzare eventi. Assieme decidono di puntare su un sottoposto di Dr Grappolo che potrebbe avere informazioni utili... Ma come possono riuscire ad attirarlo?",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/39"
+    },
+    {
+      "numero": 40,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Una trappola antizanzare",
+      "data_pubblicazione": "08 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Serramanico sfrutta la sua rete di contatti per mettere l'annuncio di un lavoro molto remunerativo che prevede molto stress e sfruttamento per i lavoratori che dovranno realizzarlo: l'esca perfetta per la Zanzara. Infatti il fastidioso insetto ci si fionda come una mosca sul miele e Dottor Scudo ha la sua occasione per passare all'attacco!",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/40"
+    },
+    {
+      "numero": 41,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Un lungo pellegrinaggio",
+      "data_pubblicazione": "11 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il piano ha successo, e il Dottor Scudo, affiancato dal dall'improbabile alleato Serramanico, riesce finalmente a sconfiggere la perfida Zanzara. Prima di sparire, l’insetto rivela di non sapere come fermare il temibile Dr. Grappolo, ma lascia intendere che esista qualcuno che potrebbe avere la risposta: un individuo che vive ai confini della civiltà, come un eremita, e che conosce ogni cosa accaduta e ogni cosa che accadrà in questo universo. Determinato a salvare i suoi amici, Scudo parte così per un lungo viaggio in groppa al suo fedele destriero, sperando che il misterioso saggio possa aiutarlo a sconfiggere Dr. Grappolo una volta per tutte.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/41"
+    },
+    {
+      "numero": 42,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "L'incontro con l'autore!",
+      "data_pubblicazione": "14 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il pellegrinaggio dell’eroe senza macchia lo conduce fino a una grotta nascosta ai confini del mondo. Ad accoglierlo in quel luogo mistico è un enigmatico individuo che si fa chiamare l’Autore: colui che genera e sorveglia gli eventi che si susseguono in quell’universo. Con rammarico, l’Autore rivela a Dottor Scudo che, in quanto custode dell’equilibrio cosmico, non può intervenire direttamente nelle vicende mortali. Tuttavia, decide di offrirgli un prezioso indizio: l’unica speranza per sconfiggere Dr. Grappolo risiede nel potere del leggendario Crudo d’Oro. Purtroppo, l’Autore non può aiutarlo a ottenerlo… poiché è vegano. E così, almeno per ora, le loro strade si separano.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/42"
+    },
+    {
+      "numero": 43,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "La leggenda del Crudo d'Oro",
+      "data_pubblicazione": "15 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo segue le indicazioni dell’Autore e si reca all’antico Tempio del Crudo, lo stesso luogo in cui, tempo addietro, aveva incontrato lo spirito del Crudo. Dopo aver superato trappole insidiose e passaggi segreti dimenticati dal tempo, raggiunge finalmente il cuore più profondo della struttura. Lì, su un altare sacro, trova il leggendario Crudo d’Oro. Eppure… non accade nulla. L’artefatto resta immobile, silenzioso, privo di qualunque segno di potere. Dottor Scudo non sa cosa aspettarsi, né se abbia davvero risvegliato ciò che cercava. Così, senza altre risposte, decide di proseguire il suo viaggio, con il Crudo d’Oro stretto tra le mani e una nuova incertezza nel cuore.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/43"
+    },
+    {
+      "numero": 44,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Nel cuore di Nettuno",
+      "data_pubblicazione": "15 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dr. Grappolo, protetto dalla sua impenetrabile armata di androidi, è ormai inavvicinabile. Dottor Scudo, consapevole che un attacco diretto sarebbe inutile, decide allora di colpire il cuore del male: il centro di controllo del Progetto Nettuno. Indossata la sua attrezzatura subacquea, si immerge nelle oscure profondità marine, tra correnti insidiose e silenzi abissali. Dopo una lunga discesa, tra relitti dimenticati e creature ignote, scorge finalmente l’imponente struttura sommersa: una base scientifica colossale, nascosta agli occhi del mondo, da cui vengono generati e controllati gli inarrestabili servi meccanici del Dr. Grappolo. Ma cosa lo attende al suo interno? Alleati? Trappole? O forse… qualcosa di peggio?",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/44"
+    },
+    {
+      "numero": 45,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "L'affondamento del progetto Nettuno",
+      "data_pubblicazione": "15 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "All’interno della base sommersa, Dottor Scudo scopre con sgomento che a capo del Progetto Nettuno c’è Barbara, la temibile e leale sottoposta demoniaca di Dr. Grappolo. Con i suoi poteri oscuri e il controllo su un esercito di androidi, Barbara sembra avere il sopravvento. La battaglia è feroce, e Scudo si ritrova sull’orlo della sconfitta. Ma l’eroe non combatte solo per vincere: sfrutta il caos dello scontro per colpire i punti nevralgici della struttura. Colpo dopo colpo, il laboratorio inizia a tremare, le pareti si incrinano, i sistemi cedono. Con un ultimo, decisivo atto di coraggio, Scudo provoca il collasso dell’intera base. Il Progetto Nettuno viene distrutto, insieme alla sua linea di produzione e difesa. È un colpo durissimo per Dr. Grappolo: la sua armata è spezzata, e le sue difese ora vacillano.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/45"
+    },
+    {
+      "numero": 46,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Il ritorno dell'eroe",
+      "data_pubblicazione": "16 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo torna sui suoi passi fino all’ingresso di una Milano devastata, piegata sotto il giogo del dominio di Dr. Grappolo. Ad accoglierlo non c’è rumore, né resistenza: solo una distesa di androidi disattivati, relitti metallici del Progetto Nettuno, che giacciono in silenzio come statue, in un’atmosfera carica di solennità. La strada è libera, dritta fino al cuore della città. Là, nel centro nevralgico, Grappolo lo attende, pronto per l’inevitabile scontro finale. Memore della disfatta del loro ultimo incontro, Scudo avanza con il cuore appesantito dal dubbio. La paura inizia a insinuarsi, il peso della missione lo sovrasta. Ma proprio quando lo sconforto sembra avere la meglio, il Crudo d’Oro s’illumina. Un bagliore abbagliante lo avvolge, caldo, vibrante, quasi vivo.",
+      "sigla": "Qualcosa di incredibile sta per accadere… Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/46"
+    },
+    {
+      "numero": 47,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Il Super Crudo si risveglia!",
+      "data_pubblicazione": "21 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo, colmo di nuova determinazione, sente il suo spirito fondersi con quello del Crudo d’Oro. In quell’istante, qualcosa si risveglia nel profondo: un potere antico, primordiale, a lungo sopito. È il segno che l’unione è compiuta… e da essa nasce il leggendario Super Crudo. Una luce travolgente esplode intorno a lui, e il suo corpo viene avvolto da un’energia mai provata prima. La sua forza si moltiplica, i suoi sensi si affinano, e dentro di lui brucia la volontà incrollabile di chi è pronto a cambiare il destino. Ma il miracolo non finisce lì. Guidato da questo potere divino, Scudo riesce a riportare in vita i suoi compagni caduti, restituendo loro la forza e la speranza perdute. Una dopo l’altra, le vecchie glorie si rialzano, pronte a combattere ancora una volta al suo fianco. Con la speranza che arde più forte che mai, e un esercito rinato pronto alla battaglia, Dottor Scudo si prepara allo scontro finale. È giunto il momento di porre fine, una volta per tutte, al regno del terrore di Dr. Grappolo!",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/47"
+    },
+    {
+      "numero": 48,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Endgame",
+      "data_pubblicazione": "22 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La battaglia finale ha inizio. L’Oscurità contro la Luce. Il Bene contro il Male. Lo Scudo contro il Grappolo. Dr. Grappolo, alimentato dalla forza degli Indirizzi dell’Infinito, si eleva oltre ogni limite umano: piega la realtà, distorce il tempo, trasforma i pensieri in armi. È divenuto un'entità quasi divina, un incubo incarnato. Ma Dottor Scudo non indietreggia. Avvolto dall’aura dorata del Super Crudo, risponde col potere puro della speranza, del coraggio e del sacrificio. Ogni colpo è un’eco di giustizia, ogni parata un atto di resistenza contro l’abisso. La terra trema, il cielo si spacca, il tempo stesso vacilla. Chi avrà la meglio?",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/48"
+    },
+    {
+      "numero": 49,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Crudo batte Grappolo",
+      "data_pubblicazione": "30 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo, colmo della potenza del Super Crudo, si lancia nell’ultimo, decisivo assalto. Con movimenti rapidi come la luce e colpi carichi di pura energia, riesce infine a distruggere il Guanto del Dr. Grappolo, frantumando una a una le gemme degli indirizzi dell'infinito che vi erano incastonate. Un fragrante colpo finale, carico di giustizia e sapore leggendario, abbatte il tiranno. Dr. Grappolo, privato della sua forza e delle sue illusioni, si dissolve in un urlo di disperazione, inghiottito da una luce purificatrice. Il suo regno di terrore è finito. La pace torna a regnare… e di Grappolaccio non si sentirà parlare per molto, molto tempo.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/49"
+    },
+    {
+      "numero": 50,
+      "saga": "Gli indirizzi dell'infinito: il ritorno del Grappolaccio",
+      "titolo": "Ritorna la pace",
+      "data_pubblicazione": "31 luglio 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Con la disfatta di Dr. Grappolo, la pace torna finalmente sulla città di Milano. Grazie ai poteri dell’Autore, le macerie si ricompongono… trasformandosi, com’è destino, in brutti appartamenti sovraprezzati. Gli Indirizzi dell’Infinito non rappresentano più una minaccia, e l’ombra del terrore è ormai un ricordo lontano. Dottor Scudo, affiancato dai suoi fidati compagni di battaglia, può finalmente concedersi un meritato momento di serenità: una pizza fumante, la sua preferita, condivisa in buona compagnia. Nuove sfide e misteriose insidie attendono sicuramente i nostri eroi, ma per oggi… possono aspettare.",
+      "sigla": "Gli indirizzi dell'Infinito",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/50"
+    },
+    {
+      "numero": 51,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Il mini sorso!",
+      "data_pubblicazione": "01 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il Calabrone e la Zanzara oggi offrono da bere a tutti, e nessuno perde l’occasione per approfittarne. Tra risate, brindisi e racconti di guerra, l’atmosfera è quella delle grandi feste dopo una lunga battaglia. Ma Dottor Scudo, ancora in vena di scherzi, decide di prendersi gioco del povero Nikson: con aria solenne, gli riempie il calice… con appena poche gocce di prosecco. Nikson assiste alla scena con sgomento e disperazione, sperando fino all’ultimo in una pioggia d’alcol gratuito. Non sarà oggi il giorno del suo trionfo enologico.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/51"
+    },
+    {
+      "numero": 52,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "La maledizione della tapparella!",
+      "data_pubblicazione": "04 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il Milet stava iniziando la giornata in ufficio come sempre, immerso nella routine e ignaro del destino che stava per abbattersi su di lui. All’improvviso, con un tonfo secco e inarrestabile, la tapparella si rompe e crolla giù. Con tutte le sue forze, cerca di opporsi all’inevitabile con la disperazione di un uomo che rifiuta il caos. Dottor Scudo, sempre vigile, accorre in suo soccorso senza esitare. Ma la malefica Zanzara non perde occasione per infierire. Davanti all’incidente, lo deride senza pietà, attribuendogli la colpa con la solita acidità e tirando in ballo, neanche troppo velatamente, il suo sangue meridionale. La stanza cade nel silenzio, rotto solo dallo scricchiolio della tapparella ormai piegata su se stessa. Quanto tempo rimarrà rotta? Nessuno lo sa. Potrebbero essere ore. Giorni. O l’eternità.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/52"
+    },
+    {
+      "numero": 53,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Un calcolo non calcolato!",
+      "data_pubblicazione": "05 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo riceve una notizia sconvolgente: Nikson è stato ricoverato in ospedale. Le voci parlano chiaro: la sua ossessione per i sassi ha superato ogni limite... al punto che il suo stesso corpo ha deciso di produrne uno. Senza perdere tempo, Scudo si precipita al suo capezzale. Il quadro è critico: nel corpo di Nikson si è formato un calcolo gargantuesco, una vera e propria creatura minerale in miniatura. Con l’aiuto dell’Autore, esperto non solo di narrazione ma anche di miracoli anatomici, Scudo prende parte a un’operazione straordinaria. Tra luci bianche e sospiri tesi, riescono infine a far partorire il mostruoso calcolo dal corpo sofferente del povero Nikson. Il peggio sembra passato. Ma da quel giorno, in ufficio, nessuno ha più osato regalargli un sasso. Nemmeno per scherzo.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/53"
+    },
+    {
+      "numero": 54,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Accesso negato",
+      "data_pubblicazione": "06 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo tenta di accedere alle più moderne tecnologie per la programmazione. Il suo obiettivo è nobile: lavorare meglio, più velocemente, e con risultati superiori. Ed eccolo, finalmente. Illuminato da sfavillanti luci al neon, tra suoni di campanelli e promesse di innovazione, si staglia davanti a lui il Parco Divertimenti delle Tecnologie Moderne. Un luogo leggendario, dove tutto è più snello, più scalabile, più “performante”. Ma la strada è sbarrata. I cancelli sono chiusi, e davanti a essi vegliando come un cerbero testardo, si erge il retrogrado Calabrone, custode dell’antico, paladino del framework di sempre. Non appena Scudo si avvicina, Calabrone lo attacca con ferocia, gridando che non serve nulla di nuovo quando l’antico sistema funziona ancora benissimo. Tra righe di codice obsolete e dipendenze spezzate, la battaglia è dura. Riuscirà Dottor Scudo ad accedere al Parco delle Tecnologie Moderne?",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/54"
+    },
+    {
+      "numero": 55,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "La polizia delle tatine",
+      "data_pubblicazione": "07 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo il doloroso parto del colossale sasso, Nikson si riprende lentamente, grazie alla portentosa tisana spaccapietre. Per celebrare l’esportazione della pietra, Dottor Scudo decide che è tempo di festeggiare a modo loro: con un classico giro di ronda. I due salgono con prestanza sulla Tatine Mobile, lucida e rombante, e si avventurano tra le strade di Milano, alla ricerca delle tatine più belle. È una missione delicata, che richiede occhio esperto, spirito d’osservazione… e autocontrollo. Nikson, con la sua consueta solennità da filosofo da bar, non perde occasione per ricordarlo a Scudo: l’importante è guardare, non toccare.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/55"
+    },
+    {
+      "numero": 56,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Sì va in vacanza!",
+      "data_pubblicazione": "08 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "L’estate è ormai nel pieno e l’esasperazione di Dottor Scudo ha raggiunto livelli da record. È il momento giusto per una meritata fuga! Tra spiagge esotiche, tatine in abbondanza, cocktail rinfrescanti e l’immancabile leggendario pallone Super Tele, Scudo saluta tutti per un paio di settimane. Finalmente lontano da zanzare e calabroni, pronto a godersi sole e libertà.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/56"
+    },
+    {
+      "numero": 57,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Buon Ferragosto!",
+      "data_pubblicazione": "08 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Ferragosto è arrivato e Dottor Scudo ha organizzato la grigliata definitiva! Tra il crepitio della brace e il profumo irresistibile che aleggia nell’aria, tutti gli amici si riuniscono per festeggiare. Nikson sorseggia il suo inseparabile Niktonik, l’Autore osserva la scena con aria compiaciuta, Jackson svapa con la sua sigaretta elettronica creando nuvolette artistiche, e Milet – con sguardo speranzoso – chiede se per caso c’è anche il sushi. Nel frattempo Ale, tra un piatto e l’altro, sfoggia trick spettacolari con la sua BMX. È una giornata di sole, risate e chiacchiere, un momento perfetto per augurare a tutti un calorosissimo buon Ferragosto!",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/57"
+    },
+    {
+      "numero": 58,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Rientro dalle ferie",
+      "data_pubblicazione": "25 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo era felice, era sereno… Era in ferie! Finalmente libero, finalmente lontano da monitor e scadenze, si godeva il lusso raro di un caffè bevuto senza fretta, di un tramonto guardato fino in fondo. Ma nel mondo capitalista in cui viviamo non è concesso vivere così per sempre. Le ferie hanno il fiato corto, e presto le malefiche catene dell’ufficio lo trascinarono di nuovo alla sua postazione. Ad attenderlo c’erano la Zanzara e il Calabrone, pronti a punzecchiarlo con nuovi lavori da sbrigare. Ogni ronzio era una scadenza, ogni puntura un “urgente” segnato in rosso. Intanto, il nostro Eroe si ritrovava schiacciato sotto il peso di migliaia di email da recuperare, un mare infinito di notifiche e richieste che sembravano moltiplicarsi da sole. E così, mentre il mondo là fuori continuava a girare, Dottor Scudo stringeva i denti: armato solo della sua pazienza, pronto a difendersi dall’assalto quotidiano.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/58"
+    },
+    {
+      "numero": 59,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Lo spaccio di caffè",
+      "data_pubblicazione": "26 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo, metodico e previdente, ha sempre la sua scorta di capsule di caffè ben ordinata, come un arsenale di energia pronto all’uso. Nikson invece no: lui pensa solo ai suoi sassi, li raccoglie, li classifica, li accarezza… e poi puntualmente, nel momento del bisogno, si accorge di non avere la minima riserva di caffeina. Allora vaga come un’anima in pena fino alla scrivania del collega, con lo sguardo supplichevole e la tazzina tremolante in mano. Scudo non è certo un tiranno: concede volentieri il caffettino, ma ha stabilito una semplice regola: nulla è gratis. In cambio di ogni tazzina offerta, vuole… denaro contante. Sì, perché i sassi sono belli da contemplare, ma i soldi servono a comprare il prossimo caffè. All'inizio era un gioco tra colleghi, un piccolo contributo che faceva parte dell’ufficio e del baratto bonario. Ma col passare dei giorni la scrivania di Scudo si è trasformata in qualcosa di strano: un altarino di cialde con montagne di monetine sparse sopra, come un piccolo santuario dell’equilibrio caffeinico. Così Scudo sorseggia il suo espresso con soddisfazione, mentre Nikson si allontana, con una mano in tasca… e l’altra alleggerita di qualche spicciolo. Forse Scudo non aveva notato che, alla fine, si era involontariamente trasformato nel più improbabile strozzino dell'ufficio: il Trafficante di Caffè.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/59"
+    },
+    {
+      "numero": 60,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Il leggendario Niktonic!",
+      "data_pubblicazione": "27 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo una lunga giornata di lavoro tra zanzare e calabroni, Nikson sa bene di cosa ha bisogno l’ufficio: il niktonic al Picchio! Convincere i colleghi non è certo un’impresa. Dottor Scudo, in particolare, è sempre pronto a staccare con un buon alcolico in mano, osservando con discreta soddisfazione le tatine che si radunano al bar.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/60"
+    },
+    {
+      "numero": 61,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Diluvio alla milanese",
+      "data_pubblicazione": "28 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Nemmeno i diluvi estivi milanesi fermano il Dottor Scudo. Avrebbe sicuramente preferito starsene a casa, ma con il suo fidato motorino — vero destriero cittadino — riesce a solcare l’alluvione che ha colpito la metropoli. Tra raffiche di vento, auto in panne e alberi sradicati, avanza imperterrito, come un cavaliere moderno che non conosce resa.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/61"
+    },
+    {
+      "numero": 62,
+      "saga": "Sermig: il troiaio e la Canalis",
+      "titolo": "Ritorno a Sermig",
+      "data_pubblicazione": "29 agosto 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo le notizie delle misteriose sparizioni di due suoi colleghi, il Dottor Scudo non riesce a ignorare l’ombra che cala sulla città. Milano, con le sue strade bagnate di pioggia e i lampioni che tremolano come candele in agonia, sembra trattenere il respiro. Il sospetto si insinua: il pungente Calabrone. Troppo avido, troppo ossessionato dal denaro per non essere coinvolto. Ma seguendo le tracce di un denaro sporco, macchiato di assenze e silenzi, l’eroe si ritrova davanti a un nome che non avrebbe mai voluto risentire: Sermig.",
+      "sigla": "Sermig: reparto sfruttamento",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/62"
+    },
+    {
+      "numero": 63,
+      "saga": "Sermig: il troiaio e la Canalis",
+      "titolo": "In trappola!",
+      "data_pubblicazione": "01 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo si fa coraggio ed entra. Dopo pochi passi nel covo del male, un suono di ingranaggi rompe il silenzio. Prima che possa rendersene conto, il pavimento si apre sotto di lui: una botola. Scivola nel vuoto, mentre il riso raccapricciante della Canalis echeggia nelle tenebre, inseguendolo e dissolvendosi man mano che precipita sempre più in basso.",
+      "sigla": "Sermig: reparto sfruttamento",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/63"
+    },
+    {
+      "numero": 64,
+      "saga": "Sermig: il troiaio e la Canalis",
+      "titolo": "L'allagamento di Sermig",
+      "data_pubblicazione": "02 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La caduta di Dottor Scudo si interrompe bruscamente quando il suo corpo impatta con l’acqua che ha invaso i sotterranei del Sermig. Sente il gelo penetrargli nelle ossa mentre cerca di riorientarsi nel buio. Ricorda le voci sull’alluvione che ha colpito la sede senza causare alcun danno visibile… ma ora la verità si rivela in tutta la sua atrocità. La Canalis, priva di scrupoli, ha deviato le acque nei sotterranei, sacrificando i lavoratori intrappolati lì sotto, lasciandoli annegare. Il cuore di Scudo accelera: deve trovare i suoi colleghi, e in fretta, prima che sia troppo tardi.",
+      "sigla": "Sermig: reparto sfruttamento",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/64"
+    },
+    {
+      "numero": 65,
+      "saga": "Sermig: il troiaio e la Canalis",
+      "titolo": "Sulla giusta strada",
+      "data_pubblicazione": "03 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo si muove a fatica nel labirintico sotterraneo allagato, ogni passo un’eco liquida che sembra moltiplicarsi tra i muri marci. Ma all’improvviso l’acqua si increspa: i corpi dei lavoratori annegati tornano in vita, spinti dal rancore mai sopito verso la crudele Canalis. Le loro voci, deformate dall’odio e dall’acqua, rimbombano nel buio: urla che reclamano uno stipendio umano, lamenti che chiedono turni di meno di dodici ore, lamenti che si confondono con gemiti spettrali. Circondato da quell’orda di anime sfruttate, Scudo stringe i denti e avanza, fendendo l’acqua come in un incubo senza fine. Finalmente, tra le ombre, scorge una scala metallica. Sopra di essa, un cartello arrugginito recita: Reparto Sfruttamento. Forse è davvero sulla giusta strada.",
+      "sigla": "Sermig: reparto sfruttamento",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/65"
+    },
+    {
+      "numero": 66,
+      "saga": "Sermig: il troiaio e la Canalis",
+      "titolo": "Reparto sfruttamento",
+      "data_pubblicazione": "04 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La porta del Reparto Sfruttamento si spalanca con un boato metallico, e Dottor Scudo irrompe come un eroe nella tenebra. La scena che si presenta davanti ai suoi occhi è agghiacciante: Jackson e Ale sono incatenati alle loro postazioni, costretti ad attendere interminabili meeting con la Canalis e il Calabrone, che come sempre si rivelano disorganizzati, lasciandoli marcire in un’attesa infinita. Con loro, un tempo, c’era anche Miguel. Ma per lui ormai è tardi: se n'è andato, e il silenzio che circonda la sua postazione è più eloquente di qualsiasi parola. Scudo stringe i pugni, poi con un gesto deciso spezza le catene dei suoi compagni. Insieme si avviano tra i corridoi bagnati e oscuri, cercando un’uscita da quella labirintica prigione. Il cammino è incerto, ma ora non sono più soli: la speranza si è riaccesa.",
+      "sigla": "Sermig: reparto sfruttamento",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/66"
+    },
+    {
+      "numero": 67,
+      "saga": "Sermig: il troiaio e la Canalis",
+      "titolo": "Ingarbugliati nella rete speranza",
+      "data_pubblicazione": "05 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo e i suoi colleghi percorrono in fretta i corridoi del Sermig, con l’ansia che cresce a ogni passo e la sensazione costante di essere osservati. All’improvviso, dall’alto cala una trappola: una diabolica rete che li avvolge e li immobilizza, la temuta Rete Speranza. Mentre cercano di liberarsi, i megafoni sui muri si accendono gracchiando. La voce seccata del Calabrone riecheggia tra le pareti: «Rilasciate... il troiaio.» Ora sono nei guai, devono liberarsi in fretta.",
+      "sigla": "Sermig: reparto sfruttamento",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/67"
+    },
+    {
+      "numero": 68,
+      "saga": "Sermig: il troiaio e la Canalis",
+      "titolo": "Travolti dal Troiaio Comunicazioni",
+      "data_pubblicazione": "08 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "I muri tremano e rumori inquietanti si fanno sempre più vicini. Dottor Scudo e i suoi compagni riescono a liberarsi dalla Rete Speranza appena in tempo. Dal fondo del corridoio, tra scintille e distorsioni, prende forma il Troiaio Comunicazioni: un abominio fatto di interferenze, linee spezzate e bug, un ammasso instabile che avanza con passo ferale. L’essere si muove come un’eco malata di tutto ciò che non dovrebbe esistere, e i suoi gemiti digitali rimbombano nelle tenebre. Gli eroi fuggono a perdifiato, ma sanno che la creatura non si fermerà finché non avrà reclamato una vittima. Le possibilità di uscire vivi da quel labirinto si assottigliano a ogni respiro.",
+      "sigla": "Sermig: reparto sfruttamento",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/68"
+    },
+    {
+      "numero": 69,
+      "saga": "Sermig: il troiaio e la Canalis",
+      "titolo": "Addio Guido, sono Guido",
+      "data_pubblicazione": "09 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Ormai senza forze e senza alcuna traccia di un’uscita, per i nostri eroi sembra essere la fine. Il Troiaio Comunicazioni si avventa con ferocia, pronto a colpire. Ma all’improvviso, dall’ombra, balza fuori una figura identica al Dottor Scudo… è il Cannellone! Si frappone tra la bestia e i fuggitivi, venendo travolto senza esitazione. Con un ultimo sguardo rassicurante verso Scudo, mormora che per lui ormai era già troppo tardi. Il sacrificio del Cannellone nazionale salva tutti. Se ne va con un sorriso, pronunciando le sue ultime parole: «Addio Guido, sono Guido», in ricordo del loro primo incontro.",
+      "sigla": "Sermig: reparto sfruttamento",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/69"
+    },
+    {
+      "numero": 70,
+      "saga": "Sermig: il troiaio e la Canalis",
+      "titolo": "Fine della corsa",
+      "data_pubblicazione": "10 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo e i suoi compagni, devastati dalla perdita del Cannellone, proseguono la fuga finché non si ritrovano in quella che sembra una mansarda senza via d’uscita. Non hanno nemmeno il tempo di tornare indietro: il corridoio alle loro spalle si riempie della voce diabolica della Canalis. È troppo tardi. Con il terrore negli occhi, gli eroi si barricano all’interno, mentre dall’altra parte della porta il demonio comincia a farsi strada a colpi di accetta e con lamenti taglienti sulla gestione dei suoi siti. Il legno scricchiola, le schegge volano. Ogni colpo sembra più vicino, più inesorabile. Riusciranno a trovare un modo per sfuggire a questa nuova minaccia?",
+      "sigla": "Sermig: reparto sfruttamento",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/70"
+    },
+    {
+      "numero": 71,
+      "saga": "Sermig: il troiaio e la Canalis",
+      "titolo": "Vendetta dall'alto",
+      "data_pubblicazione": "11 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo e i suoi colleghi scorgono un bagliore di speranza dalla finestra: stormi di piccioni volteggiano nel cielo grigio. In un atto disperato stringono un’alleanza con i volatili urbani e, a cavallo degli esemplari più grandi, spiccano il volo giusto in tempo per sfuggire agli artigli della Canalis. Ma la diabolica donna non si dà per vinta: spalanca le sue ali e si lancia all’inseguimento. I piccioni, fedeli al patto, la bombardano dall’alto con un fitto diluvio di guano. Appesantita e accecata, la Canalis perde quota e non riesce a continuare la caccia. Scudo e i suoi compagni planano lontano con le luci dell'alba, liberi dall’incubo del Sermig, finalmente fuori dal labirinto da incubo.",
+      "sigla": "Sermig: reparto sfruttamento",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/71"
+    },
+    {
+      "numero": 72,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Fuori servizio",
+      "data_pubblicazione": "12 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo già di prima mattina pregusta la pizza di Mani in Merda, e allo scoccare dell’ora di pranzo raduna i suoi compagni e marcia deciso verso la meta agognata. Ma il sorriso gli si spegne di colpo: la porta è sbarrata, un cartello annuncia la chiusura imprevista per guasto tecnico. La disperazione cala come un’ombra sul gruppo. I colleghi provano a consolarlo proponendo hamburger, sushi, ogni alternativa possibile, ma nulla riesce a placare il malessere cosmico che attanaglia l’eroe privato del suo premio.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/72"
+    },
+    {
+      "numero": 73,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "L'ora del deploy",
+      "data_pubblicazione": "16 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Come ogni giovedì, con il pranzo che grava come un macigno sullo stomaco, tutto l’ufficio intraprende il solenne pellegrinaggio verso il bagno. Anche per Dottor Scudo l’urgenza è ormai ineludibile, ma la vista che gli si para davanti lo gela: una fila interminabile serpeggia fuori dalla porta. Il rischio è altissimo, e l’eroe sa che dovrà attingere a tutta la sua forza per resistere. Perché se il destino decidesse di voltargli le spalle, si compirebbe l’incubo più temuto: il deploy in locale.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/73"
+    },
+    {
+      "numero": 74,
+      "saga": "Zanzagallo e la nascita di Sociozilla",
+      "titolo": "La camera a gas",
+      "data_pubblicazione": "17 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo un’attesa interminabile, finalmente giunge il turno di Dottor Scudo. Ma il destino gli tende un tranello: prima di lui Miletta ha lasciato nel gabinetto un “male solido” degno di un’arma chimica. Scudo si trova così di fronte a una vera e propria camera a gas, e deve attingere a tutta la sua resilienza per entrare ed evitare il famigerato deploy in locale. Ma c’è qualcosa che lo inquieta ancora di più. Il miasma che aleggia nel bagno sembra portare con sé un’ombra, come se qualcosa di marcio covasse dentro il collega.",
+      "sigla": "E la divisa dal gusto discutibile che indossa Miletta non fa che alimentare i sospetti del nostro eroe… Scudozord",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/74"
+    },
+    {
+      "numero": 75,
+      "saga": "Zanzagallo e la nascita di Sociozilla",
+      "titolo": "L'esorcismo di Miletta",
+      "data_pubblicazione": "18 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "I timori di Dottor Scudo si rivelano fondati: qualcosa di oscuro e rancido alberga davvero nel collega. Scudo invoca l’aiuto dell’Autore che fa comparire catene sovietiche di prima qualità e riesce a bloccare il Milet, che si dimena come un ossesso lanciando anatemi contro “zecche” e “stranieri” e sproloquiando su un certo ventennio. Una volta immobilizzato, l’eroe inizia un rituale d’espulsione degno dei migliori compagni esorcisti: fratellanza, diritti umani e una buona dose di parità sociale. Dopo ore di duro lavoro, un piccolo spirito malefico a forma di zanzara fuoriesce dal corpo di Miletta e vola via sibilando. Il collega, finalmente libero, crolla sfinito ma salvo.",
+      "sigla": "Scudozord",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/75"
+    },
+    {
+      "numero": 76,
+      "saga": "Zanzagallo e la nascita di Sociozilla",
+      "titolo": "Il Zanzagallo!",
+      "data_pubblicazione": "19 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo torna alla sua postazione soddisfatto dell’esorcismo appena compiuto, convinto di aver riportato un minimo di pace in ufficio. Ma la quiete dura poco: lo spirito malefico della zanzara, furioso per essere stato scacciato, si contorce nell’aria e assume una nuova forma mostruosa. Davanti agli occhi esterrefatti dei presenti prende vita una chimera ripugnante, metà zanzara e metà gallo, con zampe artigliate e un becco che stride come una trombetta. Con la sua voce acuta e martellante la creatura inizia ad attaccare l’ufficio… non con artigli o pungiglioni, ma con una raffica di opinioni politiche non richieste, slogan urlati e canti ultras. Le scrivanie tremano, i PC vanno in crash, e i colleghi cercano riparo tappandosi le orecchie: il nuovo incubo è appena cominciato.",
+      "sigla": "Scudozord",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/76"
+    },
+    {
+      "numero": 77,
+      "saga": "Zanzagallo e la nascita di Sociozilla",
+      "titolo": "Rivoluzione",
+      "data_pubblicazione": "22 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Quando è troppo è troppo. Tutto l’ufficio corre in aiuto di Dottor Scudo e scoppia una protesta. I colleghi gridano per i diritti dei lavoratori, lo stipendio minimo e la dignità. Il mostruoso Zanzagallo, che poco prima urlava opinioni politiche non richieste, resta interdetto. Confuso da quel coro compatto, barcolla e le sue ali tremano. Scudo capisce che l’unione dell’ufficio è la loro vera forza.",
+      "sigla": "Scudozord",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/77"
+    },
+    {
+      "numero": 78,
+      "saga": "Zanzagallo e la nascita di Sociozilla",
+      "titolo": "Rinforzi malfici",
+      "data_pubblicazione": "23 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il Zanzagallo è ormai disperato. Come ultima risorsa lancia una bestemmia furiosa e il suo grido attira rinforzi. Dal cielo cala il Calabrone, che vola storto per il troppo whiskey ma è ancora pieno di voglia di rovinare le vite dei dipendenti. Dal soffitto scende anche il Ragno, muovendo le zampe nervosamente e pronto a interrompere chiunque alzando la voce, minacciando di licenziare tutti. L’aria nell’ufficio si fa pesante: Dottor Scudo e i suoi colleghi capiscono che la battaglia è appena iniziata.",
+      "sigla": "Scudozord",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/78"
+    },
+    {
+      "numero": 79,
+      "saga": "Zanzagallo e la nascita di Sociozilla",
+      "titolo": "Sociozilla",
+      "data_pubblicazione": "24 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "I tre esseri malefici capiscono che, da soli, non riusciranno mai a sopraffare i dipendenti in rivolta. Senza esitare si fondono in un unico corpo, dando vita a un kaiju colossale che fa tremare l’asfalto con ogni passo. Le tre menti, unite e ubriache di potere, scivolano subito in un delirio incontrollabile e cominciano a devastare Milano, palazzo dopo palazzo. Dottor Scudo osserva la scena inorridito. L’aria vibra per l’enorme energia sprigionata.",
+      "sigla": "Nel profondo, però, sa che c’è ancora una possibilità: solo una cosa può salvarli ora… Scudozord",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/79"
+    },
+    {
+      "numero": 80,
+      "saga": "Zanzagallo e la nascita di Sociozilla",
+      "titolo": "Uniti col Crudo",
+      "data_pubblicazione": "25 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo si era ripromesso di usarlo solo in caso di vera necessità… e quel momento è arrivato. Con gesto solenne evoca il Crudo d’Oro. L’artefatto splende in mezzo alle macerie e chiama a raccolta i suoi colleghi. Uno dopo l’altro accorrono, poggiano le mani sul prosciutto luminoso e vengono avvolti da un bagliore che trasforma i loro abiti in bizzarre tute da pilota colorate. È l’inizio della controffensiva.",
+      "sigla": "Scudozord",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/80"
+    },
+    {
+      "numero": 81,
+      "saga": "Zanzagallo e la nascita di Sociozilla",
+      "titolo": "Arriva lo Scudozord!",
+      "data_pubblicazione": "29 settembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Ogni membro del team esegue una posa assurda, invocando il nome del Cursore. A quel richiamo, pezzi di metallo compaiono nell’aria e si agganciano uno all’altro fino a formare un gigantesco robot lucente: lo Scudozord. Dottor Scudo siede al comando, i colleghi occupano le postazioni di controllo e gli forniscono supporto. Di fronte a loro, l’enorme Sociozilla urla e scuote la città. La battaglia è finalmente alla pari. Riusciranno a sconfiggere il mostro o finiranno licenziati con disonore?",
+      "sigla": "Scudozord",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/81"
+    },
+    {
+      "numero": 82,
+      "saga": "Zanzagallo e la nascita di Sociozilla",
+      "titolo": "Scontro titanico",
+      "data_pubblicazione": "02 ottobre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La battaglia tra le due colossali entità scuote Milano. Sociozilla attacca con ferocia: fendenti velenosi che scaricano sui dipendenti le colpe dei propri errori e stoccate micidiali che bloccano la paga mensile. Lo Scudozord però resiste a queste angherie, solido come l’acciaio. Al comando, Dottor Scudo guida il contrattacco con precisi colpi di cursore, poi coglie il nemico di sorpresa scatenando una pioggia di Crudomissili a ricerca che illuminano il cielo prima di abbattersi sul mostro. Lo scontro è all’apice. Chi riuscirà a prevalere?",
+      "sigla": "Scudozord",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/82"
+    },
+    {
+      "numero": 83,
+      "saga": "Zanzagallo e la nascita di Sociozilla",
+      "titolo": "Trionfo eroico",
+      "data_pubblicazione": "07 ottobre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo ore di estenuante battaglia, lo Scudozord si erge trionfante, illuminato dalle prime luci dell’alba. Una lunga notte passata a discutere di diritti dei lavoratori, tagli agli stipendi e settimana corta ha messo a dura prova i nostri eroi, ma i loro colpi di Cursore e Crudo hanno avuto la meglio su Sociozilla, ora riverso a terra, sconfitto. L’idea di un futuro senza zanzare, calabroni e ragni accende l’entusiasmo di tutti. È il momento di festeggiare: il mondo del lavoro è salvo… almeno per ora!",
+      "sigla": "Scudozord",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/83"
+    },
+    {
+      "numero": 84,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Emergenza ritardi",
+      "data_pubblicazione": "08 ottobre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo la vittoria, Dottor Scudo e i suoi colleghi rientrano in ufficio con il cuore leggero, pronti a godersi un po’ di meritata normalità. Ma la pace dura poco. Alla disfatta di Sociozilla, i soci malvagi sono tornati alle loro forme originali: colmi di rancore e pronti a sputare su ogni diritto dei lavoratori. Il Ragno, più velenoso che mai, tende un’imboscata agli eroi. Zampetta rapido tra le stanze, interrompendo chiunque osi parlare, alzando la voce e coprendo tutti con un discorso pieno di accuse. Con un gesto, li immobilizza nella sua ragnatela gerarchica e scaglia un rimprovero furioso per la scarsa puntualità la mattina. A nulla valgono i tentativi di spiegargli che restano sempre oltre l’orario di chiusura. Ora, imprigionati tra email non lette e riunioni non necessarie, dovranno ingegnarsi per uscire da questa nuova trappola.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/84"
+    },
+    {
+      "numero": 85,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "L'ora della schiscia!",
+      "data_pubblicazione": "14 ottobre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Ci sono due certezze assolute nei pranzi del Dottor Scudo: il giovedì si mangia da Mani in Merda e tutti gli altri giorni si porta la schiscetta. Inutili sono le suppliche di Nikson, che sogna di andare da Hamericas e si dispera come un tossico in crisi d’astinenza da hamburger e tatine.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/85"
+    },
+    {
+      "numero": 86,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "L'ultimo viaggio del fedele destriero",
+      "data_pubblicazione": "16 ottobre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Con le nuove disposizioni comunali era inevitabile: il Dottor Scudo lo sapeva, ma questo non lo rende meno doloroso. Il suo adorato destriero argentato si prepara alla sua ultima corsa, diretto verso il paradiso dei motorini. Lo ha accompagnato nelle missioni più improbabili per le strade di Milano — sotto il diluvio universale, nella nebbia padana o tra i fumi dell’alcol — restando sempre fedele. Addio, Scudo Scooter. Nessuno Scudozord potrà mai colmare il vuoto che lasci. Insegna agli angeli a superare i sottopassaggi allagati.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/86"
+    },
+    {
+      "numero": 87,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Il riposo del Calabrone",
+      "data_pubblicazione": "23 ottobre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il Calabrone è ricaduto nel suo vizio: il whisky. La Zanzara, per celebrare l’annuale ricorrenza della sua evocazione dagli inferi, ha offerto così tanto alcol da far perdere la cognizione del tempo persino al Ragno, che per una volta dimentica di rimproverare i ritardi in ufficio. Ma l’irresponsabile Calabrone non pensa al meeting che lo attende: si addormenta in piena call, lasciando la demoniaca Canalis senza parole. Ora tocca a Jackson e Ale correre ai ripari, chiedendo l’aiuto del Dottor Scudo prima che la riunione si trasformi in una tragedia aziendale.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/87"
+    },
+    {
+      "numero": 88,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Il ritorno del calcolo!",
+      "data_pubblicazione": "30 ottobre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "L’innegabile e ossessivo amore di Nikson per i sassi ha finalmente trovato un modo perverso per manifestarsi. Da settimane diceva di sentirli “muoversi dentro”, ma nessuno gli aveva creduto. Ridevano, pensando fosse la solita battuta. Finché una mattina, un urlo agghiacciante ha squarciato il silenzio dell’ufficio. Dottor Scudo e i colleghi hanno accorso, trovando Nikson riverso sul pavimento, pallido, tremante… la camicia intrisa di sangue e polvere grigia. Poi si è mosso qualcosa.",
+      "sigla": "Dalla ferita nello stomaco è emersa una pietra pulsante, viva, che lentamente ha aperto crepe simili a bocche La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/88"
+    },
+    {
+      "numero": 89,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Bonus aziendale",
+      "data_pubblicazione": "06 novembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "In una mattina grigia e piatta come un file Excel infinito, l’ufficio l'ufficio si sveglia all'improvviso con la porta che si spalanca: la Zanzara entra ronzando euforica, agitando le braccia come se avesse appena vinto una guerra economica. Annuncia le grandi vendite fatte e nel suo slancio di generosità decide di ricompensare i lavoratori che l’hanno aiutata a raggiungere tali vette di gloria. Con gesto teatrale, distribuisce dei cornetti a tutti i presenti. Il Dottor Scudo e i colleghi si scambiano uno sguardo di muta delusione. La Zanzara, però, non nota nulla. Sorride soddisfatta, convinta che quei musi lunghi siano solo un piccolo bug del sistema umano. Non può comprendere che dietro quegli occhi spenti non c’è ingratitudine, ma la consapevolezza di aver appena ricevuto il bonus aziendale più misero della storia.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/89"
+    },
+    {
+      "numero": 90,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Le burle del Crudo",
+      "data_pubblicazione": "13 novembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Le giornate in ufficio scorrono lente e pesanti, cariche di noia e stress. Ma Dottor Scudo sa come ravvivarle: prendendo di mira il povero Nikson. Conoscendo bene la sua dipendenza da nicotina, gli basta nascondere la sigaretta elettronica per dare inizio allo spettacolo. Nikson impazzisce, rovista tra le scrivanie, promette favori e persino i suoi amati sassi pur di ritrovarla. L’ufficio esplode in risate, mentre Scudo osserva la scena con un sorriso sornione e l’orgoglio di un artista che contempla la propria opera.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/90"
+    },
+    {
+      "numero": 91,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Cala l'oscurità",
+      "data_pubblicazione": "20 novembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "È risaputo che in ufficio, quando qualcosa si rompe, può pure marcire prima che qualcuno pensi di sistemarlo. Così, quando Dottor Scudo fa notare alla triade dei soci che il boiler dell’acqua calda è fuori uso da mesi — e che con l’inverno alle porte sarebbe il caso di intervenire — non immagina la catena di disastri che ne seguirà. Zanzara, Ragno e Calabrone sono allergici all’idea di spendere soldi in un tecnico, quindi optano per la loro soluzione migliore: fondersi di nuovo in Sociozilla e correggere questo \"bug\". Peccato che Sociozilla sia un maestro della distruzione, non certo delle riparazioni. Il risultato è immediato e disastroso. Un boato, una scintilla, e l’intero ufficio piomba nel buio totale. Urla, lamenti per i file non salvati, richieste disperate di poter tornare a casa si intrecciano nell’oscurità. E il boiler? Ovviamente ancora rotto. Sarà un inverno lungo e gelido.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/91"
+    },
+    {
+      "numero": 92,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Vendetta telematica",
+      "data_pubblicazione": "27 novembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Quando è troppo, è troppo. Dottor Scudo e Milet, ormai logorati da settimane di assedio telefonico, decidono che la difesa non basta più: è il momento di contrattaccare. Individuato il nido del male telematico, sfondano la porta come due paladini disperati e stanchi, armati di crudo e bestemmie. Il caos esplode all’istante: cuffiette che volano, operatori che cercano di leggere copioni mentre si riparano, telefoni che squillano a vuoto come lamenti di guerra. La battaglia è feroce, un turbine di insulti, crudi e sberle degne di Bud Spencer. Ogni scrivania conquistata è una chiamata molesta in meno, ogni centralinista in fuga è una vittoria personale. E alla fine, tra i monitor in fumo e i cordless distrutti, cala il silenzio. Un silenzio meraviglioso. Le chiamate cessano. La pace regna. Dottor Scudo e Milet, ansimanti, si scambiano uno sguardo complice. Hanno fatto ciò che andava fatto. Almeno fino alla prossima offerta “imperdibile”.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/92"
+    },
+    {
+      "numero": 93,
+      "saga": "Nel Sottoufficio",
+      "titolo": "Il Sottoufficio",
+      "data_pubblicazione": "04 dicembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Eventi bizzarri infestano l’ufficio da settimane: luci che sfarfallano senza motivo, connessioni che cadono proprio nei momenti cruciali, file che spariscono e ricompaiono in cartelle improbabili. All’inizio tutti danno la colpa alla triade dei soci e alla loro tirchieria cronica, ma col passare dei giorni la situazione assume un tono troppo inquietante per essere semplice incuria. Una mattina, Dottor Scudo arriva alla sua postazione e si accorge che qualcosa non torna. Le sedie di alcuni colleghi sono vuote, i loro caffettini ancora tiepidi… ma di loro nessuna traccia. È come se fossero stati risucchiati nel nulla. Seguendo piccoli indizi Scudo capisce che tutto ha avuto inizio con il progetto Acuson e ripercorrendone le tracce si ritrova a scrutare sotto una delle scrivanie. Lì, nascosto tra polvere e cavi annodati come viscere nere, si apre un sinistro passaggio, una cavità che non dovrebbe esistere. Un soffio di aria gelida gli accarezza il volto. Qualcosa, là sotto, respira. E i suoi colleghi… devono essere proprio lì dentro.",
+      "sigla": "Sottoufficio",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/93"
+    },
+    {
+      "numero": 94,
+      "saga": "Nel Sottoufficio",
+      "titolo": "La minaccia del Demosocione!",
+      "data_pubblicazione": "11 dicembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo fa un respiro profondo, scaccia la voce interiore che gli urla quanto questa sia un’idea pessima… e si lancia nel Sottoufficio. Atterra in un luogo familiare eppure irrimediabilmente sbagliato. Le scrivanie sono contorte come carcasse, le luci al neon tremolano con un ronzio che sembra lamentarsi, e l’aria sa di carta ammuffita e turni NON retribuiti. Credeva che il suo ufficio reale fosse già il peggiore degli incubi… ma ora deve ricredersi. Non c’è però tempo per lasciarsi sopraffare: è lì per salvare i suoi colleghi. Avanzando in silenzio tra pile di scartoffie pulsanti e monitor che lo osservano come occhi, Scudo scorge una creatura abominevole che pattuglia il corridoio. Ha le ali fastidiose della Zanzara, il pungiglione affilato del Calabrone e le zampe scattanti del Ragno. Una fusione orribile. È il Demosocione. Frugando in alcuni documenti sparsi su un tavolo deformato, Scudo scopre la verità: dopo la disfatta contro lo Scudozord, i soci si sono rifugiati nel Sottoufficio e hanno lavorato nell’ombra per costruire un luogo da cui nessun dipendente potesse più fuggire. Un inferno burocratico in cui lo sfruttamento è legge. E a guardia di questo dominio… il Demosocione. Un instancabile sorvegliante, uno schiavista creato per inseguire chiunque osi rallentare, catturando le sue vittime con l’arma più temuta di tutte: “Oggi solo mezza giornata??”. Il ronzio della creatura si avvicina. Dottor Scudo stringe i denti: il salvataggio sta per diventare una guerra.",
+      "sigla": "Sottoufficio",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/94"
+    },
+    {
+      "numero": 95,
+      "saga": "Nel Sottoufficio",
+      "titolo": "Corsa contro il tempo",
+      "data_pubblicazione": "17 dicembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo riesce ad aggirare la creatura diabolica e, avanzando nell’antro, arriva finalmente al cuore del Sottoufficio. Lì trova i suoi colleghi: imprigionati in bozzoli vischiosi fatti di sfruttamento e mobbing, lentamente assorbiti dalla struttura stessa. I loro volti sono pallidi, gli sguardi spenti, come se l’ufficio stesse risucchiando ogni residuo di volontà. Scudo richiama la forza del Crudo e, uno dopo l’altro, squarcia i bozzoli liberando i prigionieri. Ma nel momento stesso in cui l’ultimo collega cade a terra, la dimensione reagisce. Le pareti pulsano, i neon urlano, il Sottoufficio ha percepito la perdita delle sue vittime. Da ogni corridoio iniziano a riecheggiare versi innaturali, passi affrettati, ronzii sempre più vicini. Non c’è tempo da perdere: devono fuggire prima delle 18, o il destino che li attende sarà peggiore di qualunque mostro… un meeting dell’ultimo minuto. È una corsa contro il tempo.",
+      "sigla": "Sottoufficio",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/95"
+    },
+    {
+      "numero": 96,
+      "saga": "Nel Sottoufficio",
+      "titolo": "Il potere di undici caffè",
+      "data_pubblicazione": "17 dicembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Con enorme fatica il gruppo raggiunge l’uscita, ma anche lì la vittoria sembra incompleta. Un pensiero gelido attraversa tutti: se scappano così, i mostri del Sottoufficio potranno seguirli e riversarsi nel mondo reale, portando caos, task infiniti e stipendi miseri ovunque. È allora che Nikson prende una decisione estrema. Ignora le grida dei colleghi che lo implorano di fermarsi e inizia a bere caffè. Uno dopo l’altro. Nessuno lo aveva mai visto superare quota dieci, ma questa non è una giornata normale. Questa è una giornata da eroe. All’undicesimo caffettino, qualcosa cambia. Nikson alza lentamente le braccia e un’energia incontrollabile esplode attorno a lui. Con una telecinesi folle respinge le creature del Sottoufficio, scardina corridoi, frantuma scrivanie maledette e fa collassare quel regno di task ingiuste e salari bassi. Quando l’ultimo collega è finalmente al sicuro, Nikson resta solo. Con un ultimo sforzo disumano, mentre il sangue gli cola dal naso e il corpo cede, sferra il colpo finale. Poi, con un balzo disperato, riesce a uscire e sigilla per sempre l’accesso al Sottoufficio. Il silenzio cala. Sono salvi.",
+      "sigla": "Sottoufficio",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/96"
+    },
+    {
+      "numero": 97,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "L'urlo del Crudo terrorizza l'ufficio!",
+      "data_pubblicazione": "22 dicembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il portale del Sottoufficio è sigillato per sempre e, per un attimo, la pace sembra davvero essere tornata tra i cubicoli. Dottor Scudo tira un sospiro di sollievo e si avvia verso la sua postazione. Ma qualcosa non torna: è tutto troppo tranquillo. Appena si siede, il telefono squilla. Poi squilla ancora. Le notifiche invadono il monitor, una dopo l’altra, fino a coprirlo completamente. I clienti iniziano a chiamare direttamente sul suo numero personale. Intanto, gli insetti d’ufficio corrono nei corridoi in preda al panico, urlando che bisogna vendere, gestire, performare, assegnarsi i task in autonomia. In quel momento Scudo capisce. Il Sottoufficio non era un’eccezione, ma solo una versione grottesca e sincera di un mondo già marcio alla base. Ora lo vede con chiarezza assoluta. La disperazione lo travolge. Dal profondo del petto esplode un urlo primordiale, carico di rabbia e consapevolezza, così potente da squarciare il rumore, il caos e l’ipocrisia dell’ufficio. Per un istante, tutto si ferma.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/97"
+    },
+    {
+      "numero": 98,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Basta così",
+      "data_pubblicazione": "22 dicembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Basta così. Scudo lo ripete con fermezza, svuotato di ciò che un tempo lo teneva in piedi. L’ufficio gli appare per quello che è sempre stato: una prigione. Mancano solo le sbarre alle finestre. Il pensiero lo attraversa e, per la prima volta dopo tanto tempo, lo fa sorridere. Se non ci sono sbarre, allora una via di fuga esiste. Una calma nuova lo avvolge, una pace inattesa. Senza rabbia, senza urla, Scudo si avvicina alla finestra. Il vetro, fragile e mai davvero all’altezza del suo compito, cede con facilità, frantumandosi in mille pezzi che scintillano per un istante nell’aria. I colleghi seguendo con lo sguardo disperato la traiettoria dell’eroe che scompare oltre il bordo. Poi il silenzio. In quell’istante finisce Dottor Scudo, l’eroe dei cubicoli e delle battaglie impossibili. E comincia qualcosa che nessuno, mai, potrà più portargli via: la libertà.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/98"
+    },
+    {
+      "numero": 99,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Scudo salva il Natale",
+      "data_pubblicazione": "22 dicembre 2025",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "È Natale in ufficio, ma non c’è allegria, si lavora lo stesso, che gran porcheria. Tra luci finte e caffè riscaldato, ogni sorriso sembra già stanco e malandato. Le tastiere battono lente e svogliate, le anime tristi, le schiene piegate. Da quando Scudo non c’è più tra noi, persino la stampante piange per i corridoi. Si diceva fosse finita la storia, caduto un eroe, svanita la gloria. Ma quando il morale tocca il pavimento, succede qualcosa che sfida ogni evento. Un bagliore improvviso, odore di sale, è il mistico Crudo D’Oro, artefatto ancestrale. Dal nulla riappare, con passo deciso, Dottor Scudo in persona, vivo e sorridente in viso. Con un sacco sulle spalle e lo sguardo da santo, porta doni migliori di qualsiasi tredicesima a fine anno. A Nikson una pioggia di sassi pregiati, così smette di venderli per vizi disperati. A Jackson spray anti-zanzare per una vita intera, che nemmeno l’inferno gli ronza stasera. Per Miletta una barca, ma di sushi è piena, così naviga felice tra roll e sashimi con faccia serena. Ad Ale una bici fiammante e veloce, per fuggire dai task con eleganza feroce. E all’autore, commosso e un po’ confuso, un prosciutto crudo vegano… dal gusto discusso. L’ufficio esplode di risa e brindisi, per un giorno nessuno assegna task e crea finte crisi. Niente insetti malefici, né urla né call a far da ostacolo, solo pace tra i cubicoli, un vero miracolo. È Natale davvero, lo dice il cuore stanco, finché Scudo ritorna, il natale resta gioioso e bianco. E se domani il lavoro tornerà a mordere duro, per stanotte si festeggia: il miracolo è puro.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/99"
+    },
+    {
+      "numero": 100,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "La Lore dell'ufficio",
+      "data_pubblicazione": "07 gennaio 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo è ufficialmente tornato in ufficio. Rinvigorito dal potere del Crudo d’Oro, ora può sopportare le sventure che inevitabilmente lo attendono. Mentre i colleghi spengono i computer, chiudono gli zaini e fuggono verso una parvenza di vita, lui resta. Vigila, stoico, continuando a macinare righe di codice e a insultare i clienti che insistono nel chiamare per bug tanto insulsi quanto urgenti. Quando anche l’ultimo monitor si spegne, apre lo spesso libro che contiene tutta la lore dell’ufficio: un manoscritto che raccoglie gesta eroiche, fallimenti epici e riprovevoli infamie compiute da esseri maligni. Aggiorna il tomo con gli ultimi avvenimenti, incidendo il ricordo di ciò che è stato e di ciò che, purtroppo, tornerà a essere. Ormai l’ufficio è immerso nel silenzio, e solo la luce del suo cubicolo resta accesa come un faro solitario. Scudo chiude il libro, si alza e si avvia verso l’uscita. Prima di andarsene, lancia uno sguardo malinconico alle grigie mura, ripensando alle poche gioie e alle molte sofferenze consumate lì dentro. Poi sospira. E sorride, con aria di sfida. Esce e chiude la porta.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/100"
+    },
+    {
+      "numero": 101,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "L'era glaciale",
+      "data_pubblicazione": "22 gennaio 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Il rientro dalle festività riserva una brutta sorpresa ai nostri eroi. I termosifoni sono al minimo e i condizionatori non funzionano. Con il freddo record che ha investito Milano, nell’ufficio cala un gelo degno di una spedizione artica. Le dita, ormai ridotte a ghiaccioli, devono comunque battere dolorosamente sulle tastiere. C’è chi, in preda ad allucinazioni da ipotermia, giura di aver visto dei pinguini aggirarsi tra i corridoi. L’Autore prova a sollevare il morale dei colleghi distribuendo un po’ di vin brulé, ma serve a poco: più che scaldare, sembra solo ricordare a tutti quanto sarebbe bello essere altrove. Dottor Scudo sorseggia la bevanda calda in silenzio, mentre in sottofondo gli sembra di udire le risate beffarde dei soci. Sono rintanati nei loro uffici, con i condizionatori perfettamente funzionanti, intenti a godersi un microclima tropicale. Lì fuori è l’inverno. Qui dentro è una prova di sopravvivenza.",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/101"
+    },
+    {
+      "numero": 102,
+      "saga": "La Lore dell'ufficio",
+      "titolo": "Tragedia mancata",
+      "data_pubblicazione": "19 febbraio 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Dottor Scudo stava discutendo con fermezza con la Zanzara nella sala riunioni, l’ennesimo e ordinario scontro tra bene e male, tra ticket risolti e accuse passive-aggressive. All’improvviso, la sedia su cui troneggiava tradisce la sua dignità: una rotella cede con un sinistro crack. Il tempo sembra rallentare. L’equilibrio vacilla. La caduta dell’eroe appare inevitabile. Jackson assiste alla scena paralizzato, costretto a guardare senza poter intervenire, come davanti a una tragedia annunciata. Dall’altro lato del tavolo, la Zanzara si gode lo spettacolo con una risata fragorosa e meschina, attribuendo immediatamente la colpa a Miletta, con la solita logica aziendale: se qualcosa si rompe, è sicuramente responsabilità di chi non c’entra nulla. La sedia continua a inclinarsi. Il pavimento si avvicina. Riuscirà Dottor Scudo a salvarsi anche questa volta, o sarà sconfitto da una rotella da ufficio?",
+      "sigla": "La storia dello Scudo",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/102"
+    },
+    {
+      "numero": 103,
+      "saga": "La tirannia del Calabrone",
+      "titolo": "Dittatura pungente",
+      "data_pubblicazione": "26 febbraio 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "In ufficio regnava una pace quasi irreale, di quelle che capitano solo il giovedì, quando la stanchezza della settimana si mescola a una timida speranza in vista del weekend. Nell’aria aleggiava persino un lieve entusiasmo: il pranzo offerto dall’azienda, cibo caldo, magari perfino un calice di vino bevuto senza sensi di colpa. Poi la porta si spalancò. L’irruzione del Calabrone ruppe la quiete come una sirena d’allarme. La sua voce ronzante attraversò i cubicoli annunciando la sentenza: il pranzo aziendale era cancellato. Nessuna festa, nessun brindisi. Dottor Scudo e Nikon dovevano consegnare con urgenza il progetto Accuson. E, già che c’erano, la pausa pranzo sarebbe stata abbreviata per tutti. Quelli erano i dogmi. Le leggi non scritte. La piccola dittatura del Calabrone. Così Scudo e i suoi colleghi ingurgitarono in silenzio hamburger dal retrogusto amaro, più simili a penitenze che a pasti. Masticavano in fretta, guardando l’orologio, come detenuti durante l’ora d’aria. Dopo pochi minuti erano di nuovo alle scrivanie, chini sulle tastiere, mentre dai corridoi rimbalzavano le urla rabbiose dei soci, impegnati a deridere le loro “nuove tecnologie”, troppo moderne, troppo lente, troppo costose... qualunque cosa pur di non ammettere che non le capivano. La pace del giovedì era svanita. Restava solo il ronzio. Sempre più forte. Sempre più vicino.",
+      "sigla": "I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/103"
+    },
+    {
+      "numero": 104,
+      "saga": "La tirannia del Calabrone",
+      "titolo": "I dogmi del Calabrone",
+      "data_pubblicazione": "05 marzo 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo una settimana i membri dell’ufficio erano convinti che il delirio del Calabrone fosse finalmente finito. Era stata una parentesi grottesca, si dicevano, uno di quei momenti di follia aziendale destinati a spegnersi da soli. Ma la realtà arrivò come una doccia gelata. Il pungente insetto fece nuovamente irruzione tra i cubicoli e, con la stessa naturalezza con cui si comunica il meteo, annunciò che anche quel giorno il pranzo aziendale era cancellato. Il volto di Dottor Scudo si fece scuro. Era una questione di principio: dopo tutte le angherie, le urgenze inventate e i progetti impossibili, non poter nemmeno scroccare un pasto decente era semplicemente inaccettabile. Come se non bastasse, il Calabrone si avvicinò barcollando leggermente. Il suo alito sapeva inequivocabilmente di whiskey. Con tono solenne annunciò la sua nuova, geniale riforma organizzativa: da quel momento i gruppi di lavoro sarebbero stati spostati su WhatsApp. La sua totale incapacità di gestire gli strumenti digitali dell’azienda ricadeva così direttamente sui telefoni personali dei dipendenti, che presto si sarebbero ritrovati a ricevere notifiche di lavoro a qualsiasi ora del giorno e della notte. Nel silenzio teso dell’ufficio, Scudo strinse i pugni. La fame era sopportabile. L’ingiustizia pure. Ma le chat di lavoro su WhatsApp… forse erano davvero il limite.",
+      "sigla": "I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/104"
+    },
+    {
+      "numero": 105,
+      "saga": "La tirannia del Calabrone",
+      "titolo": "Ira ingiustificata",
+      "data_pubblicazione": "12 marzo 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo sta entrando in ufficio. Appena varca la soglia di quel luogo ormai piegato alla dittatura avverte subito che qualcosa non va: dalle postazioni arrivano urla concitate, cariche di rabbia. Senza perdere tempo corre verso i cubicoli. La scena che si trova davanti lo lascia pietrificato. Il povero Nikson è riverso a terra, il volto segnato dalle lacrime. Con mani tremanti rovista tra un cumulo di sassi spezzati e bicchierini da caffè rovesciati, come se stesse cercando disperatamente di salvare ciò che resta del suo piccolo tesoro. Poco distante, il Calabrone è in piena furia. Ruggisce accuse di negligenza, di scarsa professionalità, parole lanciate come pungiglioni contro chiunque gli capiti a tiro. Scudo osserva la scena, incredulo. Quello che fino a poco tempo prima era solo caos d’ufficio e satira quotidiana sta degenerando in qualcosa di molto più oscuro. Le urla, i sassi infranti, la disperazione negli occhi di Nikson… tutto indica che è stato superato un limite. Scudo stringe i pugni. Non c’è più tempo da perdere. Il Calabrone è fuori controllo. E qualcuno deve fermarlo.",
+      "sigla": "I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/105"
+    },
+    {
+      "numero": 106,
+      "saga": "La tirannia del Calabrone",
+      "titolo": "Il training arc",
+      "data_pubblicazione": "17 marzo 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo non ne può più. Poteva sopportare di essere il bersaglio del Calabrone, ma vedere i propri colleghi piegati dalle sue angherie è un limite invalicabile. Basta sassi distrutti, basta pause caffettino spezzate a metà. È il momento di reagire. Con l’aiuto dell’Autore viene creata una misteriosa stanza dello spirito e del tempo: un luogo sospeso, lontano da notifiche, clienti e urla, perfetto per affrontare un vero training arc. Il fedele Nikson, forte della sua esperienza in palestra, porta con sé i suoi sassi migliori, selezionati con cura maniacale. Non più semplici oggetti, ma strumenti di allenamento. Così inizia il percorso. Tra sollevamenti improbabili, sessioni estenuanti e concentrazione assoluta, Scudo si sottopone a un addestramento durissimo. Ogni goccia di sudore, ogni muscolo teso ha un solo obiettivo: tornare più forte di prima.",
+      "sigla": "I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/106"
+    },
+    {
+      "numero": 107,
+      "saga": "La tirannia del Calabrone",
+      "titolo": "Ma scherziamo?",
+      "data_pubblicazione": "18 marzo 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo estenuanti sessioni di allenamento, Nikson può dirlo con certezza: Dottor Scudo ha superato ogni limite dei muscoli umani. Forgiato da sassi, fatica e disciplina, l’eroe emerge dalla stanza dello spirito e del tempo con una nuova corazza di muscoli d’acciaio. Non è più lo stesso di prima. È pronto. Lo scontro è inevitabile. Quando rientra in ufficio, però, lo accoglie una calma innaturale. Nessuna urla, nessuna notifica, nessun ronzio. Solo tensione, densa nell’aria. Scudo si avvicina alla macchinetta del caffè. Prima della battaglia serve lucidità. La macchina inizia a tremare, emette suoni gutturali e perde liquidi da ogni fessura, sputando la bevanda come un relitto ormai allo stremo. Sembra un anziano abbandonato a sé stesso, consumato dal tempo. Una perfetta rappresentazione di tutto l’ufficio: vecchio, logoro, prossimo al collasso. Poi, il ronzio. L’odore del caffè lo ha attirato. Il Calabrone compare sulla soglia, imponente, furente. Nessuna pausa può esistere senza la sua approvazione. Per un istante, il silenzio è totale. Poi, i loro sguardi si incrociano. E lo scontro ha inizio.",
+      "sigla": "I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/107"
+    },
+    {
+      "numero": 108,
+      "saga": "La tirannia del Calabrone",
+      "titolo": "La benedizione di Claudio",
+      "data_pubblicazione": "26 marzo 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Lo scontro è cruento e sanguinoso. La rabbia repressa esplode in un’ondata di violenza brutale che scuote l’intero ufficio. Dottor Scudo colpisce con forza, ma i poteri retrogradi del Calabrone si rivelano subdoli: ogni tecnica basata su nuove tecnologie viene immediatamente convertita in un vecchio e datato framework, rallentando l’eroe e frustrando i suoi attacchi. Il Calabrone avanza, implacabile. Tra le mani materializza una pesante lapide incisa con il nome di un’arcaica versione di PHP. La solleva sopra la testa, pronto a calarla su Scudo per porre fine allo scontro. Sembra finita. Ma proprio in quell’istante un fascio di luce divina irrompe dalla finestra, squarciando l’aria stagnante dell’ufficio. È Claudio Codice. Il santo che accorre in aiuto dei programmatori sovraccarichi di lavoro e oppressi da task impossibili. Con un semplice gesto scioglie le catene delle vecchie tecnologie che immobilizzavano Jackson. L’energia scorre nel suo corpo, trasformandolo: acquisisce capacità cibernetiche, gli occhi brillano di interfacce digitali, i suoi movimenti diventano precisi e sovrumani. Claudio Codice non pronuncia parola. Così come è arrivato, svanisce oltre la porta, lasciando dietro di sé un’aria carica di energia e speranza. Ora qualcosa è cambiato. Con questo nuovo potere, le sorti della battaglia potrebbero finalmente capovolgersi.",
+      "sigla": "I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/108"
+    },
+    {
+      "numero": 109,
+      "saga": "La tirannia del Calabrone",
+      "titolo": "Il sacrificio del Crudo",
+      "data_pubblicazione": "02 aprile 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La battaglia imperversa, devastando l’ufficio e ciò che resta delle attrezzature già malmesse. Monitor incrinati, tastiere spezzate e cavi penzolanti testimoniano la violenza dello scontro. L’esito è ancora incerto: con l’aiuto di Jackson, trasformato dall’intervento di Claudio, le forze si sono pareggiate e la lotta è diventata una prova di resistenza. Il Calabrone, tra un colpo e l’altro, ingolla bicchieri di whisky che sembrano rigenerarlo. La sua costituzione appare incrollabile, e diventa chiaro che i due eroi finiranno le energie prima di lui. Jackson allora si avvicina a Dottor Scudo e rivela di avere un attacco capace di sconfiggere definitivamente il tiranno. Ha però un difetto: richiede un lungo tempo di carica, e il bersaglio deve restare immobile. Scudo sorride. Nei suoi occhi passa un’ombra malinconica. Invita il compagno a iniziare a caricare l’attacco e gli dice di lasciare a lui il resto. Con uno scatto felino, forte dell’atleticità guadagnata durante gli allenamenti con Nikson, si lancia sul Calabrone e riesce a bloccarlo. L’insetto, resosi conto della situazione, inizia a urlare imprecazioni e insulti. Quando vede l’energia crescere tra le mani di Jackson, cambia tono: le urla diventano suppliche, poi pianto disperato, promesse di aumenti, benefit e un ambiente di lavoro finalmente equilibrato. Sono parole vuote. Scudo stringe la presa e resiste. Nonostante i colpi, nonostante la fatica, nonostante il dolore. Quando la carica raggiunge il culmine, Jackson, con una lacrima che gli solca il volto, libera il raggio. L’energia travolge il Calabrone… e inevitabilmente anche Scudo. L’eroe non si muove. Ha resistito fino all’ultimo, assicurando la vittoria.",
+      "sigla": "I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/109"
+    },
+    {
+      "numero": 110,
+      "saga": "La tirannia del Calabrone",
+      "titolo": "I sette crudi del drago",
+      "data_pubblicazione": "09 aprile 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo il potente raggio energetico di Jackson cala una quiete irreale. Il fumo si dirada lentamente e, tra i resti dell’ufficio devastato, i corpi del Calabrone e di Dottor Scudo cadono a terra. I colleghi accorrono immediatamente. Si inginocchiano accanto a Scudo, lo chiamano, cercano un segno. Ma ormai è troppo tardi. L’eroe ha mantenuto la presa fino all’ultimo, e ora se n’è andato. Un rantolo interrompe il silenzio. Il Calabrone, con le ultime forze, solleva appena il capo e sbeffeggia i presenti. Annuncia che tra un anno arriveranno due nuovi insetti, ancora più spietati, e che per tutti loro sarà la fine. Poi, con un ultimo ronzio soffocato, si spegne. La disperazione si diffonde tra le mura dell’ufficio. Nessuno parla. Nessuno si muove. All’improvviso arriva di corsa l’Autore, trafelato, con lo sguardo acceso. Annuncia che non tutto è perduto. C’è ancora speranza. Rivela l’esistenza di sette crudi magici, sparsi per Milano. Oggetti mistici dotati di poteri straordinari. Quello che aveva aiutato Scudo in passato era proprio uno di essi. Se riuniti tutti e sette, possono evocare un drago leggendario capace di esaudire un desiderio… e quindi riportare in vita l’eroe. Le parole accendono qualcosa negli occhi dei presenti. La disperazione lascia spazio alla determinazione. Si rialzano. Si guardano. Annuiscono. Hanno solo un anno.",
+      "sigla": "I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/110"
+    },
+    {
+      "numero": 111,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "Arrivo nell'aldilà!",
+      "data_pubblicazione": "16 aprile 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo si risveglia di soprassalto. Attorno a lui si estende uno strano edificio antico, dall’aspetto burocratico, fatto di corridoi infiniti e pareti color pergamena. L’aria è immobile, interrotta solo dal fluttuare di piccole fiammelle parlanti che svolazzano qua e là, bisbigliando tra loro come impiegati ultraterreni. In fondo alla sala troneggia una scrivania gigantesca, dietro la quale siede una figura imponente. Scudo si avvicina, ancora confuso, per chiedere spiegazioni. La figura si presenta come Mendoza, il portinaio dell’aldilà. Con tono calmo conferma i sospetti dell’eroe: è morto. Tuttavia, gli spiega che, essendo un umano fuori dal comune, gli è stato concesso di mantenere il proprio corpo fisico. Per questo può tentare la durissima prova della Traversata del Serpentone: una passerella sospesa tra le nuvole che separa quel luogo dagli inferi. Se riuscirà a superarla, raggiungerà il pianeta di Re Klaudio, un’entità divina capace di allenarlo e renderlo ancora più forte. Mendoza aggiunge un’ultima informazione: una grande minaccia incombe su Milano, e i suoi colleghi hanno già iniziato a raccogliere i leggendari crudi del drago per riportarlo in vita. Scudo annuisce. Non c’è tempo da perdere. Ringrazia il portinaio dell’aldilà e, senza voltarsi indietro, si incammina verso la passerella sospesa, pronto ad affrontare la traversata.",
+      "sigla": "#Scudo #Mendoza I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/111"
+    },
+    {
+      "numero": 112,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "La fine del serpentone",
+      "data_pubblicazione": "30 luglio 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dopo una corsa interminabile, che sembra essere durata mesi, Dottor Scudo raggiunge finalmente la fine della Traversata del Serpentone. Il fiato è pesante, i muscoli sono allo stremo, ma il percorso è terminato. Davanti a lui, però, non c’è alcuna strada. Dalla punta della coda del Serpentone si apre soltanto il vuoto. Scudo alza lo sguardo e lo vede subito. Sospeso nel cielo, poco distante, fluttua un piccolo pianeta. Su quella minuscola sfera si distinguono chiaramente un grande albero e una semplice casetta. Un luogo tanto tranquillo quanto misterioso. Mentre si domanda chi possa abitare un posto simile, una sagoma compare accanto all’albero. Anche da quella distanza, la sua presenza è opprimente. Un’aura immensa avvolge l’intero pianeta, tanto intensa da far vibrare l’aria attorno a Scudo. L’eroe sorride. Ha capito di essere arrivato nel posto giusto. Arretra di qualche passo, prende la rincorsa e si prepara a spiccare un unico, gigantesco balzo verso la meta finale del suo viaggio.",
+      "sigla": "#Scudo I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/112"
+    },
+    {
+      "numero": 113,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "La ricerca dei Crudi perduti",
+      "data_pubblicazione": "31 luglio 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Nel frattempo, i compagni di Dottor Scudo non sono rimasti con le mani in mano. Per un intero anno hanno attraversato Milano in lungo e in largo, affrontando prove improbabili e seguendo le più assurde leggende pur di recuperare i sette leggendari Crudi del Drago. La ricerca è stata lunga, estenuante e ricca di ostacoli, ma nessuno ha mai pensato di arrendersi. Infine, quasi alla vigilia dell'arrivo dei due nuovi insetti maligni annunciati dal Calabrone, l'impresa giunge al termine. I sette prosciutti mistici sono finalmente riuniti. Portati vicino tra loro, iniziano a brillare di una intensa luce dorata, sprigionando un'energia antica che fa tremare l'aria attorno a loro. I colleghi si guardano negli occhi. Dopo un anno di sacrifici, il momento è arrivato. Sono pronti a evocare il Drago e a riportare tra loro Dottor Scudo.",
+      "sigla": "#Nikson #Milet #Jackson #Prosciuttron I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/113"
+    },
+    {
+      "numero": 114,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "Il potere cosmico del Klaudioken!",
+      "data_pubblicazione": "04 agosto 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Dottor Scudo atterra sul piccolo pianeta dopo un balzo impossibile. Il luogo è silenzioso, immerso nella pace. Al centro si ergono un grande albero e una modesta casetta, davanti alla quale lo attende la figura che aveva intravisto dalla Traversata del Serpentone. È Re Klaudioh. L'aura che sprigiona è immensa, ma il suo sguardo è calmo. Scudo si inginocchia davanti all'entità divina e lo implora di allenarlo. Deve diventare più forte, aiutare i suoi amici e salvare Milano dalla nuova minaccia che incombe sulla città. Klaudioh osserva l'eroe in silenzio. Essendo un'entità ancestrale, è riluttante a concedere il proprio insegnamento a un semplice essere umano. Ma nei suoi occhi scorge qualcosa di raro: la determinazione del Crudo, una volontà così intensa da sembrare capace di sfidare il destino stesso. Alla fine accetta. Comincia così un allenamento durissimo che dura mesi. Ogni giorno Scudo viene spinto oltre i propri limiti, affrontando prove fisiche, mentali e spirituali sempre più estenuanti. Più volte sfiora il fallimento, ma ogni volta si rialza, e caffettino dopo caffettino rimane deciso a non tradire la fiducia dei suoi compagni. Quando l'addestramento giunge al termine, Klaudioh gli tramanda la sua tecnica più segreta. Il Klaudioken. Uno stato di elevazione dello spirito che trascende i limiti umani, permettendo di fondere mente e corpo con la sconfinata potenza dell'intelligenza artificiale. Scudo apre gli occhi. Non è più l'eroe che aveva messo piede su quel pianeta. Ora è pronto a tornare.",
+      "sigla": "#Scudo #Klaudio #KlaudioKen I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/114"
+    },
+    {
+      "numero": 115,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "Un desiderio per il Drago Prosciuttron",
+      "data_pubblicazione": "06 agosto 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Mentre Dottor Scudo prosegue il suo durissimo training arc sul pianeta di Re Klaudioh, i suoi amici consegnano i sette Crudi del Drago all'Autore. Grazie alle sue conoscenze metanarrative, è l'unico in grado di pronunciare l'antica formula necessaria all'evocazione. La luce dorata sprigionata dai sette prosciutti diventa sempre più intensa, fino a essere accecante. Il cielo sopra Milano si oscura all'improvviso e una gigantesca sagoma prende forma tra le nuvole. È Drago Prosciuttron. Un immenso drago dalle sembianze suine avvolge con il suo corpo lo skyline della città. I suoi occhi brillano come soli e la sua voce riecheggia in tutta Milano. Domanda quale sia il loro desiderio. Nikson fa un passo avanti. Per un istante lotta contro il fortissimo impulso di chiedere un'infinita scorta di Teresa e tatine, ma riesce a dominarlo. Stringe i pugni e grida con decisione il desiderio di tutto il gruppo: riportare in vita il loro caro collega. Prosciuttron annuisce. Con tono solenne conferma che il desiderio è stato esaudito. L'anima di Dottor Scudo potrà tornare nel mondo dei vivi... ma prima dovrà raggiungere nuovamente Mendoza, il portinaio dei cieli, che gli aprirà il passaggio verso il mondo umano. La speranza torna ad accendersi nei cuori degli eroi. Ma dura solo un istante. Nel cielo, due oggetti infuocati attraversano l'atmosfera terrestre a una velocità impressionante, lasciando lunghe scie luminose sopra Milano. La nuova minaccia è arrivata.",
+      "sigla": "#Nikson #Sosa #Jackson #Prosciuttron I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/115"
+    },
+    {
+      "numero": 116,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "La minaccia è arrivata",
+      "data_pubblicazione": "06 agosto 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Alla fine il momento è giunto. I due nuovi soci fanno il loro ingresso a Milano, pronti a raccogliere l'eredità del Calabrone e a diffondere il caos. Il loro arrivo è accompagnato da un'aura inquietante che si abbatte sulla città come una tempesta. Con una tecnologia malefica danno vita a un esercito di piccoli esseri verdi, deformi e instancabili. Sono nati con un solo scopo: rendere la vita delle persone miserabile. Le Task. Si moltiplicano senza sosta, spuntano da ogni angolo dell'ufficio, invadono monitor, telefoni e caselle di posta. Ogni volta che una viene completata, altre due prendono il suo posto. Non conoscono pietà, non conoscono pause pranzo e, soprattutto, non conoscono la parola \"priorità\". I colleghi impugnano mouse, tastiere e tazze di caffè come fossero armi, cercando disperatamente di contenere l'invasione. Ma tutti sanno la verità. Non possono vincere. Possono soltanto resistere... fino al ritorno di Dottor Scudo.",
+      "sigla": "#Zanza #Ragno I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/116"
+    },
+    {
+      "numero": 117,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "Task devastanti",
+      "data_pubblicazione": "02 settembre 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Mentre Dottor Scudo affronta il lungo viaggio che lo separa dal mondo dei vivi, i suoi compagni sono costretti a resistere da soli. La nuova forza ottenuta grazie all'addestramento con Re Klaudioh non può ancora aiutarli: il ritorno dell'eroe richiederà ancora tempo. Nel frattempo, il Ragno e la Zanzara scatenano la loro arma più insidiosa. Le Task. Con sadismo, queste piccole creature verdi si avventano sugli eroi senza concedere un attimo di tregua. All'apparenza sembrano lavoretti rapidi e innocui, ma basta iniziare ad affrontarle perché si trasformino in progetti giganteschi, fatti di richieste aggiuntive, modifiche dell'ultimo minuto e interminabili straordinari mai retribuiti. Lo scontro è estenuante. Uno dopo l'altro, gli eroi riescono ad abbattere le Task, ma ogni vittoria costa fatica e nuove energie. Quando sembra che l'ultima creatura stia per essere sconfitta, questa sfodera il suo attacco finale e si avventa su Nikson. L'impatto è devastante. Nikson crolla a terra, completamente privo di forze. Con lo sguardo rivolto al soffitto, stringe debolmente un sasso tra le mani e spera che, da qualche parte, una Teresa possa comparire e restituirgli le energie necessarie per rialzarsi.",
+      "sigla": "#Nikson I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/117"
+    },
+    {
+      "numero": 118,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "Il sacrificio di Milet",
+      "data_pubblicazione": "10 settembre 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "L'eliminazione delle Task si rivela essere solo l'antipasto del vero pericolo che incombe sugli eroi. È il turno del Ragno. Con movimenti frenetici inizia a zampettare da una stanza all'altra, entrando e uscendo dagli uffici mentre urla senza sosta. La sua tecnica è tanto semplice quanto devastante: interrompe chiunque stia parlando, semina confusione e trascina tutti in un vortice di regole incomprensibili, procedure contraddittorie e continui ammonimenti per i ritardi. In pochi istanti l'intero ufficio precipita nel caos. Le sue ragnatele si estendono ovunque, imprigionando gli eroi tra burocrazia, richiami e norme sempre più intricate. Poi il Ragno si ferma. Con tutte le sue forze intreccia un enorme bozzolo di ragnatela e lo scaglia contro Jackson. L'impatto sembra inevitabile. Ma proprio all'ultimo istante Milet si lancia davanti al compagno. Senza esitazione fa da scudo con il proprio corpo e viene completamente avvolto dalla ragnatela, sacrificandosi pur di salvare Jackson. Il silenzio cala per un istante. La situazione è sempre più critica. Ora, più che mai, l'arrivo di Dottor Scudo è fondamentale.",
+      "sigla": "#Ragno #Milet #Jackson I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/118"
+    },
+    {
+      "numero": 119,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "Lo Scudo dell'ultimo momento",
+      "data_pubblicazione": "16 settembre 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "La situazione è ormai disperata. Nikson e Milet giacciono a terra, gravemente feriti. Davanti a loro, il Ragno e la Zanzara avanzano lentamente, assaporando la vittoria e pronti a dare il colpo di grazia ai membri rimasti del gruppo. Ma proprio quando tutto sembra perduto... Un boato scuote Milano. L'aria viene squarciata da un'esplosione di energia e una sagoma attraversa il cielo a velocità folle. È Dottor Scudo. Durante il suo viaggio nell'aldilà è riuscito a ritrovare il suo fedele destriero. Finalmente riuniti, Scudo torna ufficialmente in sella al suo leggendario bolide... almeno fino alla prossima ordinanza comunale. Grazie alla sua incredibile velocità riesce a raggiungere Milano in un tempo record. L'eroe non perde un secondo. Si precipita dai compagni e presta loro immediatamente soccorso. A Nikson porge una scorta di Teresa, mentre a Milet consegna un gigantesco vassoio di sushi. I due, lentamente, iniziano a riprendere le forze. Solo allora Scudo alza lo sguardo. Vedere i propri amici ridotti in quello stato accende qualcosa dentro di lui. La rabbia cresce a ogni respiro, fino a trasformarsi in una furia cieca. I suoi pugni si stringono, l'aura del Klaudioken emana una luce sempre più intensa e perfino il Ragno e la Zanzara, per la prima volta, esitano. Dottor Scudo è tornato. E questa volta... è pronto a menare le mani.",
+      "sigla": "#Scudo #Nikson #Milet #KlaudioKen I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/119"
+    },
+    {
+      "numero": 120,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "È oltre novemila ore di ferie!",
+      "data_pubblicazione": "23 settembre 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "L'aria è carica di tensione. I due insetti osservano con crescente irritazione i compagni di Dottor Scudo rialzarsi dopo essere stati salvati. La Zanzara, troppo superba per sporcarsi personalmente le zampe, rivolge un semplice cenno al Ragno, ordinandogli di attaccare. Il Ragno parte all'assalto. Zampetta a velocità impressionante, cercando disperatamente un varco nella difesa dell'eroe. Le sue ragnatele e i suoi continui richiami rimbombano nell'ufficio, ma questa volta non bastano. Dottor Scudo è su un altro livello. Con movimenti rapidi e precisi respinge ogni assalto, schivando e parando senza il minimo sforzo. A ogni apertura risponde con colpi devastanti che fanno tremare l'intero edificio. Il Ragno tenta il tutto per tutto: alza la voce, interrompe, urla e cerca di destabilizzare l'avversario come ha sempre fatto. Ma la determinazione di Scudo non vacilla. Dopo pochi istanti lo scontro è già deciso. Con un ultimo poderoso colpo, il Ragno crolla al suolo, sconfitto. La Zanzara osserva la scena con disgusto. Vedendo il compagno strisciare verso di lui in cerca di aiuto, lo guarda con freddezza e, senza la minima esitazione, pone fine alla sua vita. Poi solleva lentamente gli occhiali e li utilizza per analizzare il suo nuovo avversario. Per un attimo rimane immobile. Le lenti restituiscono un valore che non dovrebbe nemmeno essere possibile. Lo stupore lascia subito spazio alla rabbia. La causa di quel livello di potenza è evidente: oltre novemila ore di ferie accumulate. Le mani della Zanzara tremano. L'aria si fa pesante. Sta per iniziare uno scontro di una violenza mai vista.",
+      "sigla": "#Zanza #Ragno #Scudo I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/120"
+    },
+    {
+      "numero": 121,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "Il potere dell'avidità",
+      "data_pubblicazione": "29 settembre 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "Lo scontro ha finalmente inizio. La Zanzara non perde tempo e mostra subito il suo stile di combattimento: niente onore, solo colpi bassi. Tempesta Dottor Scudo di accuse, sostenendo che non sappia reggere l'alcool come un vero veneto e che Padova sia infinitamente superiore a Milano. Ogni parola è studiata per colpire l'orgoglio dell'eroe e fargli perdere la calma. Ma Dottor Scudo resta impassibile. Assorbe ogni provocazione e risponde con una tecnica ancora più temibile: intima alla Zanzara di prendersi tre mesi di ferie e staccare completamente dal lavoro. La battaglia prosegue per ore. Capendo che la forza di Scudo è ormai superiore alla sua, la Zanzara decide di ricorrere alla sua ultima risorsa. Tra le zampe genera un globo di luce. Al suo interno pulsa ciò che da sempre risveglia l'istinto più oscuro della sua razza. Il denaro. Con un gesto deciso lo scaglia verso il cielo. Il globo esplode in una luce accecante che illumina tutta Milano. La Zanzara alza lo sguardo. I suoi occhi si tingono di un'avidità incontrollabile. Il corpo inizia a deformarsi, le ali si dilatano, il ronzio diventa un boato e un'aura oscura avvolge l'insetto. La trasformazione è iniziata. Davanti a Dottor Scudo sta nascendo qualcosa di molto più spaventoso di una semplice Zanzara.",
+      "sigla": "#Zanza #Scudo I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/121"
+    },
+    {
+      "numero": 122,
+      "saga": "La vendetta dei Soci: Zanzara e Ragno",
+      "titolo": "Il ritorno di sociozilla",
+      "data_pubblicazione": "01 ottobre 2026",
+      "autore": "Il Creatore - Enriquez da Sosa",
+      "trama": "L'infido richiamo dell'avidità e degli straordinari non retribuiti si diffonde nell'aria come una maledizione. Attirati da quell'energia, gli spiriti del Ragno e del Calabrone convergono sulla Zanzara. Pur di tornare a comandare e tormentare i dipendenti, sono ben felici di rinunciare alla tranquillità dell'aldilà... del resto, stare in ufficio è sempre stato più importante che stare con le proprie famiglie. Le tre presenze si fondono in un'unica mostruosa entità. È la rinascita del temuto Sociozilla. L'essere colossale ruggisce, facendo tremare l'intera Milano. La sua sola presenza sembra soffocare ogni speranza. Dottor Scudo affronta il gigante senza esitazione, ma il lungo viaggio dall'aldilà e il combattimento appena concluso iniziano a presentare il conto. Le energie stanno finendo. Ogni pugno di Sociozilla è come un meeting infinito. Ogni colpo pesa quanto un trimestre di straordinari non pagati. Scudo prova a resistere, ma alla fine il mostro riesce ad afferrarlo. L'enorme mano si chiude attorno all'eroe e inizia a stritolarlo lentamente, mentre Sociozilla infierisce con sadismo, sommergendolo di richiami, task urgenti, scadenze impossibili e nuove responsabilità assegnate \"al volo\". Le ossa scricchiolano. Le forze lo stanno abbandonando. Per la prima volta dopo il suo ritorno, Dottor Scudo sembra davvero vicino alla sconfitta. Come potrà il nostro eroe liberarsi dalla presa del mostro e fermare una volta per tutte il leggendario Sociozilla?",
+      "sigla": "#Zanzagallo #Scudo I 7 crudi del drago",
+      "url": "https://dottorscudo.guidomoroni.com/fumetti/122"
+    }
+  ]
+}

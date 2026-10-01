@@ -177,7 +177,7 @@ Ogni potere eroe costa 2 caffettini e si usa una volta per turno. Un potere con 
 un bersaglio non si può usare se non ci sono bersagli validi.
 
 ## 5. Set di carte
-Vedi `data/cards.json` (51 carte incluse i token). Le carte con rarità `token` non si mettono nel mazzo:
+Vedi `data/cards.json` (52 carte incluse i token). Le carte con rarità `token` non si mettono nel mazzo:
 vengono generate da altri effetti.
 
 ## 6. Mazzi precostruiti v1

@@ -827,5 +827,23 @@
     "effects": [],
     "lore": "Albo #20",
     "art": "assets/albi/albo-020.webp"
+  },
+  {
+    "id": "nettuno",
+    "name": "Nettuno",
+    "faction": "soci",
+    "signatureOf": null,
+    "rarity": "token",
+    "type": "minion",
+    "cost": 8,
+    "attack": 8,
+    "health": 8,
+    "keywords": [
+      "burocrazia"
+    ],
+    "text": "",
+    "effects": [],
+    "lore": "Albi #34-35",
+    "art": "assets/albi/albo-034.webp"
   }
 ]
