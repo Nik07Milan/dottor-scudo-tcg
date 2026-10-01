@@ -7,7 +7,37 @@
       "name": "Alza lo scudo",
       "cost": 2,
       "text": "Un tuo collega diventa Scudato, oppure ottieni 2 di armatura",
-      "effects": []
+      "effects": [],
+      "options": [
+        {
+          "label": "Scudato a un collega",
+          "effects": [
+            {
+              "trigger": "on_play",
+              "action": {
+                "kind": "give_keyword",
+                "keyword": "scudato",
+                "target": "chosen",
+                "filter": {
+                  "side": "friendly"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "2 armatura",
+          "effects": [
+            {
+              "trigger": "on_play",
+              "action": {
+                "kind": "armor",
+                "amount": 2
+              }
+            }
+          ]
+        }
+      ]
     },
     "portrait": "assets/avatar/avatar-1.jpg",
     "portraitConfirmed": true,
@@ -21,7 +51,16 @@
       "name": "Raccogli sassi",
       "cost": 2,
       "text": "Aggiungi un Sasso alla tua mano",
-      "effects": []
+      "effects": [
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "add_to_hand",
+            "cardId": "sasso",
+            "count": 1
+          }
+        }
+      ]
     },
     "portrait": "assets/avatar/avatar-2.jpg",
     "portraitConfirmed": true,
@@ -35,7 +74,24 @@
       "name": "Scoppio d'ira",
       "cost": 2,
       "text": "Infliggi 1 danno a tutti i servitori nemici e 1 al tuo eroe",
-      "effects": []
+      "effects": [
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "damage",
+            "amount": 1,
+            "target": "all_enemy_minions"
+          }
+        },
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "damage",
+            "amount": 1,
+            "target": "friendly_hero"
+          }
+        }
+      ]
     },
     "portrait": "assets/avatar/avatar-3.jpg",
     "portraitConfirmed": false,
@@ -49,7 +105,19 @@
       "name": "La via del Giappi",
       "cost": 2,
       "text": "La prossima Pratica che giochi in questo turno costa 2 in meno",
-      "effects": []
+      "effects": [
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "cost_modifier",
+            "filter": {
+              "type": "spell"
+            },
+            "amount": -2,
+            "expiresEndOfTurn": true
+          }
+        }
+      ]
     },
     "portrait": "assets/avatar/avatar-5.jpg",
     "portraitConfirmed": false,
@@ -63,7 +131,19 @@
       "name": "Fuga dalla riunione",
       "cost": 2,
       "text": "Rimanda in mano un tuo collega: costa 1 in meno",
-      "effects": []
+      "effects": [
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "return_to_hand",
+            "target": "chosen",
+            "filter": {
+              "side": "friendly"
+            },
+            "costModifier": -1
+          }
+        }
+      ]
     },
     "portrait": null,
     "portraitConfirmed": false,
@@ -77,7 +157,18 @@
       "name": "Nuova tavola",
       "cost": 2,
       "text": "Scopri un collega dell'Ufficio (scegline 1 tra 3) e aggiungilo alla tua mano",
-      "effects": []
+      "effects": [
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "discover",
+            "filter": {
+              "type": "minion",
+              "faction": "ufficio"
+            }
+          }
+        }
+      ]
     },
     "portrait": null,
     "portraitConfirmed": false,
@@ -91,7 +182,16 @@
       "name": "Lavaggio del cervello",
       "cost": 2,
       "text": "Evoca uno Studente plagiato 1/1",
-      "effects": []
+      "effects": [
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "summon",
+            "cardId": "studente-plagiato",
+            "count": 1
+          }
+        }
+      ]
     },
     "portrait": "assets/avatar/avatar-7.jpg",
     "portraitConfirmed": false,
@@ -105,7 +205,16 @@
       "name": "Pungiglione",
       "cost": 2,
       "text": "Infliggi 2 danni all'eroe nemico",
-      "effects": []
+      "effects": [
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "damage",
+            "amount": 2,
+            "target": "enemy_hero"
+          }
+        }
+      ]
     },
     "portrait": null,
     "portraitConfirmed": false,
@@ -119,7 +228,31 @@
       "name": "L'esperimento",
       "cost": 2,
       "text": "Dai +2 attacco a un tuo servitore; subisce 1 danno",
-      "effects": []
+      "effects": [
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "buff",
+            "attack": 2,
+            "health": 0,
+            "target": "chosen",
+            "filter": {
+              "side": "friendly"
+            }
+          }
+        },
+        {
+          "trigger": "on_play",
+          "action": {
+            "kind": "damage",
+            "amount": 1,
+            "target": "chosen",
+            "filter": {
+              "side": "friendly"
+            }
+          }
+        }
+      ]
     },
     "portrait": null,
     "portraitConfirmed": false,

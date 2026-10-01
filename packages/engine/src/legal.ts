@@ -8,7 +8,8 @@ import { CARDS_BY_ID } from "./data";
 import type { IllegalActionCode } from "./errors";
 import { MAX_BOARD } from "./rules";
 import type { Action, ActionType, CharacterRef, GameState, PlayerId } from "./state";
-import { chosenTargets } from "./targeting";
+import { heroPowerActions, heroPowerOf, powerEffects } from "./powers";
+import { chosenTargets, chosenTargetsFor } from "./targeting";
 
 const PLAYER_IDS: readonly string[] = ["p1", "p2"];
 const ACTION_TYPES: readonly ActionType[] = ["mulligan", "play_card", "attack", "hero_power", "choose", "end_turn", "concede"];
@@ -40,7 +41,7 @@ function phaseActions(state: GameState, player: PlayerId): Action[] {
     return state.pendingChoice.options.map((_, index): Action => ({ type: "choose", player, index }));
   }
   if (player !== state.activePlayer) return [];
-  return [...playCardActions(state, player), ...attackActions(state, player), { type: "end_turn", player }];
+  return [...playCardActions(state, player), ...attackActions(state, player), ...heroPowerActions(state, player), { type: "end_turn", player }];
 }
 
 function attackActions(state: GameState, player: PlayerId): Action[] {
@@ -116,6 +117,8 @@ export function checkShape(action: unknown): "malformed" | "unknown_action" | nu
       return isId(a.index) ? null : "malformed";
     case "attack":
       return isCharacterRef(a.attacker) && isCharacterRef(a.defender) ? null : "malformed";
+    case "hero_power":
+      return (a.target === undefined || isCharacterRef(a.target)) && (a.option === undefined || isId(a.option)) ? null : "malformed";
     default:
       return null;
   }
@@ -194,8 +197,22 @@ export function diagnose(state: GameState, action: Action): IllegalActionCode {
       return "not_legal";
     }
 
+    case "hero_power": {
+      if (state.phase !== "main") return "wrong_phase";
+      if (action.player !== state.activePlayer) return "not_your_turn";
+      if (state.pendingChoice) return "pending_choice";
+      if (ps.hero.heroPowerUsed) return "hero_power_used";
+      const power = heroPowerOf(state, action.player);
+      if (power.cost > ps.mana.available) return "not_enough_mana";
+      const effects = powerEffects(power, action.option);
+      if (!effects) return "invalid_option";
+      const targets = chosenTargetsFor(state, action.player, effects);
+      const { target } = action;
+      if (targets === null ? target !== undefined : !target || !targets.some((t) => sameRef(t, target))) return "invalid_target";
+      return "not_legal";
+    }
+
     default:
-      // hero_power: arriva con T1.16.
       return "not_implemented";
   }
 }

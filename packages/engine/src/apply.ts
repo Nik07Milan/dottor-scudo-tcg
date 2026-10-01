@@ -8,6 +8,7 @@ import { IllegalActionError } from "./errors";
 import { actionKey, checkShape, diagnose, getLegalActions } from "./legal";
 import { checkHeroes, finishGame } from "./outcome";
 import { playCard } from "./play";
+import { useHeroPower } from "./powers";
 import type { Action, ApplyResult, GameState } from "./state";
 import { addToHand, endTurn, mulligan } from "./turn";
 
@@ -33,6 +34,9 @@ export function applyAction(state: GameState, action: Action): ApplyResult {
     case "attack":
       performAttack(ctx, action.player, action.attacker, action.defender);
       break;
+    case "hero_power":
+      useHeroPower(ctx, action.player, action.option, action.target);
+      break;
     case "choose": {
       const choice = ctx.state.pendingChoice!;
       const cardId = choice.options[action.index]!;
@@ -48,8 +52,8 @@ export function applyAction(state: GameState, action: Action): ApplyResult {
       finishGame(ctx, { winner: opponentOf(action.player), reason: "concede" });
       break;
     default:
-      // Irraggiungibile: getLegalActions non propone altri tipi finché non sono implementati qui.
-      throw new IllegalActionError("not_implemented", `Azione non ancora supportata: ${action.type}`);
+      // Irraggiungibile: ogni tipo di Action è gestito sopra (TypeScript lo verifica con `never`).
+      throw new IllegalActionError("not_implemented", `Azione non supportata: ${(action as Action).type}`);
   }
   // Fine partita controllata solo a risoluzione completa (GDD §1.5.7–8).
   if (ctx.state.phase !== "ended") {
@@ -77,5 +81,7 @@ const MESSAGES: Partial<Record<string, string>> = {
   task_active: "Hai già una Task attiva",
   no_pending_choice: "Non c'è nessuna scelta da fare",
   invalid_choice: "Scelta non valida",
+  hero_power_used: "Potere eroe già usato in questo turno",
+  invalid_option: "Opzione del potere non valida",
   not_implemented: "Azione non ancora supportata",
 };

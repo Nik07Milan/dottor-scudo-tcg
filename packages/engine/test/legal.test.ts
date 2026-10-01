@@ -150,7 +150,7 @@ describe("rifiuto delle azioni illegali", () => {
     expect(codeOf(mull, { type: "mulligan", player: "p1", replace: [mull.players.p2.hand[0]!.instanceId] })).toBe("card_not_in_hand");
     expect(codeOf(mull, { type: "mulligan", player: "p1", replace: [handId, handId] })).toBe("duplicate_card");
     expect(codeOf(pending, { type: "end_turn", player: main.activePlayer })).toBe("pending_choice");
-    expect(codeOf(main, { type: "hero_power", player: main.activePlayer })).toBe("not_implemented");
+    expect(codeOf(main, { type: "hero_power", player: main.activePlayer })).toBe("not_enough_mana"); // turno 1: 1 caffettino
   });
 
   it("le azioni malformate danno errore 'malformed', mai un crash", () => {

@@ -30,6 +30,10 @@ export type IllegalActionCode =
   | "no_pending_choice"
   /** Indice fuori dalle opzioni offerte. */
   | "invalid_choice"
+  /** Potere eroe già usato in questo turno. */
+  | "hero_power_used"
+  /** Opzione del potere eroe mancante o inesistente. */
+  | "invalid_option"
   /** Tipo di azione previsto ma non ancora implementato nell'engine. */
   | "not_implemented"
   /** Ben formata ma non tra le mosse legali, senza un motivo più preciso. */

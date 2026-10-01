@@ -116,10 +116,20 @@ export interface HeroDefinition {
   id: string;
   name: string;
   faction: Exclude<FactionId, "neutrale">;
-  heroPower: { name: string; cost: number; text: string; effects: Effect[] };
+  heroPower: HeroPowerDefinition;
   portrait: string | null;
   portraitConfirmed: boolean;
   lore: string;
+}
+
+/** Potere eroe (GDD §4): costo, una volta per turno. Con `options` il giocatore sceglie quale effetto usare. */
+export interface HeroPowerDefinition {
+  name: string;
+  cost: number;
+  text: string;
+  /** Effetti `on_play` del potere; vuoto se il potere ha `options`. */
+  effects: Effect[];
+  options?: { label: string; effects: Effect[] }[];
 }
 
 export interface KeywordDefinition {

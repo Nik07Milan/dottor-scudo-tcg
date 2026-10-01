@@ -33,7 +33,8 @@ describe("dati di gioco", () => {
   });
 
   it("gli effetti puntano a carte e handler esistenti", () => {
-    for (const { id, effects } of [...CARDS, ...HEROES.map((h) => ({ id: h.id, effects: h.heroPower.effects }))]) {
+    const powers = HEROES.map((h) => ({ id: h.id, effects: [...h.heroPower.effects, ...(h.heroPower.options?.flatMap((o) => o.effects) ?? [])] }));
+    for (const { id, effects } of [...CARDS, ...powers]) {
       for (const { action } of effects) {
         if (action.kind === "summon") expect(CARDS_BY_ID.get(action.cardId)?.type, `${id} → ${action.cardId}`).toBe("minion");
         if (action.kind === "add_to_hand") expect(CARDS_BY_ID.has(action.cardId), `${id} → ${action.cardId}`).toBe(true);
