@@ -10,6 +10,9 @@ type Container = Phaser.GameObjects.Container;
 
 /** Da che altezza della copertina parte il ritaglio: sotto il titolo, dove c'è il personaggio. */
 const COVER_FOCUS = 0.38;
+/** Gli avatar (350×350, es. Margherita) hanno il viso al centro: il ritaglio parte più in alto. */
+const AVATAR_FOCUS = 0.22;
+const artFocus = (path: string | null | undefined) => (path?.includes("/avatar/") ? AVATAR_FOCUS : COVER_FOCUS);
 
 export const CARD_W = 118;
 export const CARD_H = 164;
@@ -68,8 +71,9 @@ export function cardView(scene: Scene, x: number, y: number, card: CardModel | (
     .setOrigin(0.5, 0);
 
   const parts: Phaser.GameObjects.GameObject[] = [g];
-  const artKey = requestArt(scene, CARDS_BY_ID.get(card.cardId)?.art);
-  if (artKey) parts.push(croppedImage(scene, artKey, art.x, art.y, art.w, art.h, COVER_FOCUS));
+  const artPath = CARDS_BY_ID.get(card.cardId)?.art;
+  const artKey = requestArt(scene, artPath);
+  if (artKey) parts.push(croppedImage(scene, artKey, art.x, art.y, art.w, art.h, artFocus(artPath)));
   parts.push(name, kind, body, badge(scene, -w / 2 + 8, -h / 2 + 8, COLORS.mana, card.cost, 14));
   if (card.attack !== undefined) parts.push(badge(scene, -w / 2 + 10, h / 2 - 10, COLORS.attack, card.attack, 13));
   if (card.health !== undefined) parts.push(badge(scene, w / 2 - 10, h / 2 - 10, COLORS.health, card.health, 13));
@@ -110,9 +114,10 @@ export function minionView(scene: Scene, x: number, y: number, m: MinionModel): 
     })
     .setOrigin(0.5, 0);
   const parts: Phaser.GameObjects.GameObject[] = [g];
-  const artKey = requestArt(scene, CARDS_BY_ID.get(m.cardId)?.art);
+  const artPath = CARDS_BY_ID.get(m.cardId)?.art;
+  const artKey = requestArt(scene, artPath);
   if (artKey) {
-    const img = croppedImage(scene, artKey, art.x, art.y, art.w, art.h, COVER_FOCUS);
+    const img = croppedImage(scene, artKey, art.x, art.y, art.w, art.h, artFocus(artPath));
     if (m.stealthy) img.setAlpha(0.45); // Smart working: mezzo nascosto
     parts.push(img);
   }

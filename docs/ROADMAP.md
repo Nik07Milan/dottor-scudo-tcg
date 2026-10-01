@@ -132,7 +132,7 @@ Phaser è solo presentazione e input:
 
 | Id | Task | Fatto quando |
 |---|---|---|
-| T5.1 🟡 | Arte delle carte ritagliata da `assets/albi/` e ritratti degli eroi (conferma avatar 3–8). Consenso dato. (Fatta: arte ritagliata in carte e servitori, ritratti di Dottor Scudo e Nikson in plancia e lobby; **mancano** l'arte di 7 carte — bozza-a-matita, retcon, emergenza-ritardi, ciao-guido-sono-guido, riunione-infinita, caffettino, mezza-giornata — e la conferma degli avatar 3–8.) | Ogni carta ha `art` valorizzato. |
+| T5.1 ✅ | Arte delle carte ritagliata da `assets/albi/` e ritratti degli eroi (avatar confermati, GDD §8). Ogni carta ha la sua arte (Margherita usa avatar-8); ritratti per 7 eroi su 9, Il Creatore e Il Calabrone senza avatar restano con le iniziali. | Ogni carta ha `art` valorizzato. |
 | T5.2 | Audio: sigle come musica di sottofondo. | Musica attivabile e disattivabile. |
 | T5.3 | Postgres: utenti, mazzi personalizzati (deck builder con `validateDeck`; valutare un overlay HTML per liste e filtri), storico partite salvato come seed + azioni, quindi rigiocabile come replay. | Una partita salvata si rigioca identica. |
 | T5.4 | Classifica. | Pagina classifica con i dati reali. |

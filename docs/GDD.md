@@ -230,7 +230,9 @@ I Soci non hanno Strumenti: è una scelta di identità (nessun eroe dei Soci att
 - Riconnessione entro il timer del turno; abbandono = sconfitta.
 
 ## 8. Questioni aperte
-- Conferma avatar ↔ personaggi (avatar 3–8).
+- ~~Conferma avatar ↔ personaggi (avatar 3–8).~~ Risolta: avatar-1 Dottor Scudo, 2 Nikson, 3 Jackson, 4 Ale,
+  5 Milet, 6 Lord Capognus, 7 Dr Grappolo, 8 Margherita (servitore: è l'arte della sua carta).
+  Il Creatore e Il Calabrone non hanno un avatar: in gioco mostrano le iniziali.
 - Conferma ruoli: chi è in ufficio e chi è socio.
 - Bilanciamento: tutti i numeri sono provvisori, da tarare con le partite bot-contro-bot (vedi §8.1).
 

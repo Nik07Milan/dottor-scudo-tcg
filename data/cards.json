@@ -402,7 +402,7 @@
       }
     ],
     "lore": "Tag #SOSA",
-    "art": null
+    "art": "assets/albi/albo-042.webp"
   },
   {
     "id": "retcon",
@@ -424,7 +424,7 @@
       }
     ],
     "lore": "Tag #SOSA",
-    "art": null
+    "art": "assets/albi/albo-050.webp"
   },
   {
     "id": "la-lore-dell-ufficio",
@@ -573,7 +573,7 @@
       }
     ],
     "lore": "Tag #EMERGENZA RITARDI",
-    "art": null
+    "art": "assets/albi/albo-084.webp"
   },
   {
     "id": "ciao-guido-sono-guido",
@@ -600,7 +600,7 @@
       }
     ],
     "lore": "Tag #CIAO GUIDO SONO GUIDO",
-    "art": null
+    "art": "assets/albi/albo-030.webp"
   },
   {
     "id": "il-cursore",
@@ -888,7 +888,7 @@
       }
     ],
     "lore": "Albo #9",
-    "art": "assets/albi/albo-009.webp"
+    "art": "assets/avatar/avatar-8.jpg"
   },
   {
     "id": "il-serramanico",
@@ -1186,7 +1186,7 @@
       }
     ],
     "lore": "",
-    "art": null
+    "art": "assets/albi/albo-102.webp"
   },
   {
     "id": "i-dogmi-del-calabrone",
@@ -1239,7 +1239,7 @@
       }
     ],
     "lore": "Tag #CAFFETTINO",
-    "art": null
+    "art": "assets/albi/albo-059.webp"
   },
   {
     "id": "chiamata-api",
@@ -1284,7 +1284,7 @@
       }
     ],
     "lore": "Tag #MEZZA GIORNATA",
-    "art": null
+    "art": "assets/albi/albo-056.webp"
   },
   {
     "id": "l-ultimo-sorso",

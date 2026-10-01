@@ -89,6 +89,7 @@ export class LobbyScene extends Scene {
       const c = this.add.container(x, y, [g, name, faction, power]).setSize(184, 120).setInteractive({ useHandCursor: true });
       c.setData("heroId", hero.id);
       c.setData("draw", draw);
+      c.setData("labels", [name, faction]);
       c.on("pointerdown", () => {
         this.heroId = hero.id;
         for (const other of cards) (other.getData("draw") as (s: boolean) => void)(other.getData("heroId") === hero.id);
@@ -107,6 +108,8 @@ export class LobbyScene extends Scene {
         if (!key) continue;
         placed.add(id);
         c.add(croppedImage(this, key, -88, -56, 40, 40, 0.08));
+        // Nome e fazione si spostano a destra del ritratto, così i nomi lunghi non ci finiscono sotto.
+        for (const label of c.getData("labels") as Phaser.GameObjects.Text[]) label.setX(22);
       }
     };
     this.events.off(ART_READY);

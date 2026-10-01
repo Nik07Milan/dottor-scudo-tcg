@@ -94,7 +94,7 @@
       ]
     },
     "portrait": "assets/avatar/avatar-3.jpg",
-    "portraitConfirmed": false,
+    "portraitConfirmed": true,
     "lore": "Albo #5"
   },
   {
@@ -127,7 +127,7 @@
       ]
     },
     "portrait": "assets/avatar/avatar-5.jpg",
-    "portraitConfirmed": false,
+    "portraitConfirmed": true,
     "lore": "Albo #4"
   },
   {
@@ -152,8 +152,8 @@
         }
       ]
     },
-    "portrait": null,
-    "portraitConfirmed": false,
+    "portrait": "assets/avatar/avatar-4.jpg",
+    "portraitConfirmed": true,
     "lore": "Albi #10, #11, #12, #28"
   },
   {
@@ -201,7 +201,7 @@
       ]
     },
     "portrait": "assets/avatar/avatar-7.jpg",
-    "portraitConfirmed": false,
+    "portraitConfirmed": true,
     "lore": "Albi #1, #10"
   },
   {
@@ -250,8 +250,8 @@
         }
       ]
     },
-    "portrait": null,
-    "portraitConfirmed": false,
+    "portrait": "assets/avatar/avatar-6.jpg",
+    "portraitConfirmed": true,
     "lore": "Albo #24"
   }
 ]
