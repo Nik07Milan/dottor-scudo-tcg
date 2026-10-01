@@ -1,13 +1,13 @@
 // Creazione della partita (T1.2, GDD §1.1). Il Caffettino del secondo giocatore arriva a fine mulligan (T1.4).
 
-import { CARDS_BY_ID, HEROES_BY_ID } from "./data";
+import { validateDeck } from "./deck";
 import { randomInt, shuffle } from "./rng";
 import { HERO_MAX_HEALTH, STARTING_HAND_FIRST, STARTING_HAND_SECOND } from "./rules";
 import type { ApplyResult, CardInstance, GameEvent, PlayerId, PlayerState } from "./state";
 
 export interface PlayerSetup {
   heroId: string;
-  /** Id carta del mazzo scelto. La legalità del mazzo è compito di validateDeck (T1.3). */
+  /** Id carta del mazzo scelto. Deve passare validateDeck, altrimenti createGame lancia un errore. */
   deck: string[];
 }
 
@@ -20,10 +20,10 @@ export interface GameSetup {
 const PLAYER_IDS = ["p1", "p2"] as const satisfies readonly PlayerId[];
 
 export function createGame(setup: GameSetup): ApplyResult {
-  for (const p of setup.players) {
-    if (!HEROES_BY_ID.has(p.heroId)) throw new Error(`eroe sconosciuto: ${p.heroId}`);
-    for (const id of p.deck) if (!CARDS_BY_ID.has(id)) throw new Error(`carta sconosciuta: ${id}`);
-  }
+  setup.players.forEach((p, i) => {
+    const result = validateDeck(p.heroId, p.deck);
+    if (!result.ok) throw new Error(`Mazzo di ${PLAYER_IDS[i]} non valido: ${result.errors.map((e) => e.message).join("; ")}`);
+  });
 
   // Ordine fisso di consumo dell'RNG: primo giocatore, mazzo p1, mazzo p2.
   let seed = setup.seed >>> 0;

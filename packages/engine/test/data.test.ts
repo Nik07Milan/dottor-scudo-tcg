@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import albiJson from "../../../data/dottorscudo-albi.json";
 import { CARDS, CARDS_BY_ID, HEROES, HEROES_BY_ID, KEYWORDS } from "../src/data";
+import { legalCardsForHero, maxCopies } from "../src/deck";
 import { nextRandom, randomInt, shuffle } from "../src/rng";
 
 describe("dati di gioco", () => {
@@ -41,25 +42,14 @@ describe("dati di gioco", () => {
 const ALBI: { numero: number }[] = albiJson.albi;
 
 describe("mazzi possibili per eroe", () => {
-  // Stesse regole di validateDeck (GDD §1, §4): niente token, fazione + firma propria + neutrali,
-  // max 2 copie, 1 per le leggendarie. Va sostituito da validateDeck quando arriva T1.3.
-  const legalPool = (heroId: string) => {
-    const hero = HEROES_BY_ID.get(heroId)!;
-    return CARDS.filter(
-      (c) =>
-        c.rarity !== "token" &&
-        (c.faction === hero.faction || c.faction === "neutrale") &&
-        (!c.signatureOf || c.signatureOf === heroId),
-    );
-  };
-  const slots = (cards: typeof CARDS) => cards.reduce((n, c) => n + (c.rarity === "legendary" ? 1 : 2), 0);
+  const slots = (cards: typeof CARDS) => cards.reduce((n, c) => n + maxCopies(c), 0);
 
   it.each(HEROES.map((h) => h.id))("%s può comporre un mazzo da 30 carte", (heroId) => {
-    expect(slots(legalPool(heroId))).toBeGreaterThanOrEqual(30);
+    expect(slots(legalCardsForHero(heroId))).toBeGreaterThanOrEqual(30);
   });
 
   it.each(HEROES.map((h) => h.id))("%s ha almeno 15 slot per servitori", (heroId) => {
-    expect(slots(legalPool(heroId).filter((c) => c.type === "minion"))).toBeGreaterThanOrEqual(15);
+    expect(slots(legalCardsForHero(heroId).filter((c) => c.type === "minion"))).toBeGreaterThanOrEqual(15);
   });
 });
 

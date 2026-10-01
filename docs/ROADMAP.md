@@ -31,7 +31,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 |---|---|---|
 | T1.1 ✅ | Tipi `GameState`, `PlayerState`, `MinionInstance` (instanceId, stats correnti, keyword, turni di Bloccato, attacchi nel turno, evocato in questo turno), `Action`, `GameEvent`. `rng` dentro lo stato. | Typecheck verde; tipi esportati da `index.ts`. |
 | T1.2 ✅ | `createGame({ seed, players })`: primo giocatore e mescolata con RNG, mani 3 / 4, fase mulligan. | Test: stesso seed → stesse mani; seed diverso → mani diverse. |
-| T1.3 | `validateDeck(heroId, cardIds)`: 30 carte, max 2 copie, 1 per leggendaria, niente token, solo fazione + firma propria + neutrali. | Un test per ogni regola violata. |
+| T1.3 ✅ | `validateDeck(heroId, cardIds)`: 30 carte, max 2 copie, 1 per leggendaria, niente token, solo fazione + firma propria + neutrali. | Un test per ogni regola violata. |
 
 ### 1B. Turno e risorse
 | Id | Task | Fatto quando |

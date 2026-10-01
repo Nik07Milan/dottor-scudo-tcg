@@ -120,7 +120,7 @@ describe("createGame", () => {
 
   it("rifiuta eroi e carte sconosciuti", () => {
     const s = setup(1);
-    expect(() => createGame({ ...s, players: [{ ...s.players[0], heroId: "nessuno" }, s.players[1]] })).toThrow(/eroe/);
+    expect(() => createGame({ ...s, players: [{ ...s.players[0], heroId: "nessuno" }, s.players[1]] })).toThrow(/eroe sconosciuto/i);
     expect(() =>
       createGame({ ...s, players: [{ ...s.players[0], deck: [...s.players[0].deck.slice(1), "carta-finta"] }, s.players[1]] }),
     ).toThrow(/carta-finta/);

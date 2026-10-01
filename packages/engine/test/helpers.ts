@@ -1,20 +1,16 @@
-import { CARDS, HEROES_BY_ID } from "../src/data";
+import { legalCardsForHero, maxCopies } from "../src/deck";
+import { HEROES_BY_ID } from "../src/data";
 import { DECK_SIZE } from "../src/rules";
 
 /**
- * Mazzo da 30 per i test: carte legali per l'eroe (fazione + firma + neutrali, niente token),
- * 2 copie per carta e 1 per le leggendarie, nell'ordine di cards.json. Deterministico.
+ * Mazzo da 30 per i test: carte legali per l'eroe, copie massime per carta, nell'ordine di cards.json.
+ * Deterministico.
  */
 export function testDeck(heroId: string): string[] {
-  const hero = HEROES_BY_ID.get(heroId);
-  if (!hero) throw new Error(`eroe sconosciuto: ${heroId}`);
+  if (!HEROES_BY_ID.has(heroId)) throw new Error(`eroe sconosciuto: ${heroId}`);
   const deck: string[] = [];
-  for (const c of CARDS) {
-    if (c.rarity === "token") continue;
-    if (c.faction !== hero.faction && c.faction !== "neutrale") continue;
-    if (c.signatureOf && c.signatureOf !== heroId) continue;
-    const copies = c.rarity === "legendary" ? 1 : 2;
-    for (let i = 0; i < copies && deck.length < DECK_SIZE; i++) deck.push(c.id);
+  for (const c of legalCardsForHero(heroId)) {
+    for (let i = 0; i < maxCopies(c) && deck.length < DECK_SIZE; i++) deck.push(c.id);
   }
   return deck;
 }
