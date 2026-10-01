@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import albiJson from "../../../data/dottorscudo-albi.json";
 import { CARDS, CARDS_BY_ID, HEROES, HEROES_BY_ID, KEYWORDS } from "../src/data";
-import { nextRandom } from "../src/rng";
+import { nextRandom, randomInt, shuffle } from "../src/rng";
 
 describe("dati di gioco", () => {
   it("gli id delle carte sono unici", () => {
@@ -95,5 +95,30 @@ describe("rng", () => {
   it("è deterministico a parità di seed", () => {
     expect(nextRandom(42)).toEqual(nextRandom(42));
     expect(nextRandom(42).value).not.toBe(nextRandom(43).value);
+  });
+
+  it("randomInt resta nell'intervallo [0, n) e copre tutti i valori", () => {
+    let seed = 1;
+    const seen = new Set<number>();
+    for (let i = 0; i < 500; i++) {
+      const r = randomInt(seed, 6);
+      expect(r.value).toBeGreaterThanOrEqual(0);
+      expect(r.value).toBeLessThan(6);
+      expect(Number.isInteger(r.value)).toBe(true);
+      seen.add(r.value);
+      seed = r.seed;
+    }
+    expect(seen.size).toBe(6);
+  });
+
+  it("shuffle è deterministico, è una permutazione e non modifica l'input", () => {
+    const input = Array.from({ length: 30 }, (_, i) => i);
+    const copy = [...input];
+    const a = shuffle(99, input);
+    expect(a).toEqual(shuffle(99, input));
+    expect([...a.value].sort((x, y) => x - y)).toEqual(input);
+    expect(a.value).not.toEqual(input);
+    expect(input).toEqual(copy);
+    expect(a.seed).not.toBe(99);
   });
 });

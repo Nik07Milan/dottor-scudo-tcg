@@ -30,13 +30,13 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 | Id | Task | Fatto quando |
 |---|---|---|
 | T1.1 ✅ | Tipi `GameState`, `PlayerState`, `MinionInstance` (instanceId, stats correnti, keyword, turni di Bloccato, attacchi nel turno, evocato in questo turno), `Action`, `GameEvent`. `rng` dentro lo stato. | Typecheck verde; tipi esportati da `index.ts`. |
-| T1.2 | `createGame({ seed, players })`: mescola con RNG, mani 3 / 4 + Caffettino, fase mulligan. | Test: stesso seed → stesse mani; seed diverso → mani diverse. |
+| T1.2 ✅ | `createGame({ seed, players })`: primo giocatore e mescolata con RNG, mani 3 / 4, fase mulligan. | Test: stesso seed → stesse mani; seed diverso → mani diverse. |
 | T1.3 | `validateDeck(heroId, cardIds)`: 30 carte, max 2 copie, 1 per leggendaria, niente token, solo fazione + firma propria + neutrali. | Un test per ogni regola violata. |
 
 ### 1B. Turno e risorse
 | Id | Task | Fatto quando |
 |---|---|---|
-| T1.4 | Azioni `mulligan` ed `end_turn`. Inizio turno: +1 caffettino massimo (fino a 10), ricarica, pesca. Burnout 1, 2, 3…. Mano piena: le carte oltre la decima vengono scartate. | Test per ogni regola, inclusi i limiti (10 caffettini, 10 carte, burnout crescente). |
+| T1.4 | Azioni `mulligan` (a fine mulligan il Caffettino va al secondo giocatore, GDD §1.1) ed `end_turn`. Inizio turno: +1 caffettino massimo (fino a 10), ricarica, pesca. Burnout 1, 2, 3…. Mano piena: le carte oltre la decima vengono scartate. | Test per ogni regola, inclusi i limiti (10 caffettini, 10 carte, burnout crescente). |
 | T1.5 | `getLegalActions(state, playerId)` + `applyAction` che rifiuta tutto ciò che non è legale con un errore tipizzato. | Test di proprietà: un'azione è accettata ⇔ è in `getLegalActions`. |
 | T1.6 | Vittoria, sconfitta, pareggio simultaneo, `concede`. | Test per i 4 esiti. |
 
