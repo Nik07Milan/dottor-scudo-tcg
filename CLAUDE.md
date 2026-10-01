@@ -37,6 +37,7 @@ Non passare alla milestone successiva finché la precedente non ha test verdi.
 - `npm install` — installa tutti i workspace
 - `npm test` — test dell'engine
 - `npm run typecheck` — typecheck di tutti i pacchetti
+- `npm run simulate -- --seed 42` — una partita tra bot casuali con il log; `--games 100` per il riepilogo, `--p1 <eroe> --p2 <eroe>` per scegliere gli eroi
 - `npm run dev:server` / `npm run dev:client`
 
 ## Convenzioni

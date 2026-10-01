@@ -72,7 +72,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 |---|---|---|
 | T1.18 ✅ | `getPlayerView(state, playerId)`: mano e mazzo avversari ridotti a conteggi, seed RNG rimosso. | Test che nessun campo segreto compare nella vista. |
 | T1.19 ✅ | Determinismo: stesso seed + stesse azioni → stesso stato. | Test con confronto degli snapshot. |
-| T1.20 | CLI `npm run simulate` (cross-platform, `tsx`): partita con mosse legali casuali, log leggibile. | Il comando termina con un vincitore su 100 seed diversi. |
+| T1.20 ✅ | CLI `npm run simulate` (cross-platform, `tsx`): partita con mosse legali casuali, log leggibile. | Il comando termina con un vincitore su 100 seed diversi. |
 
 **Uscita da M1**: `npm test` e `npm run typecheck` verdi.
 
@@ -82,7 +82,7 @@ Ordine: 1A → 1B → 1C → (1D ‖ 1E) → 1F → 1G.
 
 | Id | Task | Fatto quando |
 |---|---|---|
-| T2.1 | Bot `random` (scelta uniforme tra le azioni legali), riusato dalla CLI. | Interfaccia `Bot` comune nell'engine o in un pacchetto `bot`. |
+| T2.1 ✅ | Bot `random` (scelta uniforme tra le azioni legali), riusato dalla CLI. | Interfaccia `Bot` comune nell'engine o in un pacchetto `bot`. |
 | T2.2 | Bot `greedy`: euristica su ferie, campo e mano, sceglie la migliore azione a un passo. | Batte `random` in più del 70% delle partite. |
 | T2.3 | `npm run botmatch -- --games N`: winrate per eroe e per matchup, durata media, carte più giocate. Seed riproducibili. | Report stampato a terminale e in JSON. |
 | T2.4 | Fuzz: migliaia di partite casuali con invarianti (nessuna eccezione, max 7 servitori, mano ≤ 10, partita conclusa entro N turni). | Ogni crash trovato diventa un test di regressione. |
