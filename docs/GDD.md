@@ -229,6 +229,13 @@ I Soci non hanno Strumenti: è una scelta di identità (nessun eroe dei Soci att
 - Server autoritativo: il client invia azioni, il server valida con l'engine e manda a ogni giocatore la propria vista (mano e mazzo avversario nascosti).
 - Riconnessione entro il timer del turno; abbandono = sconfitta.
 
+### 7.1 Account, mazzi e storico (M5)
+- Si gioca anche da **ospite**: mazzo precostruito, nessuno storico.
+- **Accesso** con link via email (Supabase Auth), senza password. Ogni account ha un **nickname** (3–24 caratteri, unico), modificabile.
+- **Mazzi personalizzati**: da collegato si costruiscono nel deck builder con le regole del §1 (30 carte, max 2 copie, 1 per le leggendarie; fazione dell'eroe + Neutrali + carte firma proprie; niente token). Si sceglie in lobby tra precostruito e mazzi salvati, sia online sia contro l'IA. Il server rivalida il mazzo all'ingresso.
+- **Storico**: ogni partita online con almeno un giocatore collegato viene salvata come seed + azioni, quindi si può **rivedere** passo per passo. Contano anche resa e abbandono. Le partite contro l'IA e il tutorial non vanno nello storico.
+- Ogni partita salvata porta l'impronta dei dati di gioco (`DATA_VERSION`): se carte o eroi cambiano dopo, il replay avvisa che potrebbe non riuscire.
+
 ## 8. Questioni aperte
 - ~~Conferma avatar ↔ personaggi (avatar 3–8).~~ Risolta: avatar-1 Dottor Scudo, 2 Nikson, 3 Jackson, 4 Ale,
   5 Milet, 6 Lord Capognus, 7 Dr Grappolo, 8 Margherita (servitore: è l'arte della sua carta).

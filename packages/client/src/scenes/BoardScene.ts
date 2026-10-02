@@ -11,7 +11,7 @@ import { EventQueue } from "../eventQueue";
 import { NONE, click, highlightsFor, type Click, type Highlights, type Selection } from "../input";
 import { viewToModel, type BoardModel } from "../model";
 import { ART_READY } from "../ui/art";
-import type { MatchConnection } from "../match";
+import { BOARD_IDLE, type MatchConnection } from "../match";
 import { COLORS, DURATION, FONT, HEIGHT, WIDTH } from "../theme";
 import { CARD_H, CARD_W, HERO_H, HERO_W, MINION_H, MINION_W, button, cardBack, cardView, glow, heroView, minionView } from "../ui/cards";
 
@@ -196,6 +196,7 @@ export class BoardScene extends Scene {
     const latest = this.pending;
     this.pending = null;
     if (latest) this.applyView(latest.view);
+    this.events.emit(BOARD_IDLE);
   }
 
   private applyView(view: PlayerView): void {

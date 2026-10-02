@@ -51,6 +51,15 @@ describe("determinismo", () => {
     expect(replay(setup(5), actions).events).toEqual(replay(setup(5), actions).events);
   });
 
+  it("gli eventi divisi per passo sono quelli di createGame e di ogni applyAction (visore dei replay, T5.3)", () => {
+    const { actions } = record(9);
+    const r = replay(setup(9), actions);
+    expect(r.stepEvents).toHaveLength(actions.length + 1);
+    expect(r.stepEvents[0]).toEqual(createGame(setup(9)).events);
+    expect(r.stepEvents[3]).toEqual(applyAction(r.states[2]!, actions[2]!).events);
+    expect(r.stepEvents.flat()).toEqual(r.events);
+  });
+
   it("seed diverso → partita diversa con le stesse prime azioni", () => {
     const a = createGame(setup(1)).state;
     const b = createGame(setup(2)).state;

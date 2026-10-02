@@ -5,7 +5,7 @@ import { getAccount, onAccountChange, sendMagicLink, setNickname, signOut, supab
 import { el, ensureStyles } from "./dom";
 
 /** Aggiunge il pannello alla scena, centrato in (x, y). Non fa nulla se Supabase non è configurato. */
-export function mountAccountPanel(scene: Scene, x: number, y: number): void {
+export function mountAccountPanel(scene: Scene, x: number, y: number, onHistory: () => void): void {
   if (!supabase) return;
   ensureStyles();
   const root = el("div", { class: "ds-ui ds-panel", style: "width: 290px;" });
@@ -79,7 +79,12 @@ export function mountAccountPanel(scene: Scene, x: number, y: number): void {
         "div",
         { class: "ds-col", style: "gap: 2px;" },
         el("div", {}, "Ciao, ", el("b", {}, nickname)),
-        el("button", { class: "ds-link", style: "font-size: 13px; align-self: flex-start;", onclick: () => ((editing = true), render(getAccount())) }, "cambia nickname"),
+        el(
+          "div",
+          { class: "ds-row", style: "gap: 10px; font-size: 13px;" },
+          el("button", { class: "ds-link", style: "font-size: 13px;", onclick: onHistory }, "le mie partite"),
+          el("button", { class: "ds-link", style: "font-size: 13px;", onclick: () => ((editing = true), render(getAccount())) }, "cambia nickname"),
+        ),
       ),
       el("button", { class: "ds-secondary", onclick: () => void signOut() }, "Esci"),
     );

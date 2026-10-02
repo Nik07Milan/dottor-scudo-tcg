@@ -6,6 +6,7 @@ import { ART_READY, croppedImage, heroPortrait, requestArt } from "../ui/art";
 import { LocalMatch } from "../local";
 import { mountAccountPanel } from "../overlay/accountPanel";
 import { openDeckBuilder } from "../overlay/deckBuilder";
+import { openHistory } from "../overlay/history";
 import { mountDeckPicker, type DeckPicker } from "../overlay/deckPicker";
 import { TutorialMatch } from "../tutorial/tutorial";
 import { Scene } from "phaser";
@@ -33,7 +34,7 @@ export class LobbyScene extends Scene {
     this.add.text(WIDTH / 2, 118, "il paladino degli impiegati contro la burocrazia aziendale", { fontFamily: FONT, fontSize: "18px", color: COLORS.muted }).setOrigin(0.5);
 
     this.drawHeroPicker();
-    mountAccountPanel(this, WIDTH - 175, 70);
+    mountAccountPanel(this, WIDTH - 175, 70, () => openHistory(this));
     // Da collegato: scelta tra precostruito e i propri mazzi (T5.3).
     this.decks = mountDeckPicker(this, WIDTH / 2, 508, () => this.heroId, () =>
       openDeckBuilder(this, this.heroId, (changed) => changed && this.decks.refresh()),

@@ -10,6 +10,8 @@ export interface ReplayResult {
   states: GameState[];
   /** Eventi di createGame e di ogni azione, in ordine. */
   events: GameEvent[];
+  /** Gli stessi eventi divisi per passo: `stepEvents[0]` di createGame, `stepEvents[i]` dell'azione i-1. */
+  stepEvents: GameEvent[][];
   final: GameState;
 }
 
@@ -17,13 +19,13 @@ export interface ReplayResult {
 export function replay(setup: GameSetup, actions: readonly Action[]): ReplayResult {
   const start = createGame(setup);
   const states = [start.state];
-  const events = [...start.events];
+  const stepEvents = [start.events];
   let state = start.state;
   for (const action of actions) {
     const r = applyAction(state, action);
     state = r.state;
     states.push(state);
-    events.push(...r.events);
+    stepEvents.push(r.events);
   }
-  return { states, events, final: state };
+  return { states, events: stepEvents.flat(), stepEvents, final: state };
 }
